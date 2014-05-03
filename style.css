@@ -21,16 +21,13 @@ header #sortmenu {
 	right: 10px;
 	top: 10px;
 	width: 100px;
-}
-header #sortmenu div:first-child {
-	display: block;
+	min-height: 20px;
 }
 header #sortmenu div {
 	background-color: rgba(43,30,23,0.6);
 	border: white solid thin;
 	color: white;
 	padding: 2px;
-	display: none;
 }
 
 header span#title {
