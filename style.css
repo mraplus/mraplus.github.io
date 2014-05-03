@@ -19,6 +19,7 @@ header {
 header div#sortmenu {
 	border: white solid thin;
 	color: white;
+	padding: 2px;
 	position: absolute;
 	right: 10px;
 	top: 10px;
@@ -26,7 +27,6 @@ header div#sortmenu {
 
 header span#title {
 	padding: 20px;
-	
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
