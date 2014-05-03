@@ -18,7 +18,7 @@ header {
 header > #commands {
 	position: relative;
 	float: right;
-	right: 100px;
+	right: 10px;
 	top: 15px;
 }
 
@@ -56,13 +56,13 @@ div#sortMenu .button {
 }
 
 header span#title {
-	color: #EEE;
-	position: relative;
+	position: fixed;
 	top: 15px;
+	
+	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
 	font-weight: normal;
-	vertical-align: middle;
 }
 
 #content {
