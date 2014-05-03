@@ -42,7 +42,7 @@ $(document).ready(function() {
 			projects.push(text);
 		});
 		
-		$("#content").append(projects.join());
+		$("#content").append(projects.join(''));// empty string stops comma
 	});
 });
 </script>

@@ -31,4 +31,5 @@ div.project:nth-child(even) { background-color: #66F; }
 
 div.project h1 {
 	font-size: 24px;
+	display: inline;
 }
