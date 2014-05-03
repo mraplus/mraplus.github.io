@@ -28,7 +28,6 @@ div.project {
 	float: left;
 	color: white;
 	padding: 10px;
-	position: relative;
 }
 
 div.project h1 {
@@ -51,6 +50,11 @@ div.project p.author {
 	font-weight: bold;
 }
 
+<<<<<<< HEAD
+=======
+div.project:nth-child(2n + 2) { background-color: #66F; }
+div.project:nth-child(3n + 3) { background-color: #030; }
+>>>>>>> aa287a30498a815a633beadd91e4e01cc137b5d1
 div.project:nth-child(4n + 1) { background-color: #900; }
 div.project:nth-child(2n + 2) { background-color: #009; } 
 div.project:nth-child(3n + 3) { background-color: #030; }
