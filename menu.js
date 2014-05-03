@@ -7,15 +7,15 @@ $(document).ready(function(e) {
 	$("#sort").click(function(e) {
    		$("#sortMenu").fadeToggle(fadeTime);
 	});
-	$("#sortMenu").blur(function(e) {
-		$(this).fadeOut(fadeTime);
+	$("#sort").blur(function(e) {
+		$("sortMenu").fadeOut(fadeTime);
 	});
 
 	$("#search").click(function() {
 		$("#searchForm").fadeToggle(fadeTime, function() { $("#searchField").focus(); });
 	});
-	$("#searchForm").blur(function() {
-		$(this).fadeOut(fadeTime);
+	$("#search").blur(function() {
+		$("#searchForm").fadeOut(fadeTime);
 	});
 	
 	$("div[value]").click(function() { // handles sort button clicks
