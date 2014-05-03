@@ -22,6 +22,12 @@ $(document).ready(function(e) {
 		$("#sortMenu").fadeOut(fadeTime, function() { isSortVisible = false; });
 		$("#searchForm").fadeIn(fadeTime, function() { isSearchVisible = true; $("#searchField").focus(); });
 	});
+	$("#searchField").change(function() {
+		// get matching elements
+		var matches = $(".project:contains(" + $(this).val() + ")").show();
+		$(".project").not(matches).hide();
+
+	});
 });
 
 $(document).click(function(e) {
