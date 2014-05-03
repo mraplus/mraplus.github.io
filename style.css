@@ -26,6 +26,7 @@ header #sortmenu div:first-child {
 	display: block;
 }
 header #sortmenu div {
+	background-color: rgba(43,30,23,0.6);
 	border: white solid thin;
 	color: white;
 	padding: 2px;
