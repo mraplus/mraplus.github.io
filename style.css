@@ -35,9 +35,10 @@ div.project {
 	position: relative;
 }
 
+div.project * { margin: 10px; } /* this keeps the grid working fine */
+
 div.project h1 {
 	font-size: 36px;
-	font-weight: normal;
 	display: inline;
 }
 
@@ -46,7 +47,7 @@ div.project h1 a {
 }
 
 div.project p.description {
-	margin: 10px;
+	margin: 20px;
 }
 
 div.project p.author {
