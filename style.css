@@ -3,6 +3,7 @@
 body {
 	font-family: "brandon-grotesque", Times, serif;
 	margin: 0;
+	background-color: black;
 }
 
 header {
@@ -14,11 +15,6 @@ header {
 	padding: 5px;	
 	font-size: 20px;
 	clear: both;
-	display: table-row;
-}
-
-p {
-	font-family: "Times New Roman", Times, serif;
 }
 
 #content {
@@ -46,10 +42,6 @@ div.project h1 a {
 
 div.project p.description {
 	margin: 10px;
-}
-
-div.project p.author::befoe {
-	content: "By ";
 }
 
 div.project p.author {
