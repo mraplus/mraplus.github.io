@@ -32,10 +32,12 @@ header #sort {
 div#sortMenu {
 	background-color: white;
 	color: black;
+	text-align: right;
 	
 	position: fixed;
 	right: 10;
 	top: 50;
+	width: 300px;
 }
 
 header #title {
