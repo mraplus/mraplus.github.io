@@ -3,10 +3,11 @@ var sortBy = "name";
 var data = [];
 
 function sortf(a,b) {
-	if (a[sortBy] > b[sortBy]) return 1;
-	else if (a[sortBy] < b[sortBy]) return -1;
-	else return 0;
-		
+	if (a[sortBy] > b[sortBy])
+		return 1;
+	else if (a[sortBy] < b[sortBy])
+		return -1;
+	return 0;
 }
 
 $(document).ready(function() { // makes the project grid
