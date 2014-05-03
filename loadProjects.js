@@ -15,10 +15,10 @@ $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(response) { data = response; reload(); });
 	
 	$("div.project").hover(function(e) { // darken inactive <div>s
-		$("div.project").not(this).css( { 'background-color': '#000', opacity: '0.5' }); 
+		$("div.project").not(this).css( { opacity: '0.5' }); 
 	}, 
 	function(e) {
-		$("div.project").not(this).css( { 'background-color': '#FFF', opacity: '1' }); 
+		$("div.project").not(this).css( { opacity: '1' }); 
 	});
 });
 
