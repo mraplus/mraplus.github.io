@@ -15,10 +15,9 @@ header {
 	z-index: 1
 }
 
-/* Right-aligned drop-down menu */
-header #sort {
+header .command {
 	position: absolute;
-	right: 10px;
+	right: 20px;
 	top: 15px;
 	width: 150px;
 	height: 30px;
@@ -96,7 +95,7 @@ div.project p.author {
 	font-weight: bold;
 }
 
-
+/* colors :D */
 div.project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
 div.project:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
 div.project:nth-child(6n + 3) { background-color: #16a085; } /* green, third one */

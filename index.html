@@ -5,24 +5,24 @@
 
 <!-- Adobe Typekit fonts are loaded here -->
 <script type="text/javascript">
-  (function() {
-    var config = {
-      kitId: 'eda3eaj'
-    };
-    var d = false;
-    var tk = document.createElement('script');
-    tk.src = '//use.typekit.net/' + config.kitId + '.js';
-    tk.type = 'text/javascript';
-    tk.async = 'true';
-    tk.onload = tk.onreadystatechange = function() {
-      var rs = this.readyState;
-      if (d || rs && rs != 'complete' && rs != 'loaded') return;
-      d = true;
-      try { Typekit.load(config); } catch (e) {}
-    };
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(tk, s);
-  })();
+(function() {
+  var config = {
+    kitId: 'eda3eaj'
+  };
+  var d = false;
+  var tk = document.createElement('script');
+  tk.src = '//use.typekit.net/' + config.kitId + '.js';
+  tk.type = 'text/javascript';
+  tk.async = 'true';
+  tk.onload = tk.onreadystatechange = function() {
+    var rs = this.readyState;
+    if (d || rs && rs != 'complete' && rs != 'loaded') return;
+    d = true;
+    try { Typekit.load(config); } catch (e) {}
+  };
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(tk, s);
+})();
 </script>
 
 <!-- load all our resources -->
@@ -37,7 +37,8 @@
 
 <!-- top bar -->
 <header>
-  <div id="sort">Sort Projects By...</div>
+  <div class="command" id="search">Search Projects...</div>
+  <div class="command" id="sort">Sort Projects By...</div>
   <span id="title">Iron Horse 2014 Science Projects</span> 
 </header>
 
