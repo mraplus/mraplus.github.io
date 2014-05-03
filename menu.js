@@ -17,5 +17,5 @@ $(document).ready(function(e) {
 $(document).click(function(e) {
     var box = $("#sortMenu");
 	
-	if (!box.is(e.target) && box.has(e.target).length === 0 && isMenuVisible) box.fadeOut(fadeTime, function() { isMenuVisible = false; }));
+	if (!box.is(e.target) && box.has(e.target).length === 0 && isMenuVisible) box.fadeOut(fadeTime, function() { isMenuVisible = false; });
 });
