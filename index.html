@@ -35,10 +35,7 @@
 $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(data) {
 		var projects = [];
-		data = data.sort(function(a,b) {
-			if (a['author'] < b['author']) return 1;
-			return -1;
-		});
+		data = data.sort(function(a,b) { return a['author'] > b['author']; });
 		$.each(data, function(index, item) {
 			var text = "<div class='project'>";
 			text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
