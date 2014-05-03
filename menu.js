@@ -41,3 +41,9 @@ $(document).click(function(e) {
 		if (!sortMenu.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function() { isSearchVisible = false; });
 	}
 });
+
+// makse search case-insensitive (for the common peasants)
+jQuery.expr[':'].Contains = function(a, i, m) {
+  return jQuery(a).text().toUpperCase()
+      .indexOf(m[3].toUpperCase()) >= 0;
+};
