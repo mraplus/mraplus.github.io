@@ -11,6 +11,7 @@ function sortf(a,b) {
 
 $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(data) { this.data = data });
+	reload();
 	
 });
 
