@@ -1,10 +1,6 @@
 @charset "utf-8";
 
 body {
-	background: -moz-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: linear-gradient(#fff, #999);
 	font-family: "brandon-grotesque", Times, serif;
 	margin: 0;
 }
