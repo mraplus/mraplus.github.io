@@ -27,7 +27,7 @@ div.project {
 	height: 200px;
 	float: left;
 	color: white;
-	padding: 10px;
+	padding: 20px;
 	position: relative;
 }
 
@@ -47,7 +47,8 @@ div.project p.description {
 div.project p.author {
 	position: absolute;
 	bottom: 0;
-	left: 0px;
+	right: 0px;
+	padding: 10px;
 	font-weight: bold;
 }
 
