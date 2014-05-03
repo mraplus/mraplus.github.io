@@ -23,6 +23,10 @@ header #sortmenu {
 	width: 100px;
 	height: 29px;
 	overflow-y: hidden;
+	transition: height 1s;
+}
+header #sortmenu:hover {
+	height: 116px;
 }
 header #sortmenu div {
 	background-color: rgba(43,30,23,0.6);
