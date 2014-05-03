@@ -1,4 +1,5 @@
 var fadeTime = 500;
+var isMenuVisible = false;
 
 $(document).ready(function(e) {
 	$("#sortMenu").hide();
@@ -9,13 +10,13 @@ $(document).ready(function(e) {
     });
 	
 	$("#sort").click(function(e) {
-   		$("#sortMenu").fadeIn(fadeTime);
+   		$("#sortMenu").fadeIn(fadeTime, function() { isMenuVisible = true; });
 	});
 });
 
 $(document).click(function(e) {
     var box = $("#sortMenu");
 	
-	if (!box.is(e.target) && box.has(e.target).length === 0) box.fadeOut(fadeTime);
+	if (!box.is(e.target) && box.has(e.target).length === 0 && isMenuVisible) box.fadeOut(fadeTime, function() { isMenuVisible = false; }));
 });
 
