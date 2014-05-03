@@ -35,6 +35,7 @@ $(document).ready(function() {
 	$.getJSON("projects.json", function(data) {
 		var projects = [];
 		$.each(data, function(name, value) {
+			var text = "<div class='project'>";
 			console.log(name + " has value " + value);
 		});
 	});

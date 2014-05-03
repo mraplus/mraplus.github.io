@@ -1,5 +1,4 @@
-{
-	"projects": [
+{[
 		{
 			"name": "Jeopardy",
 			"author": "Ishan",
@@ -11,5 +10,4 @@
 			"author": "Dhruba",
 			"link": "http://schwartz.heliohost.org/ssgame/"
 		}
-	]
-}
+]}
