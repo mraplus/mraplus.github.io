@@ -1,16 +1,45 @@
 <!doctype html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
 
 <meta charset="utf-8">
 
-<script type="text/javascript" src="//use.typekit.net/eda3eaj.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- Adobe Typekit fonts are loaded here -->
+<script type="text/javascript">
+  (function() {
+    var config = {
+      kitId: 'eda3eaj'
+    };
+    var d = false;
+    var tk = document.createElement('script');
+    tk.src = '//use.typekit.net/' + config.kitId + '.js';
+    tk.type = 'text/javascript';
+    tk.async = 'true';
+    tk.onload = tk.onreadystatechange = function() {
+      var rs = this.readyState;
+      if (d || rs && rs != 'complete' && rs != 'loaded') return;
+      d = true;
+      try { Typekit.load(config); } catch (e) {}
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tk, s);
+  })();
+</script>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="style.css">
+<script src="jquery.js"></script>
 
 <title>Iron Horse 2014 Science Projects</title>
+
+<script>
+$(document).ready(function() {
+	$.getJSON("projects.json", function(data) {
+		var projects = [];
+		$.each(data, function(name, value) {
+			console.log(name + " has value " + value);
+		});
+	});
+});
+</script>
 
 </head>
 
@@ -18,6 +47,9 @@
 
 <div id="header">
 <h1>Iron Horse 2014 Science Projects</h1>
+</div>
+
+<div id="content">
 </div>
 
 </body>
