@@ -7,6 +7,7 @@ body {
 
 header {
 	background-color: #2B1E17;
+	box-shadow: 0 0 4px 0 #2B1E17;
 	text-align: center;
 
 	width: 100%;
@@ -39,23 +40,21 @@ header > #commands > div {
 header > #commands > div#search { float: left; }
 header > #commands > div#sort { float: right; }
 
-div#sortMenu {
+div.popup {
 	background-color: white;
 	color: black;
 	text-align: right;
 	border-radius: 10px;
-	box-shadow: 0px 0px rgba(255,255,255,0.5);
+	box-shadow: 0 0 3px 0 white; /* faint glow */
 	
 	position: fixed;
 	right: 20px;
-	top: 60px;
+	top: 70px;
 	z-index: 2;
 	padding: 15px;
 }
 
-div#sortMenu .button {
-	float: left;
-}
+div.popup .button { float: left; }
 
 header span#title {
 	position: fixed;
