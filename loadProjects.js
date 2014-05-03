@@ -28,7 +28,7 @@ $(document).ready(function() { // makes the project grid
 });
 
 function reload() {
-	$.getJSON("projects.json", function(data)) {
+	$.getJSON("projects.json", function(data) {
 		var projects = [];
 		
 		data = data.sort(sortf);
@@ -45,5 +45,5 @@ function reload() {
 		
 		$("#content").empty();
 		$("#content").append(projects.join(''));
-	}
+	});
 }
