@@ -34,10 +34,15 @@
 $(document).ready(function() {
 	$.getJSON("projects.json", function(data) {
 		var projects = [];
-		$.each(data, function(name, value) {
+		$.each(data, function(index, value) {
 			var text = "<div class='project'>";
-			console.log(name + " has value " + value);
+			text += "<h1>" + value['name'] + "</h1>";
+			text += "</div>";
+			
+			projects.push(text);
 		});
+		
+		$("#content").append(projects.join());
 	});
 });
 </script>

@@ -18,8 +18,13 @@ body {
 	font-size: 20px;
 }
 
-.project {
+div.project {
 	width: 25%;
 	display: inline;
+	color: white;
+	padding: 5px;
 }
-.
+
+div.project h1 {
+	font-size: 24px;
+}
