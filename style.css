@@ -39,9 +39,12 @@ div#sortMenu {
 	position: fixed;
 	right: 20px;
 	top: 60px;
-	width: 250px; height: 100px;
 	z-index: 2;
-	padding: 5px;
+	padding: 15px;
+}
+
+div#sortMenu .button {
+	float: right;
 }
 
 header #title {
