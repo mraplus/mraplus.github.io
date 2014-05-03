@@ -17,6 +17,7 @@ header {
 }
 
 header div#sortmenu {
+	border: white solid thin;
 	color: white;
 	position: absolute;
 	right: 10px;
