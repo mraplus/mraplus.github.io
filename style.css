@@ -12,7 +12,7 @@ header {
 	position: fixed;
 	text-align: center;
 	display: block;
-	z-index: 1;
+	z-index: 1
 }
 
 /* Right-aligned drop-down menu */
@@ -24,7 +24,18 @@ header #sort {
 	height: 30px;
 	
 	background-color: #A38F84;
+	color: white;
+
 	cursor: pointer;
+}
+
+div#sortMenu {
+	background-color: white;
+	color: black;
+	
+	position: fixed;
+	right: 10;
+	top: 50;
 }
 
 header #title {
