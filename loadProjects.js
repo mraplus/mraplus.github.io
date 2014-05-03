@@ -1,4 +1,4 @@
-var fadeValue = 1.25;
+var fadeValue = .75;
 var sortBy = "name";
 var sortAscending = 1;
 var data = [];
