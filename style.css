@@ -20,8 +20,11 @@ header #sort {
 	position: absolute;
 	right: 10px;
 	top: 10px;
-	width: 100px;
-	height: 29px;
+	width: 150px;
+	height: 30px;
+	
+	background-color: #A38F84;
+	cursor: pointer;
 }
 
 header #title {
