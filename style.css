@@ -13,12 +13,11 @@ header {
 	clear: both;
 
 	text-align: center;
-	display: inline-block;
+	display: block;
 }
 
 header span#title {
-	margin: 20px;
-	
+	padding: 20px;
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
