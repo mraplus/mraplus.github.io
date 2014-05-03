@@ -11,9 +11,8 @@ function sortf(a,b) {
 }
 
 $(document).ready(function() { // makes the project grid
-	$("#sortmenu").slideUp({
-		"duration": 500,
-		
+	$("#sortmenu").slideUp(500, function() {
+		$(this).css("display","block");
 	});
 	$.getJSON("projects.json", function(response) { data = response; reload(); });
 });
