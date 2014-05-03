@@ -16,11 +16,9 @@ header {
 	display: inline-block;
 }
 
-header * {
-	margin: 20px;
-}
-
 header span#title {
+	margin: 20px;
+	
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
