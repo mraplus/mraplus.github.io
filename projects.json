@@ -1,14 +1,14 @@
 [
 		{
 			"name": "Jeopardy",
-			"author": "Ishan",
+			"author": "Ishan Bhargava",
 			"description": "A jeopardy game which allows players to practice question.",
 			"link": "http://firedude90.github.io/"
 		},
 		
 		{
 			"name": "Solar Wars",
-			"author": "Dhruba",
+			"author": "Dhruba Gosh",
 			"description": "A card game which allows you to answer questions to get advantages.",
 			"link": "http://schwartz.heliohost.org/ssgame/"
 		}

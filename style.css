@@ -3,7 +3,7 @@
 body {
 	font-family: "brandon-grotesque", Times, serif;
 	margin: 0;
-	background-color: black;
+	background-color: #999;
 }
 
 header {
@@ -12,8 +12,8 @@ header {
 	text-align: center;
 	position: relative;
 	color: #EEE;
-	padding: 5px;	
-	font-size: 20px;
+	padding: 8px;	
+	font-size: 24px;
 	clear: both;
 }
 
