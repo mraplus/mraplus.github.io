@@ -9,11 +9,7 @@ $(document).ready(function(e) {
 	});
 	
 	$("#sort").click(function(e) {
-<<<<<<< HEAD
-		$("#sortMenu").fadeToggle(fadeTime);
-=======
    		$("#sortMenu").fadeIn(fadeTime);
->>>>>>> parent of cef4bee... Use fade toggle
 	});
 });
 
