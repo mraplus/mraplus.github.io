@@ -16,27 +16,12 @@ header {
 }
 
 /* Right-aligned drop-down menu */
-header #sortmenu {
+header #sortMenu {
 	position: absolute;
 	right: 10px;
 	top: 10px;
 	width: 100px;
 	height: 29px;
-	overflow-y: hidden;
-	transition: height linear 0.3s;
-}
-header #sortmenu:hover {
-	height: 116px;
-}
-header #sortmenu div:first-child {
-	cursor: default;
-}
-header #sortmenu div {
-	background-color: rgba(43,30,23,0.6);
-	border: white solid thin;
-	color: white;
-	cursor: pointer;
-	padding: 2px;
 }
 
 header #title {
