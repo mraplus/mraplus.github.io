@@ -13,6 +13,13 @@ function sortf(a,b) {
 
 $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(response) { data = response; reload(); });
+	
+	$("div.project").hover(function(e) { // darken inactive <div>s
+		$("div.project").not(this).css( { 'background-color': '#000', opacity: '0.5' }); 
+	}, 
+	function(e) {
+		$("div.project").not(this).css( { 'background-color': '#FFF', opacity: '1' }); 
+	});
 });
 
 function reload() { // sorts projects and reprints them
