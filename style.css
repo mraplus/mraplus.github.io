@@ -49,8 +49,8 @@ div.project p.author {
 	font-weight: bold;
 }
 
-div.project:nth-child(odd) { background-color: #900; }
-div.project:nth-child(even) { background-color: #66F; }
+div.project:nth-child(2n + 2) { background-color: #66F; }
 div.project:nth-child(3n + 3) { background-color: #030; }
+div.project:nth-child(4n + 1) { background-color: #900; }
 
 
