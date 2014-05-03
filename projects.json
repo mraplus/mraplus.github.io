@@ -1,0 +1,15 @@
+{
+	"projects": [
+		{
+			"name": "Jeopardy",
+			"author": "Ishan",
+			"link": "http://firedude90.github.io/"
+		},
+		
+		{
+			"name": "Solar Wars",
+			"author": "Dhruba",
+			"link": "http://schwartz.heliohost.org/ssgame/"
+		}
+	]
+}

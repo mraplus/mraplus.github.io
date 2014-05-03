@@ -6,7 +6,7 @@ body {
 }
 
 #header {
-	background-color: black;
+	background-color: #2B1E17;
 	width: 100%;
 	text-align: center;
 	position: relative;
@@ -17,3 +17,5 @@ body {
 #header h1 {
 	font-size: 20px;
 }
+
+.
