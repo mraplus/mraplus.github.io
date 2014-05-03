@@ -16,6 +16,13 @@ header {
 	z-index: 1;
 }
 
+head div#sortmenu {
+	color: white;
+	position: absolute;
+	right: 4px;
+	top: 10px;
+}
+
 header span#title {
 	padding: 20px;
 	
