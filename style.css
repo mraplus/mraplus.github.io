@@ -21,7 +21,7 @@ header #sortmenu {
 	right: 10px;
 	top: 10px;
 	width: 100px;
-	min-height: 20px;
+	height: 20px;
 }
 header #sortmenu div {
 	background-color: rgba(43,30,23,0.6);
