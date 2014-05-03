@@ -9,7 +9,7 @@ $(document).ready(function(e) {
 	
 	$("#sort").click(function(e) {
 		// fade out search if it's open
-		$("#search").fadeOut(fadeTime, function() { isSearchVisible = false; });
+		$("#searchForm").fadeOut(fadeTime, function() { isSearchVisible = false; });
    		$("#sortMenu").fadeIn(fadeTime, function() { isSortVisible = true; });
 	});
 
@@ -20,13 +20,13 @@ $(document).ready(function(e) {
 	
 	$("#search").click(function() {
 		$("#sortMenu").fadeOut(fadeTime, function() { isSortVisible = false; });
-		$("#search").fadeIn(fadeTime, function() { isSearchVisible = true; });
+		$("#searchForm").fadeIn(fadeTime, function() { isSearchVisible = true; });
 	});
 });
 
 $(document).click(function(e) {
     var sortMenu = $("#sortMenu");
-	var searchBox = $("#search");
+	var searchBox = $("#searchForm");
 	
 	if (isSortVisible) {
 		if (!sortMenu.is(e.target) && sortMenu.has(e.target).length === 0) sortMenu.fadeOut(fadeTime, function() { isSortVisible = false; });
