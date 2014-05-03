@@ -4,10 +4,7 @@ body {
 	font-family: "brandon-grotesque", Arial, sans-serif;
 	margin: 0;
 }
-<<<<<<< HEAD
-=======
 body ::selection { background-color: inherit; }
->>>>>>> 21587eab9c4a0282c22b3cd44bf9d01a59759102
 
 header {
 	background-color: #2B1E17;
