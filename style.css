@@ -40,11 +40,12 @@ header #sortmenu div {
 }
 
 header #title {
-	padding: 20px;
+	padding: 5px;
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
 	font-weight: normal;
+	vertical-align: middle;
 }
 
 #content {
