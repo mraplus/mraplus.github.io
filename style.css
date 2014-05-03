@@ -28,6 +28,7 @@ div.project {
 	float: left;
 	color: white;
 	padding: 10px;
+	position: relative;
 }
 
 div.project h1 {
