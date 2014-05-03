@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-	font-family: "garamond-premier-pro-display", Times, serif;
+	font-family: "brandon-grotesque", Arial, sans-serif;
 	margin: 0;
 }
 
@@ -11,7 +11,8 @@ header {
 	text-align: center;
 	position: relative;
 	color: #EEE;
-	padding: 20px;	
+	padding: 20px;
+	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 24px;
 	clear: both;
 }
