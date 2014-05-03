@@ -44,7 +44,7 @@ $(document).ready(function() { // makes the project grid
 		data = data.sort(sortf);
 		
 		$.each(data, function(index, item) {
-			var text = "<div class='project'>";
+			var text = "<div class='project " + item['category'] + "'>";
 			text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
 			text += "<p class='description'>" + item['description'] + "</p>";
 			text += "<p class='author'>By " + item['author'] + "</p>";
@@ -56,12 +56,6 @@ $(document).ready(function() { // makes the project grid
 		$("#content").append(projects.join(''));// empty string stops comma
 	});
 });
-
-/*
-$(window).scroll(function() {
-    $("header").css('top', $(this).scrollTop() + "px");
-});
-*/
 </script>
 
 </head>

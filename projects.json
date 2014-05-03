@@ -26,6 +26,7 @@
 		{
 			"name": "Test A",
 			"author": "Person D",
+			"category": "test",
 			"description": "Just a test of the project sorting.",
 			"link": "http://www.example.com"
 		},
@@ -33,6 +34,7 @@
 		{
 			"name": "Test B",
 			"author": "Person C",
+			"category": "test",
 			"description": "Just a test of the project sorting.",
 			"link": "http://www.example.com"
 		},
@@ -40,6 +42,7 @@
 		{
 			"name": "Test C",
 			"author": "Person E",
+			"category": "test",
 			"description": "Just a test of the project sorting.",
 			"link": "http://www.example.com"
 		},
@@ -47,6 +50,7 @@
 		{
 			"name": "Test D",
 			"author": "Person B",
+			"category": "test",
 			"description": "Just a test of the project sorting.",
 			"link": "http://www.example.com"
 		},
@@ -54,6 +58,7 @@
 		{
 			"name": "Test E",
 			"author": "Person A",
+			"category": "test",
 			"description": "Just a test of the project sorting.",
 			"link": "http://www.example.com"
 		}
