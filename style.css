@@ -33,7 +33,7 @@ div.project {
 	position: relative;
 }
 
-div.project * { margin: 10px; } /* this keeps the grid working fine */
+div.project * { margin: 20px 10px; } /* this keeps the grid working fine */
 
 div.project h1 {
 	font-size: 36px;
@@ -45,7 +45,7 @@ div.project h1 a {
 }
 
 div.project p.description {
-	margin: 20px;
+	margin: 10px 30px;
 }
 
 div.project p.author {
