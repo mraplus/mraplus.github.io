@@ -10,10 +10,13 @@ header {
 	width: 100%;
 	
 	position: relative;
-	padding: 20px;
 	clear: both;
 
 	text-align: center;
+}
+
+header * {
+	margin: 20px;
 }
 
 header span#title {
@@ -24,6 +27,7 @@ header span#title {
 }
 
 header span#settings {
+	color: white;
 	float: right;
 	text-decoration: underline;
 }
