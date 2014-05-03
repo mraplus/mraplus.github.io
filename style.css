@@ -38,6 +38,8 @@ div#sortMenu {
 	position: fixed;
 	right: 20px;
 	top: 60px;
+	width: 250px;
+	height: 100px;
 	z-index: 2;
 	padding: 15px;
 }
@@ -110,7 +112,7 @@ div.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth on
 }
 
 .button:hover {
-	background-color: #EEE;
+	background-color: #DDD;
 }
 
 .button:active {
