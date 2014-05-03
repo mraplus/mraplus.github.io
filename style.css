@@ -9,7 +9,8 @@ header {
 	background-color: #2B1E17;
 	width: 100%;
 	text-align: center;
-	position: relative;
+	position: fixed;
+	top: 0;
 	color: #EEE;
 	padding: 20px;
 	font-family: "garamond-premier-pro-display", Times, serif;
