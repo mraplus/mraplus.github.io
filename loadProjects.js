@@ -1,3 +1,5 @@
+var fadeValue = 0.75;
+
 var sortBy = "name";
 var sortAscending = 1;
 
@@ -11,17 +13,23 @@ function sortf(a,b) {
 	return 0;
 }
 
-$(document).ready(function() { // makes the project grid
-	$.getJSON("projects.json", function(response) { data = response; reload(); });
-	
-	$("div.project").hover(function(e) { // darken inactive <div>s
-		$("div.project").not(this).css( { opacity: '0.5' }); 
-	}, 
-	function(e) {
-		$("div.project").not(this).css( { opacity: '1' }); 
-	});
-});
+$(document).ready(function () { // makes the project grid
+    $.getJSON("projects.json", function (response) {
+        data = response;
+        reload();
 
+        $("div.project").hover(function (e) { // darken inactive <div>s
+                $("div.project").not(this).animate({
+                    opacity: fadeValue
+                });
+            },
+            function (e) {
+                $("div.project").not(this).animate({
+                    opacity: '1'
+                });
+            });
+    });
+});
 function reload() { // sorts projects and reprints them
 	var projects = [];
 	

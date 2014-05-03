@@ -14,7 +14,6 @@ $(document).ready(function(e) {
 	});
 	
 	$("#search").click(function() {
-		
 	});
 });
 
