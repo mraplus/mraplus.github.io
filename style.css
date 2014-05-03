@@ -29,6 +29,7 @@ header #title {
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
 	font-weight: normal;
+	vertical-align: middle;
 }
 
 #content {
