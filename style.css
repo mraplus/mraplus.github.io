@@ -39,18 +39,12 @@ header #sortmenu div {
 	padding: 2px;
 }
 
-header span#title {
-	padding: 20px;
+header #title {
+	padding: 10px;
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
 	font-weight: normal;
-}
-
-header span#settings {
-	color: white;
-	float: right;
-	text-decoration: underline;
 }
 
 #content {
