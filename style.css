@@ -9,7 +9,6 @@ header {
 	background-color: #2B1E17;
 	width: 100%;
 	height: 50px;
-	
 	position: fixed;
 	text-align: center;
 	display: block;
@@ -21,7 +20,7 @@ header #sortmenu {
 	position: absolute;
 	right: 10px;
 	top: 10px;
-	width: 50px;
+	width: 100px;
 }
 header #sortmenu div:first-child {
 	display: block;
