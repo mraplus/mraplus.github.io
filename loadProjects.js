@@ -8,23 +8,7 @@ function sortf(a,b) {
 }
 
 $(document).ready(function() { // makes the project grid
-	$.getJSON("projects.json", function(data) {
-		var projects = [];
-		
-		data = data.sort(sortf);
-		
-		$.each(data, function(index, item) {
-			var text = "<div class='project " + item['category'] + "'>";
-			text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
-			text += "<p class='description'>" + item['description'] + "</p>";
-			text += "<p class='author'>By " + item['author'] + "</p>";
-			text += "</div>";
-			
-			projects.push(text);
-		});
-		
-		$("#content").append(projects.join(''));// empty string stops comma
-	});
+	reload();
 });
 
 function reload() {
