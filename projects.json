@@ -2,6 +2,7 @@
 		{
 			"name": "Jeopardy",
 			"author": "Ishan Bhargava",
+			"category": "game",
 			"description": "A jeopardy game which allows two people to compete against each other to win the game.",
 			"link": "http://firedude90.github.io/"
 		},
@@ -9,6 +10,7 @@
 		{
 			"name": "Solar Wars",
 			"author": "Dhruba Ghosh",
+			"category": "game",
 			"description": "A two-player computer card game featuring the solar system, along with an informative introduction.",
 			"link": "http://schwartz.heliohost.org/ssinfo/"
 		},
@@ -16,6 +18,7 @@
 		{
 			"name": "Worksheet",
 			"author": "Christine Lou and Karina Hazari",
+			"category": "assessment",
 			"description": "A worksheet covering the key facts about Chapter 14",
 			"link": "https://docs.google.com/document/d/1SuKnvZ8kYFeoJWAob6qcxiIfX9MVomOD7SMFHyD_CxA/edit?usp=sharing"
 		},
