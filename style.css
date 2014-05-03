@@ -14,10 +14,18 @@ header {
 	clear: both;
 
 	text-align: center;
+}
+
+header span#title {
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
 	font-weight: normal;
+}
+
+header span#settings {
+	float: right;
+	text-decoration: underline;
 }
 
 #content {
