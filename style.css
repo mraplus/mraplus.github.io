@@ -33,10 +33,11 @@ div#sortMenu {
 	background-color: white;
 	color: black;
 	text-align: right;
+	border-radius: 10px;
 	
 	position: fixed;
-	right: 15px;
-	top: 55px;
+	right: 20px;
+	top: 60px;
 	width: 250px;
 	z-index: 2;
 	padding: 5px;
@@ -96,3 +97,20 @@ div.project:nth-child(6n + 3) { background-color: #16a085; } /* green, third one
 div.project:nth-child(6n + 4) { background-color: #8e44ad; } /* purple, fourth one */
 div.project:nth-child(6n + 5) { background-color: #96281B; } /* brown, fifth one */
 div.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
+
+.button {
+	margin: 5px;
+	padding: 10px;
+	border: 2.5px solid black;
+	display: inline;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: #EEE;
+}
+
+.button:active {
+	background-color: black;
+	color: white;
+}
