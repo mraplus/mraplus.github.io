@@ -32,10 +32,11 @@
 <title>Iron Horse 2014 Science Projects</title>
 
 <script>
+var sortby = "author";
 $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(data) {
 		var projects = [];
-		data = data.sort(function(a,b) { return a['author'] > b['author']; });
+		data = data.sort(function(a,b) { return a[sortby] > b[sortby]; });
 		$.each(data, function(index, item) {
 			var text = "<div class='project'>";
 			text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
