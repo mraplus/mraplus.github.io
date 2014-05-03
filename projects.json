@@ -2,14 +2,14 @@
 		{
 			"name": "Jeopardy",
 			"author": "Ishan Bhargava",
-			"description": "A jeopardy game which allows players to practice question.",
+			"description": "A jeopardy game which allows two people to compete against each other to win the game.",
 			"link": "http://firedude90.github.io/"
 		},
 		
 		{
 			"name": "Solar Wars",
 			"author": "Dhruba Gosh",
-			"description": "A card game which allows you to answer questions to get advantages.",
+			"description": "Every time your cards are attacked, you can protect them. A question will pop up. If answered correctly, the opponent’s attacked does half damage.",
 			"link": "http://schwartz.heliohost.org/ssgame/"
 		}
 ]
