@@ -54,7 +54,8 @@ div.project p.author {
 	font-weight: bold;
 }
 
-div.project:nth-child(4n + 1) { background-color: #e74c3c; } /* red, first one */
+div.project:nth-child(6n + 6) { background-color: #e74c3c; } /* red, first one */
 div.project:nth-child(2n + 2) { background-color: #2980b9; } /* blue, second one */
 div.project:nth-child(3n + 3) { background-color: #16a085; } /* green, third one */
-
+div.project:nth-child(4n + 4) { background-color: #8e44ad; } /* purple, fourth one */
+div.project:nth-child(5n + 5) { background-color: #96281B; } /* brown, fifth one */
