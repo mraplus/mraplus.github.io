@@ -9,6 +9,17 @@ $(document).ready(function(e) {
 	});
 	
 	$("#sort").click(function(e) {
+<<<<<<< HEAD
 		$("#sortMenu").fadeToggle(fadeTime);
+=======
+   		$("#sortMenu").fadeIn(fadeTime);
+>>>>>>> parent of cef4bee... Use fade toggle
 	});
 });
+
+$(document).click(function(e) {
+    var box = $("#sortMenu");
+	
+	if (!box.is(e.target) && box.has(e.target).length === 0) box.fadeOut(fadeTime);
+});
+
