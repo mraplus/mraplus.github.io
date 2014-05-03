@@ -45,5 +45,9 @@ function reload() {
 		
 		$("#content").empty();
 		$("#content").append(projects.join(''));
+<<<<<<< HEAD
 	})
+=======
+	});
+>>>>>>> 4a3f22594ab19851f20f39b4284b53468392caaf
 }
