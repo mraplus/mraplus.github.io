@@ -25,9 +25,9 @@ div.project {
 	padding: 5px;
 }
 
-div.project::nth-child(n+0) { background-color: #060; }
-div.project::nth-child(n+1) { background-color: #F33; }
-div.project::nth-child(n+2) { background-color: #66F; }
+div.project:nth-child(n+0) { background-color: #060; }
+div.project:nth-child(n+1) { background-color: #F33; }
+div.project:nth-child(n+2) { background-color: #66F; }
 
 
 div.project h1 {
