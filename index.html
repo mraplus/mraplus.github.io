@@ -33,11 +33,15 @@
 
 <script>
 var sortby = "name";
+var order = true;
+function sortf(a,b) {
+	return order ^ (a[sortby] < b[sortby]);
+}
 $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(data) {
 		var projects = [];
 		
-		data = data.sort(function(a,b) { return a[sortby] > b[sortby]; });
+		data = data.sort(sortf);
 		
 		$.each(data, function(index, item) {
 			var text = "<div class='project'>";
