@@ -1,25 +1,37 @@
 var fadeTime = 500;
 
+var isSortVisible = false;
+var isSearchVisible = false;
+
 $(document).ready(function(e) {
 	$("#sortMenu").hide();
 	$("#searchForm").hide();
 	
 	$("#sort").click(function(e) {
-   		$("#sortMenu").fadeToggle(fadeTime);
-	});
-	$("#sort").blur(function(e) {
-		$("sortMenu").fadeOut(fadeTime);
+		// fade out search if it's open
+		$("#searchForm").fadeOut(fadeTime, function() { isSearchVisible = false; });
+   		$("#sortMenu").fadeIn(fadeTime, function() { isSortVisible = true; });
 	});
 
-	$("#search").click(function() {
-		$("#searchForm").fadeToggle(fadeTime, function() { $("#searchField").focus(); });
-	});
-	$("#search").blur(function() {
-		$("#searchForm").fadeOut(fadeTime);
-	});
-	
 	$("div[value]").click(function() { // handles sort button clicks
 		sortBy = $(this).attr("value");
 		generateTiles();
 	});
+	
+	$("#search").click(function() {
+		$("#sortMenu").fadeOut(fadeTime, function() { isSortVisible = false; });
+		$("#searchForm").fadeIn(fadeTime, function() { isSearchVisible = true; $("#searchField").focus(); });
+	});
+});
+
+$(document).click(function(e) {
+    var sortMenu = $("#sortMenu");
+	var searchBox = $("#searchForm");
+	
+	if (isSortVisible) {
+		if (!sortMenu.is(e.target) && sortMenu.has(e.target).length === 0) sortMenu.fadeOut(fadeTime, function() { isSortVisible = false; });
+	}
+	else if (isSearchVisible) {
+		if (!sortMenu.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function() { isSearchVisible = false; });
+	}
 });
