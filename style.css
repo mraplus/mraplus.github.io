@@ -21,7 +21,7 @@ header #sort {
 	right: 10px;
 	top: 10px;
 	width: 150px;
-	border: #52B3D9 solid thin;
+	background-color: #E87E04;
 	cursor: pointer;
 }
 
