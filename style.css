@@ -32,6 +32,7 @@ header span#settings {
 
 #content {
 	width: auto;
+	float: left; /* thanks to the magic crystal ball @ http://stackoverflow.com/a/2849494/303795 */
 }
 
 div.project {
