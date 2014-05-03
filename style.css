@@ -40,6 +40,7 @@ header #sortmenu div {
 }
 
 header #title {
+	margin-top: 10px;
 	padding: 10px;
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
