@@ -15,22 +15,27 @@ header {
 	z-index: 1
 }
 
-header #commands {
+header > #commands {
 	position: relative;
 	float: right;
 	right: 100px;
 	top: 15px;
 }
 
-header #commands div {
+header > #commands > div {
 	width: 150px;
 	height: 30px;
+	
+	margin: 0 5px;
 	
 	background-color: #A38F84;
 	color: white;
 	
 	cursor: pointer;
 }
+
+header > #commands > div#search { float: left; }
+header > #commands > div#sort { float: right; }
 
 div#sortMenu {
 	background-color: white;
