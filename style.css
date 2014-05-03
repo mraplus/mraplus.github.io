@@ -17,12 +17,14 @@ header {
 	font-weight: normal;
 	padding: 4px;
 	clear: both;
+	z-index: 1;
 }
 
 #content {
 	width: auto;
 	height: 100%;
 	overflow: auto;
+	z-index: 0;
 }
 
 div.project {
