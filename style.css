@@ -16,7 +16,7 @@ header {
 	z-index: 1;
 }
 
-head div#sortmenu {
+header div#sortmenu {
 	color: white;
 	position: absolute;
 	right: 4px;
