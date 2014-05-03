@@ -4,6 +4,7 @@ body {
 	font-family: "brandon-grotesque", Arial, sans-serif;
 	margin: 0;
 }
+body::selection { background-color: inherit; }
 
 header {
 	background-color: #2B1E17;
