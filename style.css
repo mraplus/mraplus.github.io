@@ -47,8 +47,10 @@ div#sortMenu .button {
 	float: right;
 }
 
-header #title {
+header span#title {
 	color: #EEE;
+	position: fixed;
+	top: 10px;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
 	font-weight: normal;
