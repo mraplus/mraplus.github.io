@@ -15,6 +15,7 @@ $(document).ready(function() { // makes the project grid
 });
 
 function reload() {
+	console.log("reload called");
 	var projects = [];
 	
 	data = data.sort(sortf);
