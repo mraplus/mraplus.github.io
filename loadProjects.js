@@ -19,12 +19,12 @@ $(document).ready(function () { // makes the project grid
         reload();
 
         $("div.project").hover(function (e) { // darken inactive <div>s
-                $("div.project").not(this).animate({
+                $("div.project").not(this).stop().animate({
                     opacity: fadeValue
                 });
             },
             function (e) {
-                $("div.project").not(this).animate({
+                $("div.project").not(this).stop().animate({
                     opacity: '1'
                 });
             });
