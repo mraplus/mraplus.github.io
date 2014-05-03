@@ -14,7 +14,7 @@ $(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(response) { data = response; reload(); });
 });
 
-function reload() {
+function reload() { // sorts projects and reprints them
 	var projects = [];
 	
 	data = data.sort(sortf);
