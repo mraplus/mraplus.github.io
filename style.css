@@ -9,15 +9,17 @@ header {
 	background-color: #2B1E17;
 	width: 100%;
 	
-	position: relative;
+	position: fixed;
 	clear: both;
 
 	text-align: center;
 	display: block;
+	z-index: 1;
 }
 
 header span#title {
 	padding: 20px;
+	
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 30px;
@@ -33,6 +35,8 @@ header span#settings {
 #content {
 	width: auto;
 	float: left; /* thanks to the magic crystal ball @ http://stackoverflow.com/a/2849494/303795 */
+	position: fixed;
+	top: 37px;
 }
 
 div.project {
