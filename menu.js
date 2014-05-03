@@ -1,11 +1,16 @@
 var fadeTime = 500;
-var isMenuVisible = false;
+
+var isSortVisible = false;
+var isSearchVisible = false;
 
 $(document).ready(function(e) {
 	$("#sortMenu").hide();
+	$("#search").hide();
 	
 	$("#sort").click(function(e) {
-   		$("#sortMenu").fadeIn(fadeTime, function() { isMenuVisible = true; });
+		// fade out search if it's open
+		$("#search").fadeOut(fadeTime, function() { isSearchVisible = false; });
+   		$("#sortMenu").fadeIn(fadeTime, function() { isSortVisible = true; });
 	});
 
 	$("div[value]").click(function() { // handles sort button clicks
@@ -14,12 +19,20 @@ $(document).ready(function(e) {
 	});
 	
 	$("#search").click(function() {
+		$("#sortMenu").fadeOut(fadeTime, function() { isSortVisible = false; });
+		$("#search").fadeIn(fadeTime, function() { isSearchVisible = true; });
 	});
 });
 
 $(document).click(function(e) {
-    var box = $("#sortMenu");
+    var sortMenu = $("#sortMenu");
+	var searchBox = $("#search");
 	
-	if (!box.is(e.target) && box.has(e.target).length === 0 && isMenuVisible) box.fadeOut(fadeTime, function() { isMenuVisible = false; });
+	if (isSortVisible) {
+		if (!sortMenu.is(e.target) && sortMenu.has(e.target).length === 0) sortMenu.fadeOut(fadeTime, function() { isSortVisible = false; });
+	}
+	else if (isSearchVisible) {
+		if (!sortMenu.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function() { isSearchVisible = false; });
+	}
 });
 
