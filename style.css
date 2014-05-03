@@ -28,7 +28,7 @@ header #sortmenu div {
 	padding: 2px;
 	display: none;
 }
-header #sortmenu div:first {
+header #sortmenu div:first-child {
 	display: block;
 }
 
