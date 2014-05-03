@@ -23,7 +23,7 @@ header #sortmenu {
 	width: 100px;
 	height: 29px;
 	overflow-y: hidden;
-	transition: height 0.5s;
+	transition: height linear 0.5s;
 }
 header #sortmenu:hover {
 	height: 116px;
