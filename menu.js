@@ -5,4 +5,9 @@ $(document).ready(function(e) {
     	sortBy = $(this).attr("value");
     	reload();
     });
+	
+	$("#sort").click(function(e) {
+   		$("#sortMenu").fadeIn(500);
+	});
 });
+
