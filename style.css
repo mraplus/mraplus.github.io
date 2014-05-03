@@ -37,7 +37,9 @@ div#sortMenu {
 	position: fixed;
 	right: 15px;
 	top: 55px;
-	width: 300px;
+	width: 250px;
+	z-index: 2;
+	padding: 5px;
 }
 
 header #title {
