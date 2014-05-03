@@ -19,4 +19,3 @@ $(document).click(function(e) {
 	
 	if (!box.is(e.target) && box.has(e.target).length === 0 && isMenuVisible) box.fadeOut(fadeTime, function() { isMenuVisible = false; }));
 });
-
