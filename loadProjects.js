@@ -10,7 +10,7 @@ function sortf(a,b) {
 }
 
 $(document).ready(function() { // makes the project grid
-	$.getJSON("projects.json", function(response) { data = response});
+	$.getJSON("projects.json", function(response) { data = response; });
 	reload();
 });
 
