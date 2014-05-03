@@ -5,7 +5,7 @@ var isSearchVisible = false;
 
 $(document).ready(function(e) {
 	$("#sortMenu").hide();
-	$("#search").hide();
+	$("#searchForm").hide();
 	
 	$("#sort").click(function(e) {
 		// fade out search if it's open
