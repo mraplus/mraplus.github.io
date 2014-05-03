@@ -34,12 +34,12 @@ div#sortMenu {
 	color: black;
 	text-align: right;
 	border-radius: 10px;
-	box-shadow: 0px 0px white;
-	
+	box-shadow: 0px 0px rgba(255,255,255,0.8);
 	position: fixed;
 	right: 20px;
 	top: 60px;
-	width: 250px; height: 100px;
+	width: 250px;
+	height: 100px;
 	z-index: 2;
 	padding: 5px;
 }
