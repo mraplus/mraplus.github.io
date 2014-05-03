@@ -22,12 +22,23 @@ header {
 
 div.project {
 	width: 25%;
+	height: 33%;
 	float: left;
+	color: white;
+	padding: 10px;
 }
 
 div.project h1 {
-	font-size: 24px;
+	font-size: 36px;
 	display: inline;
+}
+
+div.project p.description {
+	margin: 10px;
+}
+
+div.project p.author {
+	font-weight: bold;
 }
 
 div.project:nth-child(odd) { background-color: #F33; }

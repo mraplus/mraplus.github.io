@@ -31,12 +31,14 @@
 <title>Iron Horse 2014 Science Projects</title>
 
 <script>
-$(document).ready(function() {
+$(document).ready(function() { // makes the project grid
 	$.getJSON("projects.json", function(data) {
 		var projects = [];
-		$.each(data, function(index, value) {
+		$.each(data, function(index, item) {
 			var text = "<div class='project'>";
-			text += "<h1>" + value['name'] + "</h1>";
+			text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
+			text += "<p class='description'>" + item['description'] + "</p>";
+			text += "<p class='author'>" + item['author'] + "</p>";
 			text += "</div>";
 			
 			projects.push(text);
