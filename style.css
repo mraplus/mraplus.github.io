@@ -22,8 +22,6 @@ header {
 
 #content {
 	width: auto;
-	height: 100%;
-	overflow: auto;
 }
 
 div.project {
