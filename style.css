@@ -44,10 +44,13 @@ div.project p.description {
 }
 
 div.project p.author {
+	position: absolute;
+	bottom: 0;
 	font-weight: bold;
 }
 
-div.project:nth-child(odd) { background-color: #F33; }
+div.project:nth-child(odd) { background-color: #900; }
 div.project:nth-child(even) { background-color: #66F; }
+div.project:nth-child(3n + 3) { background-color: #030; }
 
 
