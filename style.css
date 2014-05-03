@@ -16,13 +16,16 @@ header {
 	z-index: 1;
 }
 
-header div#sortmenu {
-	border: white solid thin;
-	color: white;
-	padding: 2px;
+/* Right-aligned drop-down menu */
+header #sortmenu {
 	position: absolute;
 	right: 10px;
 	top: 10px;
+}
+header #sortmenu div {
+	border: white solid thin;
+	color: white;
+	padding: 2px;
 }
 
 header span#title {
