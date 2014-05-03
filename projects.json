@@ -19,14 +19,42 @@
 			"name": "Worksheet",
 			"author": "Christine Lou and Karina Hazari",
 			"category": "assessment",
-			"description": "A worksheet covering the key facts about Chapter 14",
+			"description": "A worksheet covering the key facts about Chapter 14.",
 			"link": "https://docs.google.com/document/d/1SuKnvZ8kYFeoJWAob6qcxiIfX9MVomOD7SMFHyD_CxA/edit?usp=sharing"
 		},
 		
 		{
-			"name": "Test",
-			"author": "Bob the Fake Person",
-			"description": "It's not real. It's just to see how the grid looks.",
-			"link": "http://example.com"
+			"name": "Test A",
+			"author": "Person D",
+			"description": "Just a test of the project sorting.",
+			"link": "http://www.example.com"
+		}
+		
+		{
+			"name": "Test B",
+			"author": "Person C",
+			"description": "Just a test of the project sorting.",
+			"link": "http://www.example.com"
+		},
+		
+		{
+			"name": "Test C",
+			"author": "Person E",
+			"description": "Just a test of the project sorting.",
+			"link": "http://www.example.com"
+		},
+		
+		{
+			"name": "Test D",
+			"author": "Person B",
+			"description": "Just a test of the project sorting.",
+			"link": "http://www.example.com"
+		},
+		
+		{
+			"name": "Test E",
+			"author": "Person A",
+			"description": "Just a test of the project sorting.",
+			"link": "http://www.example.com"
 		}
 ]
