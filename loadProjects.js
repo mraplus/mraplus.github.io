@@ -1,12 +1,13 @@
 var sortBy = "name";
+var sortAscending = 1;
 
 var data = [];
 
 function sortf(a,b) {
 	if (a[sortBy] > b[sortBy])
-		return 1;
+		return sortAscending;
 	else if (a[sortBy] < b[sortBy])
-		return -1;
+		return -sortAscending;
 	return 0;
 }
 
