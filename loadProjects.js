@@ -2,6 +2,7 @@ var fadeValue = 0.75;
 var sortBy = "name";
 var sortAscending = 1;
 var data = [];
+var searchData = [];
 
 function sortf(a, b) {
    if (a[sortBy] > b[sortBy]) return sortAscending;
@@ -11,14 +12,15 @@ function sortf(a, b) {
 $(document).ready(function() { // makes the project grid
    $.getJSON("projects.json", function(response) {
       data = response;
+      searchData = data;
       generateTiles();
    });
 });
 
 function generateTiles() { // sorts projects and reprints them
    var projects = [];
-   data = data.sort(sortf);
-   $.each(data, function(index, item) {
+   searchData = searchData.sort(sortf);
+   $.each(searchData, function(index, item) {
       var text = "<div class='project " + item['category'] + "'>";
       text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
       text += "<p class='description'>" + item['description'] + "</p>";
