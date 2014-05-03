@@ -46,8 +46,8 @@ div.project p.description {
 
 div.project p.author {
 	position: absolute;
-	text-align: right;
 	bottom: 0;
+	left: 0px;
 	font-weight: bold;
 }
 
