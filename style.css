@@ -8,21 +8,15 @@ body {
 header {
 	background-color: #2B1E17;
 	width: 100%;
+	text-align: center;
 	position: relative;
 	color: #EEE;
 	padding: 20px;
 	font-family: "garamond-premier-pro-display", Times, serif;
-	clear: both;
-}
-
-#title {
-	text-align: center;
 	font-size: 30px;
-}
-
-#optionLink {
-	text-align: right;
-	text-decoration: underline
+	font-weight: normal;
+	padding: 4px;
+	clear: both;
 }
 
 #content {
