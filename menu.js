@@ -52,6 +52,6 @@ jQuery.expr[':'].Contains = function(a, i, m) {
 $(document).keypress(function(e) {
 	if (!isSearchVisible) {
 		$("#search").click();
-		$("searchField").attr("value",e.key);
+		$("#searchField").val(e.key);
 	}
 });
