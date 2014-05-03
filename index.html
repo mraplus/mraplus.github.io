@@ -48,6 +48,11 @@ $(document).ready(function() { // makes the project grid
 		$("#content").append(projects.join(''));// empty string stops comma
 	});
 });
+
+$(window).scroll(function() {
+    $("header").css('top', $(this).scrollTop() + "px");
+});
+
 </script>
 
 </head>
