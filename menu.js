@@ -9,13 +9,6 @@ $(document).ready(function(e) {
     });
 	
 	$("#sort").click(function(e) {
-   		$("#sortMenu").fadeIn(fadeTime);
+   		$("#sortMenu").fadeToggle(fadeTime);
 	});
 });
-
-$(document).click(function(e) {
-    var box = $("#sortMenu");
-	
-	if (!box.is(e.target) && box.has(e.target).length === 0) box.fadeOut(fadeTime);
-});
-
