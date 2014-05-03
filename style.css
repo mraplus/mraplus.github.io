@@ -14,6 +14,7 @@ header {
 	padding: 5px;	
 	font-size: 20px;
 	clear: both;
+	display: table-row;
 }
 
 p {
@@ -41,7 +42,6 @@ div.project h1 {
 
 div.project h1 a {
 	color: white;
-	text-decoration: none;
 }
 
 div.project p.description {
