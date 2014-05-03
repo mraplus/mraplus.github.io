@@ -41,11 +41,11 @@ header > #commands > div#search { float: left; }
 header > #commands > div#sort { float: right; }
 
 div.popup {
-	background-color: white;
+	background-color: #bdc3c7;
 	color: black;
 	text-align: right;
 	border-radius: 10px;
-	box-shadow: 0 0 3px 0 white; /* faint glow */
+	box-shadow: 0 0 3px 0 #bdc3c7; /* faint glow */
 	
 	position: fixed;
 	right: 20px;

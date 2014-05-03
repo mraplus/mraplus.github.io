@@ -1,6 +1,8 @@
 var fadeValue = 0.75;
+
 var sortBy = "name";
 var sortAscending = 1;
+
 var data = [];
 var searchData = [];
 
@@ -9,6 +11,7 @@ function sortf(a, b) {
    else if (a[sortBy] < b[sortBy]) return -sortAscending;
    return 0;
 }
+
 $(document).ready(function() { // makes the project grid
    $.getJSON("projects.json", function(response) {
       data = response;
