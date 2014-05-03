@@ -10,12 +10,10 @@ function sortf(a,b) {
 }
 
 $(document).ready(function() { // makes the project grid
-	$.getJSON("projects.json", function(response) { data = response; });
-	reload();
+	$.getJSON("projects.json", function(response) { data = response; reload(); });
 });
 
 function reload() {
-	console.log("reload called");
 	var projects = [];
 	
 	data = data.sort(sortf);
