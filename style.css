@@ -26,6 +26,10 @@ header #sortmenu div {
 	border: white solid thin;
 	color: white;
 	padding: 2px;
+	display: none;
+}
+header #sortmenu div:first {
+	display: block;
 }
 
 header span#title {
