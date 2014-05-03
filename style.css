@@ -11,7 +11,7 @@ header {
 	text-align: center;
 	position: relative;
 	color: #EEE;
-	padding: 12px;	
+	padding: 20px;	
 	font-size: 24px;
 	clear: both;
 }
@@ -51,7 +51,7 @@ div.project p.author {
 	font-weight: bold;
 }
 
-div.project:nth-child(4n + 1) { background-color: #900; }
-div.project:nth-child(2n + 2) { background-color: #009; } 
-div.project:nth-child(3n + 3) { background-color: #030; }
+div.project:nth-child(4n + 1) { background-color: #e74c3c; } /* red, first one */
+div.project:nth-child(2n + 2) { background-color: #2980b9; } /* blue, second one */
+div.project:nth-child(3n + 3) { background-color: #16a085; } /* green, third one */
 
