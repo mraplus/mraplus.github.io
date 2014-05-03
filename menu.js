@@ -1,5 +1,5 @@
-/*$(document).ready(function(e) {
-    $("#sortmenu").slideUp(500, function() {
-		$(this).css("display","block");
-	});
-});*/
+$(document).ready(function(e) {
+    $("div[value]").click(function() {
+    	sortby = $(this).val();
+    });
+});
