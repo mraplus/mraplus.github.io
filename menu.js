@@ -20,7 +20,7 @@ $(document).ready(function(e) {
 	
 	$("#search").click(function() {
 		$("#sortMenu").fadeOut(fadeTime, function() { isSortVisible = false; });
-		$("#searchForm").fadeIn(fadeTime, function() { isSearchVisible = true; });
+		$("#searchForm").fadeIn(fadeTime, function() { isSearchVisible = true; $("#searchField").focus(); });
 	});
 });
 
