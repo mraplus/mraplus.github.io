@@ -20,7 +20,8 @@ body {
 
 div.project {
 	width: 25%;
-	display: inline;
+	height: 100px;
+	display: inline-block;
 	color: white;
 	padding: 5px;
 }
