@@ -45,5 +45,5 @@ function reload() {
 		
 		$("#content").empty();
 		$("#content").append(projects.join(''));
-	})
+	});
 }
