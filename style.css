@@ -67,10 +67,11 @@ header span#title {
 }
 
 #content {
-	clear: both;
-	width: 100%;
-	float: left; /* thanks to the magic crystal ball @ http://stackoverflow.com/a/2849494/303795 */
+	width: 100%; height: 100%;
+	overflow: auto;
+	
 	position: fixed;
+	float: left; /* thanks to the magic crystal ball @ http://stackoverflow.com/a/2849494/303795 */
 	top: 65px; /* needs to match header height */
 }
 
@@ -89,13 +90,8 @@ div.project h1 {
 	display: inline;
 }
 
-div.project h1 a {
-	color: white;
-}
-
-div.project p.description {
-	margin: 10px 30px;
-}
+div.project h1 a { color: white; }
+div.project p.description {	margin: 10px 30px; }
 
 div.project p.author {
 	position: absolute;
