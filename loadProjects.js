@@ -10,14 +10,14 @@ function sortf(a,b) {
 }
 
 $(document).ready(function() { // makes the project grid
-	$.getJSON("projects.json", function(response) { data = response; });
+	$.getJSON("projects.json", function(response) { $(document).data = response; });
 	reload();
 });
 
 function reload() {
 	var projects = [];
 	
-	data = data.sort(sortf);
+	data = $(document).data.sort(sortf);
 	
 	$.each(data, function(index, item) {
 		var text = "<div class='project " + item['category'] + "'>";
