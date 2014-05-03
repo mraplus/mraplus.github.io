@@ -59,7 +59,7 @@ div.project p.author {
 }
 
 div.project:nth-child(6n + 1) {
-	border-color: #f66 #c00 #f66 #c00;
+	border-color: #f66 #c00 #c00 #f66;
 	background-color: #e74c3c;
 } /* red, first one */
 div.project:nth-child(2n + 2) { background-color: #2980b9; } /* blue, second one */
