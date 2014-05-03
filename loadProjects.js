@@ -1,18 +1,20 @@
-var sortby = "name";
+var sortBy = "name";
+
+var data = [];
 
 function sortf(a,b) {
-	if (a[sortby] > b[sortby]) return 1;
-	else if (a[sortby] < b[sortby]) return -1;
+	if (a[sortBy] > b[sortBy]) return 1;
+	else if (a[sortBy] < b[sortBy]) return -1;
 	else return 0;
 		
 }
 
 $(document).ready(function() { // makes the project grid
-	reload();
+	$.getJSON("projects.json", function(data) { this.data = data });
+	
 });
 
 function reload() {
-	$.getJSON("projects.json", function(data) {
 		var projects = [];
 		
 		data = data.sort(sortf);
@@ -27,7 +29,6 @@ function reload() {
 			projects.push(text);
 		});
 		
-		$("#content").empty();
-		$("#content").append(projects.join(''));
+		$("#content").html(projects.join(''));
 	});
 }
