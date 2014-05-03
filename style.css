@@ -118,6 +118,7 @@ div.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth on
 	padding: 10px;
 	border: 2.5px solid black;
 	display: inline;
+	background-color: white;
 	cursor: pointer;
 }
 
