@@ -16,8 +16,14 @@ header {
 	clear: both;
 }
 
+p {
+	font-family: "Times New Roman", Times, serif;
+}
+
 #content {
 	width: auto;
+	height: 100%;
+	overflow: auto;
 }
 
 div.project {
@@ -36,15 +42,6 @@ div.project h1 {
 div.project h1 a {
 	color: white;
 	text-decoration: none;
-}
-
-div.project h1 a:hover:visited {
-	color: #999;
-	text-decoration: none;
-}
-
-div.project h1 a:active {
-	color: #666;
 }
 
 div.project p.description {
