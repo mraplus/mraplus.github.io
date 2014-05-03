@@ -28,10 +28,14 @@ header #sortmenu {
 header #sortmenu:hover {
 	height: 116px;
 }
+header #sortmenu div:first-child {
+	cursor: default;
+}
 header #sortmenu div {
 	background-color: rgba(43,30,23,0.6);
 	border: white solid thin;
 	color: white;
+	cursor: pointer;
 	padding: 2px;
 }
 
