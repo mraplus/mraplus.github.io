@@ -143,3 +143,11 @@ div.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth on
 	background-color: black;
 	color: white;
 }
+
+iframe#view {
+	z-index: 10;
+	width: 80%;
+	height: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
