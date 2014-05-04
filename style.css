@@ -35,12 +35,12 @@ header > a {
 	color: white;
 }
 
-#commands {
+#right {
 	float: right;
 	padding-top: 3px;
 }
 
-#commands > div {
+#right > div {
 	height: 30px;
 
 	padding: 0 20px;
@@ -52,8 +52,8 @@ header > a {
 	cursor: pointer;
 }
 
-header > #commands > #search { float: left; }
-header > #commands > #sort { float: left; }
+header > #right > #search { float: left; }
+header > #right > #sort { float: left; }
 
 .popup {
 	background-color: #EEEEEE;
@@ -98,7 +98,7 @@ header > #commands > #sort { float: left; }
 		font-size: 16px;
 	} 
 
-	#commands > div {
+	#right > div {
 		height: 20px;
 		font-size: 12px;
 	}
