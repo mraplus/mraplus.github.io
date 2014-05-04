@@ -55,7 +55,7 @@ div.popup {
 	box-shadow: 0 0 9px 0 #EEEEEE; /* faint glow */
 	
 	position: fixed;
-	right: 20px;
+	right: 30px;
 	top: 70px;
 	z-index: 2;
 	padding: 15px;
