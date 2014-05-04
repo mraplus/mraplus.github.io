@@ -120,10 +120,11 @@ header #title {
 
 .project a {
 	font-size: 36px;
-	display: inline;
+	font-weight: 800;
+	color: white;
+	
+	display: block;
 }
-
-.project > a { color: white; }
 
 .project .description {	
 	margin: 10px 30px; 
