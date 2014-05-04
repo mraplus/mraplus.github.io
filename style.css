@@ -11,13 +11,6 @@ body {
 	margin: 0;
 }
 
-.project {
-	height: 200px;
-	float: left;
-	color: white;
-	position: relative;
-}
-
 header {
 	background-color: #2B1E17;
 	box-shadow: 0 0 4px 0 #2B1E17;
@@ -121,6 +114,12 @@ header #title {
 	header #title { font-size: 30px; left: 30px; }
 }
 
+.project {
+	height: 300px;
+	float: left;
+	color: white;
+	position: relative;
+}
 
 .project * { margin: 20px 10px; } /* this keeps the grid working fine */
 
@@ -133,7 +132,7 @@ header #title {
 
 .project .description {	
 	margin: 10px 30px; 
-	max-height: 60px;
+	max-height: 150px;
 	overflow: auto;
 }
 
