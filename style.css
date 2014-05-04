@@ -32,12 +32,13 @@ header {
 
 #right {
 	float: right;
-	padding-top: 3px;
+	padding-top: 10px;
 }
 
 #right > a {
-	float: right;
+	float: left;
 	color: white;
+	margin: 0 10px;
 }
 
 #right > div {
