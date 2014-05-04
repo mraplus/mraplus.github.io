@@ -115,7 +115,7 @@ header #title {
 @media screen and (min-device-width: 1200px) {
 	.project { width: 25%; }
 	
-	header #title { font-size: 30px; text-align: center; }
+	header #title { font-size: 30px; left: 30px; }
 }
 
 
