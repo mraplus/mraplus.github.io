@@ -63,8 +63,9 @@ header span#title {
 	top: 65px; /* needs to match header height */
 }
 
-@media screen and (min-width: 800px) {
-div.project { /* needs to be 50% at <1280 width */
+/* have only two columns for smaller screens */
+@media screen and (max-width: 800px) {
+div.project {
 	width: 50%;
 	height: 200px;
 	float: left;
@@ -84,8 +85,8 @@ header {
 
 }
 
-@media screen and (min-width: 1280px) {
-div.project { /* needs to be 50% at <1280 width */
+@media screen and (min-width: 801px) {
+div.project {
 	width: 25%;
 	height: 200px;
 	float: left;
