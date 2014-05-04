@@ -5,11 +5,14 @@ body {
 	margin: 0;
 }
 
-::-webkit-scrollbar-track {
+.project::-webkit-scrollbar-track {
 	background-color: gray;
 }
-::-webkit-scrollbar-track-piece {
+.project::-webkit-scrollbar-track-piece {
 	background-color: black;
+}
+.project::-webkit-scrollbar-thumb  {
+	background-color: white;
 }
 
 header {
