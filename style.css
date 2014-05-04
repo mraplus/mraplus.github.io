@@ -137,7 +137,7 @@ header #title {
 	font-weight: bold;
 }
 /* Space at bottom */
-.project:last-child { margin-bottom: 20px; }
+.project:last-child { margin-bottom: 30px; }
 
 /* colors :D */
 .project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
