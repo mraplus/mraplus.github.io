@@ -83,8 +83,20 @@ header span#title {
 	top: 65px; /* needs to match header height */
 }
 
-/* one column for ridiculously small screens */
-@media screen and (max-device-width: 675px) { div.project { width: 100%; } header span#title { left: 10px; display: block; } }
+/* one column for ridiculously small screens (the buttons should be by themselves */
+@media screen and (max-device-width: 675px) { 
+	div.project { width: 100%; } 
+	
+	header span#title { 
+		left: 10px; display: block;
+		font-size: 16px;
+	} 
+	
+	header > #commands > div {
+		height: 20px;
+		font-size: 12px;
+	}
+}
 
 /* have only two columns for smaller screens (675 is */
 @media screen and (min-device-width: 676px) and (max-device-width: 800px) { div.project { width: 50%; } header span#title { left: 25px; } }
