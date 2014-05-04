@@ -127,10 +127,9 @@ header > #right > #sort { float: left; }
 
 
 .pwrapper {
-	width: 99%;
 	height: 100%;
 	overflow: auto;
-	margin: 2.5px 0;
+	margin: 2.5px 4px 2.5px 10px;
 }
 
 .project {
