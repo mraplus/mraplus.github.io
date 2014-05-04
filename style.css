@@ -1,11 +1,5 @@
 @charset "utf-8";
 
-/*
-:root {
-	var-headerHeight: 57px;
-}
-*/
-
 body {
 	font-family: "brandon-grotesque", Arial, sans-serif;
 	margin: 0;
@@ -115,9 +109,10 @@ header #title {
 }
 
 .project {
-	height: 300px;
+	height: 250px; max-height: 250px;
 	float: left;
 	color: white;
+	overflow: auto;
 	position: relative;
 }
 
@@ -132,14 +127,11 @@ header #title {
 
 .project .description {	
 	margin: 10px 30px; 
-	max-height: 150px;
-	overflow: auto;
 }
 
 .project .author {
-	position: absolute;
-	bottom: 0;
-	right: 0px;
+	position: relative;
+	text-align: right;
 	padding: 20px;
 	font-weight: bold;
 }
