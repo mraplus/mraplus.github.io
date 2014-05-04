@@ -106,18 +106,18 @@ header #title {
 
 /* one column for small tablets) */
 @media screen and (max-device-width: 675px) { 
-	.project { width: 100%; } 
+	.pwrapper { width: 100%; } 
 }
 
 /* have only two columns for smaller screens (675 is */
-@media screen and (min-device-width: 676px) and (max-device-width: 800px) { div.project { width: 50%; } header span#title { left: 25px; } }
+@media screen and (min-device-width: 676px) and (max-device-width: 800px) { div.pwrapper { width: 50%; } header span#title { left: 25px; } }
 
 /* three columns, so it doesn't look too stretched out with only two */
-@media screen and (min-device-width: 801px) and (max-device-width: 1199px) { div.project { width: calc(100% / 3); } header span#title { left: 25px; }  }
+@media screen and (min-device-width: 801px) and (max-device-width: 1199px) { div.pwrapper { width: calc(100% / 3); } header span#title { left: 25px; }  }
 
 /* four columns, normal display size */
 @media screen and (min-device-width: 1200px) {
-	.project { width: 25%; }
+	.pwrapper { width: 25%; }
 	
 	header #title { font-size: 30px; left: 30px; }
 }
