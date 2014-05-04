@@ -40,9 +40,8 @@ var data = [];
 var searchData = [];
 
 // JSON callback
-var remoteData;
 function parseFormData(json) {
-	remoteData = json;
+	data = json['feed']['entry'];
 }
 
 // menu

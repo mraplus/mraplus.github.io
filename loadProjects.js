@@ -14,12 +14,12 @@ $(document).ready(function() { // makes the project grid
 
 function generateTiles() { // sorts projects and reprints them
    var projects = [];
-   searchData = searchData.sort(sortf)
-   $.each(searchData, function(index, item) {
-      var text = "<div class='project " + item['category'] + "'>";
-      text += "<h1><a href='" + item['link'] + "'>" + item['name'] + "</a></h1>";
-      text += "<p class='description'>" + item['description'] + "</p>";
-      text += "<p class='author'>By " + item['author'] + "</p>";
+   
+   $.each(data, function(index, item) {
+      var text = "<div class='project " + item['gsx$category']['$t'] + "'>";
+      text += "<h1><a href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a></h1>";
+      text += "<p class='description'>" + item['gsx$description']['$t'] + "</p>";
+      text += "<p class='author'>By " + item['gsx$author']['$t'] + "</p>";
       text += "</div>";
       projects.push(text);
    });
