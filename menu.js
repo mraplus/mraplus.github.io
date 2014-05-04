@@ -1,4 +1,3 @@
-
 $(document).ready(function(e) {
 	$("#sortMenu").hide();
 	$("#searchForm").hide();
@@ -10,7 +9,10 @@ $(document).ready(function(e) {
 	});
 
 	$("div[value]").click(function() { // handles sort button clicks
-		sortBy = "gsx$" + $(this).attr("value");
+		var requestSort = "gsx$" + $(this).attr("value");
+		if (sortBy === requestedSort) sortAscending *= -1; // flip sort direction
+		else sortBy = requestSort;
+		
 		generateTiles();
 	});
 	

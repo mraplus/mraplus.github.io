@@ -1,7 +1,12 @@
 function sortf(a, b) {
-   if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
-   else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
-   return 0;
+   if (sortBy === "gsx$category") {
+			  
+   }
+   else {
+	   if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
+	   else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
+	   return 0;
+   }
 }
 
 $(document).ready(function() { // makes the project grid
