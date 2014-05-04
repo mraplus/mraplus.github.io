@@ -35,12 +35,12 @@ header > a {
 	color: white;
 }
 
-header > #commands {
+#commands {
 	float: right;
 	padding-top: 3px;
 }
 
-header > #commands > div {
+#commands > div {
 	height: 30px;
 
 	padding: 0 20px;
@@ -71,7 +71,7 @@ header > #commands > #sort { float: left; }
 
 .popup .button { float: left; }
 
-header #title {	
+#title {	
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	font-size: 28px;
@@ -93,12 +93,12 @@ header #title {
 		width: 100%;
 	}
 
-	header #title { 
+	#title { 
 		left: 10px; display: block;
 		font-size: 16px;
 	} 
 
-	header > #commands > div {
+	#commands > div {
 		height: 20px;
 		font-size: 12px;
 	}
@@ -122,10 +122,13 @@ header #title {
 	header #title { font-size: 30px; left: 30px; }
 }
 
+
+
 .pwrapper {
 	width: 97.5%;
 	height: 100%;
 	overflow: auto;
+	margin: 2.5px 0;
 }
 
 .project {
@@ -145,12 +148,12 @@ header #title {
 	display: block;
 }
 
-.pwrapper > .description {	
+.description {	
 	margin: 10px 30px; 
 	text-align: justify;
 }
 
-.pwrapper > .author {
+.author {
 	position: relative;
 	text-align: right;
 	padding: 20px;
