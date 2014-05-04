@@ -87,6 +87,11 @@ header span#title {
 	div.project {
 		width: 50%;
 	}
+	
+	header > #title {
+		text-align: left;
+		font-size: 28px;
+	}
 }
 
 /* three columns, so it doesn't look too stretched out with only two */
