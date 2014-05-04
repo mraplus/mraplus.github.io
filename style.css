@@ -32,7 +32,8 @@ header {
 
 #right {
 	float: right;
-	padding-top: 10px;
+	padding-top: 3px;
+	padding-right: 10px;
 }
 
 #right > a {
