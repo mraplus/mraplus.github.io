@@ -33,9 +33,9 @@ header > #commands {
 }
 
 header > #commands > div {
-	width: 150px;
 	height: 30px;
-	
+
+	padding: 0 20px;
 	margin: 0 5px;
 	
 	background-color: #A38F84;
