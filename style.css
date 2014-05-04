@@ -24,6 +24,10 @@ header {
 	z-index: 1;
 }
 
+header > a {
+	float: right;
+}
+
 header > #commands {
 	position: relative;
 	float: right;
