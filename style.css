@@ -130,7 +130,12 @@ header #title {
 }
 
 .project > h1 > a { color: white; }
-.project .description {	margin: 10px 30px; }
+
+.project .description {	
+	margin: 10px 30px; 
+	max-height: 60px;
+	overflow: auto;
+}
 
 .project .author {
 	position: absolute;
