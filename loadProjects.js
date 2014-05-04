@@ -5,11 +5,7 @@ function sortf(a, b) {
 }
 
 $(document).ready(function() { // makes the project grid
-   $.getJSON("projects.json", function(response) {
-      data = response;
-      searchData = data;
-      generateTiles();
-   });
+	generateTiles();
 });
 
 function generateTiles() { // sorts projects and reprints them
