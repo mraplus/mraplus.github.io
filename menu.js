@@ -10,7 +10,7 @@ $(document).ready(function(e) {
 	});
 
 	$("div[value]").click(function() { // handles sort button clicks
-		sortBy = $(this).attr("value");
+		sortBy = "gsx$" + $(this).attr("value");
 		generateTiles();
 	});
 	

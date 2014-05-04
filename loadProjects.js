@@ -11,6 +11,8 @@ $(document).ready(function() { // makes the project grid
 function generateTiles() { // sorts projects and reprints them
    var projects = [];
    
+   data.sort(sortf);
+   
    $.each(data, function(index, item) {
       var text = "<div class='project " + item['gsx$category']['$t'] + "'>";
       text += "<h1><a href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a></h1>";
