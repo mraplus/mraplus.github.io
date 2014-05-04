@@ -1,3 +1,5 @@
+var clickSound = new Audio("click.wav");
+
 $(document).ready(function (e) {
 	$("#sortMenu").hide();
 	$("#searchForm").hide();
@@ -39,7 +41,7 @@ $(document).ready(function (e) {
 $(document).click(function (e) {
 	var sortMenu = $("#sortMenu");
 	var searchBox = $("#searchForm");
-
+	clickSound.play();
 	if (isSortVisible) {
 		if (!sortMenu.is(e.target) && sortMenu.has(e.target).length === 0) sortMenu.fadeOut(fadeTime, function () {
 			isSortVisible = false;
