@@ -83,9 +83,11 @@ header span#title {
 	top: 65px; /* needs to match header height */
 }
 
-/* one column for ridiculously small screens (the buttons should be by themselves */
-@media screen and (max-device-width: 675px) { 
-	div.project { width: 100%; } 
+/* phones */
+@media screen and (max-device-width: 400px) { 
+	div.project {
+		width: 100%;
+	}
 	
 	header span#title { 
 		left: 10px; display: block;
@@ -96,6 +98,11 @@ header span#title {
 		height: 20px;
 		font-size: 12px;
 	}
+}
+
+/* one column for small tablets) */
+@media screen and (max-device-width: 675px) { 
+	div.project { width: 100%; } 
 }
 
 /* have only two columns for smaller screens (675 is */
