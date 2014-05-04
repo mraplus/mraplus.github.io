@@ -5,7 +5,7 @@ body {
 	margin: 0;
 }
 
-div.project {
+.project {
 	height: 200px;
 	float: left;
 	color: white;
@@ -44,10 +44,10 @@ header > #commands > div {
 	cursor: pointer;
 }
 
-header > #commands > div#search { float: left; }
-header > #commands > div#sort { float: right; }
+header > #commands > #search { float: left; }
+header > #commands > #sort { float: right; }
 
-div.popup {
+.popup {
 	background-color: #EEEEEE;
 	color: black;
 	text-align: right;
@@ -61,9 +61,9 @@ div.popup {
 	padding: 15px;
 }
 
-div.popup .button { float: left; }
+.popup .button { float: left; }
 
-header span#title {
+header #title {
 	position: fixed;
 	top: 15px;
 	
@@ -85,11 +85,11 @@ header span#title {
 
 /* phones */
 @media screen and (max-device-width: 400px) { 
-	div.project {
+	.project {
 		width: 100%;
 	}
 	
-	header span#title { 
+	header #title { 
 		left: 10px; display: block;
 		font-size: 16px;
 	} 
@@ -102,7 +102,7 @@ header span#title {
 
 /* one column for small tablets) */
 @media screen and (max-device-width: 675px) { 
-	div.project { width: 100%; } 
+	.project { width: 100%; } 
 }
 
 /* have only two columns for smaller screens (675 is */
@@ -113,23 +113,23 @@ header span#title {
 
 /* four columns, normal display size */
 @media screen and (min-device-width: 1200px) {
-	div.project { width: 25%; }
+	.project { width: 25%; }
 	
-	header span#title { font-size: 30px; text-align: center; }
+	header #title { font-size: 30px; text-align: center; }
 }
 
 
-div.project * { margin: 20px 10px; } /* this keeps the grid working fine */
+.project * { margin: 20px 10px; } /* this keeps the grid working fine */
 
-div.project h1 {
+.project h1 {
 	font-size: 36px;
 	display: inline;
 }
 
-div.project h1 a { color: white; }
-div.project p.description {	margin: 10px 30px; }
+.project > h1 > a { color: white; }
+.project .description {	margin: 10px 30px; }
 
-div.project p.author {
+.project .author {
 	position: absolute;
 	bottom: 0;
 	right: 0px;
@@ -138,12 +138,12 @@ div.project p.author {
 }
 
 /* colors :D */
-div.project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
-div.project:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
-div.project:nth-child(6n + 3) { background-color: #16a085; } /* green, third one */
-div.project:nth-child(6n + 4) { background-color: #8e44ad; } /* purple, fourth one */
-div.project:nth-child(6n + 5) { background-color: #96281B; } /* brown, fifth one */
-div.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
+.project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
+.project:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
+.project:nth-child(6n + 3) { background-color: #16a085; } /* green, third one */
+.project:nth-child(6n + 4) { background-color: #8e44ad; } /* purple, fourth one */
+.project:nth-child(6n + 5) { background-color: #96281B; } /* brown, fifth one */
+.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
 
 .button {
 	margin: 5px;
