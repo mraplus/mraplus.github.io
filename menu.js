@@ -22,7 +22,6 @@ $(document).ready(function(e) {
 		// get matching elements
 		var matches = $(".project:contains(" + $(this).val() + ")").show();
 		$(".project").not(matches).hide();
-
 	});
 });
 
@@ -37,6 +36,7 @@ $(document).click(function(e) {
 		if (!sortMenu.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function() { isSearchVisible = false; });
 	}
 });
+// trigger search on ctrl-f
 $(document).keydown(function(e) {
 	if ((e.which == 102 || e.which == 70) && e.ctrlKey) {
 		e.preventDefault();
