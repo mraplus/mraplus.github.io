@@ -142,6 +142,7 @@ header #title {
 
 .project .description {	
 	margin: 10px 30px; 
+	text-align: justify;
 }
 
 .project .author {
