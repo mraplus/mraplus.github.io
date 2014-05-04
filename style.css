@@ -136,6 +136,7 @@ header #title {
 	padding: 20px;
 	font-weight: bold;
 }
+
 /* Space at bottom */
 .project:last-child { margin-bottom: 65px; }
 
