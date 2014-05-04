@@ -16,5 +16,5 @@ Design by Ishan.
 Programming by Dhruba and also Ishan.
 
 ### Special Thanks
-Thanks to Adam for editing products.json once
+Thanks to Adam for editing products.json once (though it has been removed).<br />
 Thanks to GitHub for hosting our project
