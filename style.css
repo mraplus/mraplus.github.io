@@ -126,7 +126,6 @@ header #title {
 	height: 250px; max-height: 250px;
 	float: left;
 	color: white;
-	overflow: auto;
 	position: relative;
 }
 
@@ -135,6 +134,7 @@ header #title {
 .project {
 	width: 100%;
 	height: 100%;
+	overflow: auto;
 }
 
 .project a {
