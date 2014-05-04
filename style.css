@@ -29,10 +29,7 @@ header > a {
 }
 
 header > #commands {
-	position: relative;
 	float: right;
-	right: 10px;
-	top: 15px;
 	padding-top: 3px;
 }
 
@@ -49,7 +46,7 @@ header > #commands > div {
 }
 
 header > #commands > #search { float: left; }
-header > #commands > #sort { float: right; }
+header > #commands > #sort { float: left; }
 
 .popup {
 	background-color: #EEEEEE;
