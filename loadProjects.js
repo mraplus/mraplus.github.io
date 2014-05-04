@@ -34,12 +34,12 @@ function generateTiles() { // sorts projects and reprints them
 		projects.push(text);
 	});
 	$("#content").html(projects.join(''));
-	$("div.project").hover(function (e) { // darken inactive <div>s
-		$("div.project").not(this).stop().animate({
+	$(".project").hover(function (e) { // darken inactive <div>s
+		$(".project").not(this).stop().animate({
 			opacity: fadeValue
 		});
 	}, function (e) {
-		$("div.project").not(this).stop().animate({
+		$(".project").not(this).stop().animate({
 			opacity: '1'
 		});
 	});

@@ -45,7 +45,9 @@ $(document).click(function (e) {
 			isSortVisible = false;
 		});
 	} else if (isSearchVisible) {
-		if (!sortMenu.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function () {
+		if (!searchBox.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function () {
+			searchBox.val(''); // clear search box
+			$(".project").show(); // show all the projects again
 			isSearchVisible = false;
 		});
 	}
