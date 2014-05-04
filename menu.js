@@ -13,9 +13,9 @@ $(document).ready(function (e) {
 	});
 
 	$("div[value]").click(function () { // handles sort button clicks
-		var requestSort = "gsx$" + $(this).attr("value");
+		var requestedSort = "gsx$" + $(this).attr("value");
 		if (sortBy === requestedSort) sortAscending *= -1; // flip sort direction
-		else sortBy = requestSort;
+		else sortBy = requestedSort;
 
 		generateTiles();
 	});
