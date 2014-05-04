@@ -5,6 +5,13 @@ body {
 	margin: 0;
 }
 
+::-webkit-scrollbar-track {
+	background-color: gray;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: black;
+}
+
 header {
 	background-color: #2B1E17;
 	box-shadow: 0 0 4px 0 #2B1E17;
