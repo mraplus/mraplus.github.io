@@ -16,6 +16,7 @@ header {
 	background-color: #2B1E17;
 	box-shadow: 0 0 4px 0 #2B1E17;
 
+	padding: 10px;
 	width: 100%;
 	position: fixed;
 	display: block;
@@ -24,6 +25,7 @@ header {
 
 header > a {
 	float: right;
+	color: white;
 }
 
 header > #commands {
