@@ -28,7 +28,32 @@
 })();
 </script>
 
+<!-- global variables -->
+<script>
+// tiles
+var fadeValue = 0.75;
+
+var sortBy = "name";
+var sortAscending = 1;
+
+var data = [];
+var searchData = [];
+
+// JSON callback
+function parseFormData(json) {
+	data = $.parseJSON(json);
+}
+
+// menu
+var fadeTime = 500;
+
+var isSortVisible = false;
+var isSearchVisible = false;
+
+</script>
+
 <!-- load all our resources -->
+<script src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
 <script src="jquery.js"></script>
 
 <script src="loadProjects.js"></script>

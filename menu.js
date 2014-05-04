@@ -1,7 +1,3 @@
-var fadeTime = 500;
-
-var isSortVisible = false;
-var isSearchVisible = false;
 
 $(document).ready(function(e) {
 	$("#sortMenu").hide();
