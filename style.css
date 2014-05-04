@@ -135,7 +135,7 @@ header #title {
 	position: relative;
 }
 
-.pwrapper > * { margin: 20px 10px; } /* this keeps the grid working fine */
+.pwrapper > * { margin: 10px 10px; } /* this keeps the grid working fine */
 
 .pwrapper > a {
 	font-size: 36px;
