@@ -70,7 +70,6 @@ header span#title {
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	text-align: left;
-	float: left;
 	font-size: 28px;
 	font-weight: normal;
 }
@@ -85,10 +84,10 @@ header span#title {
 }
 
 /* have only two columns for smaller screens */
-@media screen and (max-width: 800px) { div.project { width: 50%; } }
+@media screen and (max-width: 800px) { div.project { width: 50%; } header span#title { left: 10px; } }
 
 /* three columns, so it doesn't look too stretched out with only two */
-@media screen and (min-width: 801px) and (max-width: 1199px) { div.project { width: calc(100% / 3); } }
+@media screen and (min-width: 801px) and (max-width: 1199px) { div.project { width: calc(100% / 3); } header span#title { left: 10px; }  }
 
 /* four columns, normal display size */
 @media screen and (min-width: 1200px) {
