@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/*
+:root {
+	var-headerHeight: 47px;
+}
+*/
+
 body {
 	font-family: "brandon-grotesque", Arial, sans-serif;
 	margin: 0;
@@ -77,7 +83,7 @@ header #title {
 	
 	position: fixed;
 	float: left; /* thanks to the magic crystal ball @ http://stackoverflow.com/a/2849494/303795 */
-	top: 65px; /* needs to match header height */
+	top: 47px; /* needs to match header height */
 }
 
 /* phones */
@@ -135,7 +141,7 @@ header #title {
 }
 
 /* Space at bottom */
-.project:last-child { margin-bottom: 65px; }
+.project:last-child { margin-bottom: 47px; }
 
 /* colors :D */
 .project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
