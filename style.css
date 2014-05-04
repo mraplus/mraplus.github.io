@@ -118,12 +118,12 @@ header #title {
 
 .project * { margin: 20px 10px; } /* this keeps the grid working fine */
 
-.project h1 {
+.project a {
 	font-size: 36px;
 	display: inline;
 }
 
-.project > h1 > a { color: white; }
+.project > a { color: white; }
 
 .project .description {	
 	margin: 10px 30px; 
