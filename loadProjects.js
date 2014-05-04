@@ -1,6 +1,6 @@
 function sortf(a, b) {
-   if (a[sortBy] > b[sortBy]) return sortAscending;
-   else if (a[sortBy] < b[sortBy]) return -sortAscending;
+   if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
+   else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
    return 0;
 }
 
