@@ -83,7 +83,10 @@ header span#title {
 	top: 65px; /* needs to match header height */
 }
 
-/* have only two columns for smaller screens */
+/* one column for ridiculously small screens */
+@media screen and (max-width: 675px) { div.project { width: 100%; } header span#title { left: 10px; display: block; } }
+
+/* have only two columns for smaller screens (675 is */
 @media screen and (max-width: 800px) { div.project { width: 50%; } header span#title { left: 25px; } }
 
 /* three columns, so it doesn't look too stretched out with only two */
