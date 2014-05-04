@@ -33,7 +33,11 @@ function generateTiles() { // sorts projects and reprints them
 		text += "</div>";
 		projects.push(text);
 	});
+	
 	$("#content").html(projects.join(''));
+	
+	$(".project").mCustomScrollBar(); 
+	
 	$(".project").hover(function (e) { // darken inactive <div>s
 		$(".project").not(this).stop().animate({
 			opacity: fadeValue
