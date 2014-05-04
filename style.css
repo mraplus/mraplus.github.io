@@ -128,7 +128,6 @@ header #title {
 	color: white;
 	overflow: auto;
 	position: relative;
-	padding-right: 2px;
 }
 
 .pwrapper * { margin: 20px 10px; } /* this keeps the grid working fine */
@@ -159,15 +158,15 @@ header #title {
 }
 
 /* Space at bottom */
-.project:last-child { margin-bottom: 57px; }
+.pwrapper:last-child { margin-bottom: 57px; }
 
 /* colors :D */
-.project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
-.project:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
-.project:nth-child(6n + 3) { background-color: #16a085; } /* green, third one */
-.project:nth-child(6n + 4) { background-color: #8e44ad; } /* purple, fourth one */
-.project:nth-child(6n + 5) { background-color: #96281B; } /* brown, fifth one */
-.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
+.pwrapper:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
+.pwrapper:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
+.pwrapper:nth-child(6n + 3) { background-color: #16a085; } /* green, third one */
+.pwrapper:nth-child(6n + 4) { background-color: #8e44ad; } /* purple, fourth one */
+.pwrapper:nth-child(6n + 5) { background-color: #96281B; } /* brown, fifth one */
+.pwrapper:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
 
 .button {
 	margin: 5px;
