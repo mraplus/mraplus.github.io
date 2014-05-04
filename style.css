@@ -30,14 +30,14 @@ header {
 	z-index: 1;
 }
 
-header > a {
-	float: right;
-	color: white;
-}
-
 #right {
 	float: right;
 	padding-top: 3px;
+}
+
+#right > a {
+	float: right;
+	color: white;
 }
 
 #right > div {
