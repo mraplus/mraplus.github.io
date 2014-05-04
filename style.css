@@ -84,22 +84,23 @@ header span#title {
 
 /* have only two columns for smaller screens */
 @media screen and (max-width: 800px) {
-div.project {
-	width: 50%;
+	div.project {
+		width: 50%;
+	}
 }
 
-/* three columns */
+/* three columns, so it doesn't look too stretched out with only two */
 @media screen and (min-width: 801px) and (max-width: 1199px) {
-div.project {
-	width: calc(100% / 3);
-}
+	div.project {
+		width: calc(100% / 3);
+	}
 }
 
-/* four columns */
+/* four columns, normal display size */
 @media screen and (min-width: 1200px) {
-div.project {
-	width: 25%;
-}
+	div.project {
+		width: 25%;
+	}
 }
 
 
