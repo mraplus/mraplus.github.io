@@ -6,6 +6,10 @@
 }
 */
 
+::selection {
+	background-color: rgba(0,0,0,1);	
+}
+
 body {
 	font-family: "brandon-grotesque", Arial, sans-serif;
 	margin: 0;
