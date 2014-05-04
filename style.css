@@ -133,7 +133,6 @@ header #title {
 	float: left;
 	color: white;
 	position: relative;
-	padding: -5px;
 }
 
 .project * { margin: 20px 10px; } /* this keeps the grid working fine */
