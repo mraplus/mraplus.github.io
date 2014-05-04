@@ -70,6 +70,7 @@ header span#title {
 	color: #EEE;
 	font-family: "garamond-premier-pro-display", Times, serif;
 	text-align: left;
+	float: left;
 	font-size: 28px;
 	font-weight: normal;
 }
@@ -93,7 +94,7 @@ header span#title {
 @media screen and (min-width: 1200px) {
 	div.project { width: 25%; }
 	
-	header span#title { font-size: 30px; text-align: center;}
+	header span#title { font-size: 30px; text-align: center; float: none; }
 }
 
 
