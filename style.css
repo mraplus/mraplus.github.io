@@ -89,7 +89,7 @@ header #title {
 
 /* phones */
 @media screen and (max-device-width: 400px) { 
-	.project {
+	.pwrapper {
 		width: 100%;
 	}
 	
