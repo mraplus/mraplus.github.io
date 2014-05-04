@@ -37,7 +37,7 @@ $(document).click(function(e) {
 		if (!sortMenu.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function() { isSearchVisible = false; });
 	}
 });
-$(document).keypress(function(e) {
+$(document).keydown(function(e) {
 	if ((e.which == 102 || e.which == 70) && e.ctrlKey) {
 		e.preventDefault();
 		$("#search").click();
