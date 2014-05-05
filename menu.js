@@ -42,7 +42,7 @@ $(document).ready(function (e) {
 			duration: 1500,
 			easing: 'linear',
 			step: function() {
-				$("body *").not(".credits").not(".credits *").css({ "-webkit-filter": "blur(" + blurRadius + "px)" });
+				$("body *").not(".credits").not(".credits *").css({ "-webkit-filter": "blur(" + this.blurRadius + "px)" });
 			}
 		});
     });
