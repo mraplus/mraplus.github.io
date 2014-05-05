@@ -38,13 +38,8 @@ $(document).ready(function (e) {
 	
 	$("#credits").click(function() {
         // blur background
-		$({ blurRadius: 0 }).animate({ blurRadius: 2 }, {
-			duration: 1500,
-			easing: 'linear',
-			step: function() {
-				$("body *").not(".credits").not(".credits *").css({ "-webkit-filter": "blur(" + this.blurRadius + "px)" });
-			}
-		});
+		$("body *").not(".credits").not(".credits *").animate( { opacity: 0.5 }, { duration: fadeSpeed } );
+		$(".credits").fadeIn(fadeSpeed);
     });
 });
 
