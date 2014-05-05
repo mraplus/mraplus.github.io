@@ -37,16 +37,15 @@ $(document).ready(function (e) {
 	});
 	
 	$("#credits").click(function() {
-        // blur background
-		hiddenElements = $("body *").not(".credits").not(".credits *");
+        // blur background		
+		$("#fade").animate( { opacity: 0.5 }, { duration: fadeTime } );
 		
-		hiddenElements.animate( { opacity: 0.5 }, { duration: fadeTime } );
 		$(".credits").fadeIn(fadeTime);
     });
 	
 	$("#closeCredits").click(function(e) {
         $(".credits").fadeOut(fadeTime);
-		hiddenElements.animate( { opacity: 1 }, { duration: fadeTime });
+		$("#fade").animate( { opacity: 0 }, { duration: fadeTime });
     });
 });
 
