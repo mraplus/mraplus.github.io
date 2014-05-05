@@ -40,13 +40,13 @@ $(document).ready(function (e) {
         // blur background
 		hiddenElements = $("body *").not(".credits").not(".credits *");
 		
-		hiddenElements.animate( { opacity: 0.5 }, { duration: fadeSpeed } );
-		$(".credits").fadeIn(fadeSpeed);
+		hiddenElements.animate( { opacity: 0.5 }, { duration: fadeTime } );
+		$(".credits").fadeIn(fadeTime);
     });
 	
 	$("#closeCredits").click(function(e) {
-        $(".credits").fadeOut(fadeSpeed);
-		hiddenElements.animate( { opacity: 1 }, { duration: fadeSpeed });
+        $(".credits").fadeOut(fadeTime);
+		hiddenElements.animate( { opacity: 1 }, { duration: fadeTime });
     });
 });
 
