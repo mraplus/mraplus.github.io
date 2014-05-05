@@ -1,6 +1,6 @@
 $(document).ready(function (e) {
-	$("#sortMenu").hide();
-	$("#searchForm").hide();
+	$(".popup").hide();
+	$(".credits").hide();
 
 	$("#sort").click(function (e) {
 		// fade out search if it's open
@@ -29,11 +29,23 @@ $(document).ready(function (e) {
 			$("#searchField").focus();
 		});
 	});
+	
 	$("#searchField").on('input', function () {
 		// get matching elements
 		var matches = $(".project:contains(" + $(this).val() + ")").show();
 		$(".project").not(matches).hide();
 	});
+	
+	$("#credits").click(function() {
+        // blur background
+		$({ blurRadius: 0 }).animate({ blurRadius: 2 }, {
+			duration: 1500,
+			easing: 'linear',
+			step: function() {
+				$("body *").not(".credits").not(".credits *").css({ "-webkit-filter": "blur(" + blueRadius + "px)" });
+			}
+		});
+    });
 });
 
 $(document).click(function (e) {
