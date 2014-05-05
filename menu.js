@@ -1,6 +1,7 @@
 $(document).ready(function (e) {
 	$(".popup").hide();
 	$(".credits").hide();
+	$("#fade").hide();
 
 	$("#sort").click(function (e) {
 		// fade out search if it's open
@@ -37,15 +38,16 @@ $(document).ready(function (e) {
 	});
 	
 	$("#credits").click(function() {
-        // blur background		
-		$("#fade").animate( { opacity: 0.5 }, { duration: fadeTime } );
+        // blur background	
+		
+		$("#fade").show().animate( { opacity: 0.5 }, { duration: fadeTime } );
 		
 		$(".credits").fadeIn(fadeTime);
     });
 	
 	$("#closeCredits").click(function(e) {
         $(".credits").fadeOut(fadeTime);
-		$("#fade").animate( { opacity: 0 }, { duration: fadeTime });
+		$("#fade").animate( { opacity: 0 }, { duration: fadeTime }).hide();
     });
 });
 
