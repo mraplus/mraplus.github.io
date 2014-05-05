@@ -47,15 +47,13 @@ header {
 
 	padding: 0 20px;
 	margin: 0 5px;
+	float: left;
 
 	background-color: #A38F84;
 	color: white;
 
 	cursor: pointer;
 }
-
-header > #right > #search { float: left; }
-header > #right > #sort { float: left; }
 
 .popup {
 	background-color: #EEEEEE;
