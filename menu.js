@@ -38,8 +38,15 @@ $(document).ready(function (e) {
 	
 	$("#credits").click(function() {
         // blur background
-		$("body *").not(".credits").not(".credits *").animate( { opacity: 0.5 }, { duration: fadeSpeed } );
+		hiddenElements = $("body *").not(".credits").not(".credits *");
+		
+		hiddenElements.animate( { opacity: 0.5 }, { duration: fadeSpeed } );
 		$(".credits").fadeIn(fadeSpeed);
+    });
+	
+	$("#closeCredits").click(function(e) {
+        $(".credits").fadeOut(fadeSpeed);
+		hiddenElements.animate( { opacity: 1 }, { duration: fadeSpeed });
     });
 });
 
