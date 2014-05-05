@@ -89,10 +89,13 @@ header {
 
 .credits {
 	border-radius: 10px;
-	margin: auto auto;
 	width: 40%;
+	background-color: white;
+	padding: 20px;
+	
+	left: 50%; margin-left: -20%;
 	z-index: 3;
-	background-color: #CCC;
+	position: fixed;
 }
 
 #content {
