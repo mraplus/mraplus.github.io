@@ -45,7 +45,7 @@ $(document).ready(function (e) {
 		$(".credits").fadeIn(fadeTime);
     });
 	
-	$("#closeCredits").click(function(e) {
+	$("#closeCredits, #fade").click(function(e) {
         $(".credits").fadeOut(fadeTime);
 		$("#fade").animate( { opacity: 0 }, { duration: fadeTime }).hide();
     });

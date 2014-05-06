@@ -99,11 +99,11 @@ header {
 	position: fixed;
 }
 
-.credits > p {
-	margin: 0;
+.credits > p:last-child {
+	margin-bottom: 10px;
 }
 
-.credits > .button {
+#creditButtons {
 	margin: 0 auto;
 }
 
