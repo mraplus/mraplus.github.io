@@ -89,13 +89,22 @@ header {
 
 .credits {
 	border-radius: 10px;
-	width: 40%;
+	width: 20%;
 	background-color: white;
 	padding: 20px;
 	
-	left: 50%; margin-left: -20%;
+	left: 50%; margin-left: -10%;
+	top: 20%;
 	z-index: 3;
 	position: fixed;
+}
+
+.credits > p {
+	margin: 0;
+}
+
+.credits > .button {
+	margin: 0 auto;
 }
 
 #content {
