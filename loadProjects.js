@@ -27,7 +27,8 @@ function generateTiles() { // sorts projects and reprints them
 
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";
-		text += "<a href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a>";
+		if (item['gsx$name']['$t'] === "") text += "<p class='projectTitle noLink'>" + item['gsx$name']['$t'] + "</p>";
+		else text += "<a class='projectTitle' href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a>";
 		text += "<p class='description'>" + item['gsx$description']['$t'] + "</p>";
 		text += "<p class='author'>By " + item['gsx$author']['$t'] + "</p>";
 		text += "</div></div>";
