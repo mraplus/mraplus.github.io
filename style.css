@@ -23,7 +23,7 @@ header {
 	background-color: #2B1E17;
 	box-shadow: 0 0 4px 0 #2B1E17;
 
-	padding: 10px;
+	padding: 10px 20px;
 	width: 100%;
 	position: fixed;
 	display: block;
@@ -52,9 +52,7 @@ header {
 }
 
 #right > div {
-	height: 30px;
-
-	padding: 0 20px;
+	padding: 10px;
 	margin: 0 5px;
 	float: left;
 
@@ -80,11 +78,14 @@ header {
 
 .popup .button { float: left; }
 
+.heading {
+	font-family: "proxima-nova", Times, serif;
+	font-weight: 100;
+}
+
 #title {	
 	color: #EEE;
-	font-family: "proxima-nova", Times, serif;
 	font-size: 28px;
-	font-weight: normal;
 }
 
 .credits {
@@ -168,10 +169,10 @@ hr {
 	position: relative;
 }
 
-.pwrapper > * { margin: 10px 10px; } /* this keeps the grid working fine */
+.pwrapper > * { margin: 10px; } /* this keeps the grid working fine */
 
 .pwrapper > a {
-	font-size: 36px;
+	font-size: 24px;
 	font-weight: 800;
 	color: white;
 
@@ -186,7 +187,7 @@ hr {
 .author {
 	position: relative;
 	text-align: right;
-	padding: 20px;
+	padding: 10px 20px;
 	font-weight: bold;
 }
 
