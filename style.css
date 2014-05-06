@@ -85,18 +85,17 @@ header {
 
 .credits {
 	border-radius: 10px;
-	width: 20%;
+	width: 30%;
 	background-color: white;
 	padding: 20px;
 	
-	left: 50%; margin-left: -10%;
+	left: 50%; margin-left: -15%;
 	top: 20%;
 	z-index: 3;
 	position: fixed;
 }
 
 .credits > h3 { margin: 0; }
-.credits > p { margin-bottom: 5px; }
 
 hr {
 	border: 0;
