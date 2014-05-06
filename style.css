@@ -80,6 +80,7 @@ header {
 
 .heading {
 	font-family: "proxima-nova", Times, serif;
+	font-weight: 600;
 }
 
 #title {	
