@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="keywords" content="science, armstrong, iron, horse, project">
 
-	<!-- Adobe Typekit fonts are loaded here -->
+	<!-- Adobe Typekit -->
 	<script type="text/javascript">
 	(function () {
 		var config = {
@@ -56,7 +56,6 @@
 	var isSearchVisible = false;
 	</script>
 
-	<!-- load all our resources -->
 	<script src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
 	
 	<script src="jquery.js"></script>
@@ -69,20 +68,18 @@
 	<title>Iron Horse 2014 Science Projects</title>
 </head>
 <body>
-	<!-- top bar -->
 	<header>
 		<span id="title">Iron Horse 2014 Science Projects</span>
-        
 		<div id="right">
        			<a href="https://docs.google.com/forms/d/1OT0jZMMEMUJdBZQ92cW7zonSbUDEnMd5U8hppL7Dlf8/viewform?usp=send_form">Submit Project</a>
+       			<div id="credits">Credits</div>
 			<div id="search">Search</div>
 			<div id="sort">Arrange</div>
 		</div>	
-
 	</header>
 	
-	
 	<div id="fade"></div>
+	
 	<div class="popup" id="sortMenu">
 		<div class="button" value="name">Name</div>
 		<div class="button" value="author">Author</div>
@@ -95,17 +92,19 @@
 
 	<div class="credits">
     	<h3>Credits</h3>
+    	
         <hr>
-		<p>Design: Ishan Bhargava</p>
-		<p>Programming: Dhruba Ghosh and Ishan Bhargava</p>
+        
+	<p>Design: Ishan Bhargava</p>
+	<p>Programming: Dhruba Ghosh and Ishan Bhargava</p>
         
         <div id="creditButtons">
-			<div class="button" onClick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View Source on GitHub</div>
-			<div class="button" id="closeCredits">Close</div>
+		<div class="button" onClick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View Source on GitHub</div>
+		<div class="button" id="closeCredits">Close</div>
         </div>
 	</div>
-	<!-- grid -->
+	
 	<div id="content"></div>
+	
 </body>
-
 </html>
