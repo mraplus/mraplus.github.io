@@ -31,8 +31,8 @@
 	})();
 	</script>
 
-	<!-- global variables -->
 	<script>
+	// global variables
 	// tiles
 	var fadeValue = 0.75;
 
@@ -54,6 +54,14 @@
 
 	var isSortVisible = false;
 	var isSearchVisible = false;
+	
+	// page styling
+	$(function() {
+		var height =  $("header").innerHeight();
+		
+		$("#content").css( { 'top': height });
+		$(".project:last-child").css( { 'margin-bottom': height });
+	});
 	</script>
 
 	<script src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
