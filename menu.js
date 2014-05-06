@@ -33,7 +33,7 @@ $(document).ready(function (e) {
 	
 	$("#searchField").on('input', function () {
 		// get matching elements
-		var matches = $(".project:contains(" + $(this).val() + ")").show();
+		var matches = $(".project:search(" + $(this).val() + ")").show();
 		$(".project").not(matches).hide();
 	});
 	
@@ -76,8 +76,7 @@ $(document).keydown(function (e) {
 	}
 });
 
-// makes search case-insensitive (for the common peasants)
-jQuery.expr[':'].Contains = function (a, i, m) {
+jQuery.expr[':'].search = function (a, i, m) {
 	return jQuery(a).text().toUpperCase()
 		.indexOf(m[3].toUpperCase()) >= 0;
 };
