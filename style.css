@@ -95,6 +95,7 @@ header {
 	position: fixed;
 }
 
+.credits > h3 { margin: 0; }
 .credits > p { margin-bottom: 5px; }
 
 hr {
