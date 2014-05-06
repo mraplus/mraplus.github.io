@@ -80,12 +80,12 @@ header {
 
 .heading {
 	font-family: "proxima-nova", Times, serif;
-	font-weight: 100;
 }
 
 #title {	
 	color: #EEE;
 	font-size: 28px;
+	font-weight: 100;
 }
 
 .credits {
