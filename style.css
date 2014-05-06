@@ -40,16 +40,15 @@ header {
 
 #right {
 	position: absolute;
-	right: 50px;
+	right: 40px;
 	top: 3px;
 	padding-top: 3px;
-	padding-right: 10px;
 }
 
 #right > a {
 	float: left;
 	color: white;
-	margin: 0 10px;
+	margin: 10px;
 }
 
 #right > div {
