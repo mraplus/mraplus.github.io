@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-	font-family: "myriad-pro", Arial, sans-serif;
+	font-family: "proxima-nova", Arial, sans-serif;
 	margin: 0;
 }
 
@@ -75,10 +75,6 @@ header {
 }
 
 .popup .button { float: left; }
-
-.heading {
-	font-family: "proxima-nova", Times, serif;
-}
 
 #title {	
 	color: #EEE;
@@ -178,7 +174,6 @@ hr {
 .description {	
 	margin: 10px 30px; 
 	text-align: justify;
-	font-family: "pragmatica-web", Arial, sans-serif;
 }
 
 .author {
