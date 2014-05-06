@@ -154,8 +154,6 @@ hr {
 	header #title { font-size: 30px; left: 30px; }
 }
 
-
-
 .pwrapper {
 	height: 100%;
 	overflow: auto;
@@ -173,7 +171,7 @@ hr {
 
 .pwrapper > a {
 	font-size: 24px;
-	font-weight: 800;
+	font-weight: 400;
 	color: white;
 
 	display: block;
