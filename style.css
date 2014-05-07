@@ -148,7 +148,7 @@ hr {
 	header #title { font-size: 30px; left: 30px; }
 }
 
-.pwrapper {
+.wrapper {
 	height: 100%;
 	overflow: auto;
 	margin: 10px 4px 2.5px 20px;
@@ -161,7 +161,7 @@ hr {
 	position: relative;
 }
 
-.pwrapper > * { margin: 10px; } /* this keeps the grid working fine */
+.wrapper > * { margin: 10px; } /* this keeps the grid working fine */
 
 .projectTitle {
 	font-size: 24px;
