@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-	font-family: "proxima-nova", Arial, sans-serif;
+	font-family: "myriad-pro", Arial, sans-serif;
 	margin: 0;
 }
 
@@ -79,6 +79,8 @@ header {
 
 #title {	
 	color: #EEE;
+	
+	font-family: "proxima-nova";
 	font-size: 28px;
 	font-weight: 100;
 }
@@ -176,8 +178,10 @@ hr {
 }
 
 .description {	
-	margin: 10px 30px; 
 	text-align: justify;
+	font-weight: 100;
+	
+	margin: 10px 30px; 
 }
 
 .author {
