@@ -23,7 +23,7 @@ header {
 	background-color: #2B1E17;
 	
 	float: left;
-	padding: 10px 20px;
+	padding: 10px 10px 10px 20px;
 	width: 100%;
 	display: block; box-sizing: border-box;
 }
