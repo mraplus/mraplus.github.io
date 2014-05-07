@@ -21,7 +21,7 @@ body {
 
 header {
 	background-color: #2B1E17;
-
+	float: left;
 	padding: 10px 20px;
 	width: 100%;
 	display: block;
@@ -37,9 +37,7 @@ header {
 }
 
 #right {
-	position: absolute;
-	right: 40px;
-	top: 3px;
+	float: right;
 	padding-top: 3px;
 }
 
@@ -76,8 +74,10 @@ header {
 .popup .button { float: left; }
 
 #title {	
+	float: left;
+
 	color: #EEE;
-	
+
 	font-family: "proxima-nova";
 	font-size: 28px;
 	font-weight: 100;
@@ -145,7 +145,7 @@ hr {
 @media screen and (min-device-width: 1200px) {
 	.project { width: 25%; }
 
-	header #title { font-size: 30px; left: 30px; }
+	header #title { font-size: 30px; }
 }
 
 .pwrapper {
