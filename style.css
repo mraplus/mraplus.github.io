@@ -21,10 +21,11 @@ body {
 
 header {
 	background-color: #2B1E17;
+	
 	float: left;
 	padding: 10px 20px;
 	width: 100%;
-	display: block;
+	display: block; box-sizing: border-box;
 }
 
 #fade {
