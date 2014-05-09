@@ -33,7 +33,12 @@ $(document).ready(function (e) {
 	
 	$("#searchField").on('input', function () {
 		// get matching elements
-		var matches = $(".project:search(" + $(this).val() + ")").show();
+		var text = $(this).val();
+		if (text.toLowerCase() === "do work") {
+			$("<div style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.5; color: white; font-size: 72pt; font-weight: bold; text-align: center'>SON!</div>").appendTo("body").fadeOut(fadeTime, function() { $(this).remove(); });
+		}
+		
+		var matches = $(".project:search(" + text + ")").show();
 		$(".project").not(matches).hide();
 	});
 	
