@@ -44,4 +44,7 @@ function generateTiles() { // sorts projects and reprints them
 			opacity: '1'
 		});
 	});
+	
+	$(".project:last-child").css( { 'margin-bottom': height });
+
 }
