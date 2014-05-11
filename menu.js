@@ -39,7 +39,7 @@ $(document).ready(function (e) {
 		}
 		
 		var matches = $(".project:search(" + text + ")").show();
-		if (matches.length === 0) $("#content").html("<span style='margin: 0 100px; font-size: 24px;top: 25px;position: relative;;'>No matches found</span");
+		if (matches.length === 0) $("#content").html("<span style='margin: 0 100px; font-size: 24px;top: 25px;position: relative;'>No matches found</span");
 		$(".project").not(matches).hide();
 	});
 	
