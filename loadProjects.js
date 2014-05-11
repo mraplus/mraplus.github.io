@@ -5,10 +5,13 @@ function sortf(a, b) {
 
 		if (Aindex > Bindex) return sortAscending;
 		else if (Bindex > Aindex) return -sortAscending;
+		
 		else {
 			if (a['gsx$name'] > b['gsx$name']) return sortAscending;
 			else return -sortAscending;
 		}
+	} else if(sortBy === "gsx$author") { 
+		// code coming soon
 	} else {
 		if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
 		else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
@@ -27,6 +30,7 @@ function generateTiles() { // sorts projects and reprints them
 
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";
+		var authors = item['gsx$author']['$t'].split(/,|([Aa]nd)/)
 		
 		if (item['gsx$link']['$t'] === "") text += "<p class='projectTitle noLink'>" + item['gsx$name']['$t'] + "</p>";
 		else text += "<a class='projectTitle' href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a>";
