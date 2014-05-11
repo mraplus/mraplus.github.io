@@ -39,6 +39,7 @@ $(document).ready(function (e) {
 		}
 		
 		var matches = $(".project:search(" + text + ")").show();
+		if (matches.length === 0) $("#content").html("<span style='margin: 100px; font-size: 24px;'>No matches found</span");
 		$(".project").not(matches).hide();
 	});
 	
