@@ -34,7 +34,7 @@ function generateTiles() { // sorts projects and reprints them
 		var authors = item['gsx$author']['$t'].split(/[, ]?and ?|, /).filter(function(elem) { return elem !== "" }).sort(); // sometimes regex gives empty results
 		var sortedAuthors = "";
 		for (var i = 0; i < authors.length; i++) {
-			if (authors.length === 2) sortedAuthors = authors[0] + " and " + authors[1];
+			if (authors.length === 2) { sortedAuthors = authors[0] + " and " + authors[1]; break; }
 			if (i === 0) sortedAuthors += authors[0];
 			else if (i < authors.length - 1) sortedAuthors += ", " + authors[i];
 			else sortedAuthors += ", and" + authors[i];
