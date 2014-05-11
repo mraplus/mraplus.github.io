@@ -197,12 +197,12 @@ hr {
 .author::before { content: "By "; }
 
 /* colors :D */
-.project:nth-child(6n + 1) { background-color: hsl(45, 100%, 50%); } /* red, first one */
-.project:nth-child(6n + 2) { background-color: hsl(90, 100%, 50%); } /* blue, second one */
-.project:nth-child(6n + 3) { background-color: hsl(135, 100%, 50%); } /* brown, third one */
-.project:nth-child(6n + 4) { background-color: hsl(180, 100%, 50%); } /* purple, fourth one */
-.project:nth-child(6n + 5) { background-color: hsl(225, 100%, 50%); } /* green, fifth one */
-.project:nth-child(6n + 6) { background-color: hsl(270, 100%, 50%); } /* orange, sixth one */
+.project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
+.project:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
+.project:nth-child(6n + 3) { background-color: #96281B; } /* brown, third one */
+.project:nth-child(6n + 4) { background-color: #8e44ad; } /* purple, fourth one */
+.project:nth-child(6n + 5) { background-color: #16a085; } /* green, fifth one */
+.project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
 
 .button {
 	margin: 5px;
