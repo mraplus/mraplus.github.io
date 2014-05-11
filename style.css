@@ -197,12 +197,12 @@ hr {
 .author::before { content: "By "; }
 
 /* colors :D */
-.project:nth-child(6n + 1) { background-color: hsl(0, 100%, 30%); }
-.project:nth-child(6n + 2) { background-color: hsl(24, 100%, 50%); } /* cheating here, yellow didn't look good */
-.project:nth-child(6n + 3) { background-color: hsl(120, 100%, 30%); }
-.project:nth-child(6n + 4) { background-color: hsl(180, 100%, 30%); }
-.project:nth-child(6n + 5) { background-color: hsl(240, 100%, 30%); } 
-.project:nth-child(6n + 6) { background-color: hsl(300, 100%, 30%); } 
+.project:nth-child(6n + 1) { background-color: hsl(0, 100%, 30%); } /* red, first one */
+.project:nth-child(6n + 2) { background-color: hsl(60, 100%, 30%); } /* blue, second one */
+.project:nth-child(6n + 3) { background-color: hsl(120, 100%, 30%); } /* brown, third one */
+.project:nth-child(6n + 4) { background-color: hsl(180, 100%, 30%); } /* purple, fourth one */
+.project:nth-child(6n + 5) { background-color: hsl(240, 100%, 30%); } /* green, fifth one */
+.project:nth-child(6n + 6) { background-color: hsl(300, 100%, 30%); } /* orange, sixth one */
 
 .button {
 	margin: 5px;
