@@ -27,7 +27,7 @@ $(document).ready(function (e) {
 		});
 		$("#searchForm").fadeIn(fadeTime, function () {
 			isSearchVisible = true;
-			$("#searchField").focus();
+			$("#searchField").focus().select();
 		});
 	});
 	
