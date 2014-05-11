@@ -189,6 +189,8 @@ hr {
 	font-weight: bold;
 }
 
+.author::before { content: "By "; }
+
 /* colors :D */
 .project:nth-child(6n + 1) { background-color: #e74c3c; } /* red, first one */
 .project:nth-child(6n + 2) { background-color: #2980b9; } /* blue, second one */
