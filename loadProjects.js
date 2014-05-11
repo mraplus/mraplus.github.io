@@ -37,7 +37,7 @@ function generateTiles() { // sorts projects and reprints them
 			if (authors.length === 2) { sortedAuthors = authors[0] + " and " + authors[1]; break; }
 			if (i === 0) sortedAuthors += authors[0];
 			else if (i < authors.length - 1) sortedAuthors += ", " + authors[i];
-			else sortedAuthors += ", and" + authors[i];
+			else sortedAuthors += ", and " + authors[i];
 		}
 		
 		if (item['gsx$link']['$t'] === "") text += "<p class='projectTitle noLink'>" + item['gsx$name']['$t'] + "</p>";
