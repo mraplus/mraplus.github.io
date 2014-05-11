@@ -30,7 +30,11 @@
 		s.parentNode.insertBefore(tk, s);
 	})();
 	</script>
+    
    	<script src="jquery.js"></script>
+    
+    <script src="loadProjects.js"></script>
+	<script src="menu.js"></script>
 
 	<script>
 	// global variables
@@ -48,6 +52,7 @@
 	// JSON callback
 	function parseFormData(json) {
 		data = json['feed']['entry'];
+		generateTiles();
 	}
 
 	// menu
@@ -64,11 +69,8 @@
 	});
 	</script>
 
-	<script src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
+	<script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
 	
-    <script src="loadProjects.js"></script>
-	<script src="menu.js"></script>
-
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" type="image/png" href="icon.png">
 
@@ -120,6 +122,14 @@
 	    </div>
 	</div>
 	
-	<div id="content"></div>
+	<div id="content">
+    	<div class="loading">
+        	<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+        </div>
+    </div>
 </body>
 </html>

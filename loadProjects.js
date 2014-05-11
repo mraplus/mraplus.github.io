@@ -19,10 +19,6 @@ function sortf(a, b) {
 	}
 }
 
-$(document).ready(function () { // makes the project grid
-	generateTiles();
-});
-
 function generateTiles() { // sorts projects and reprints them
 	var projects = [];
 
