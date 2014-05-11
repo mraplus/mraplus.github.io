@@ -30,13 +30,20 @@ function generateTiles() { // sorts projects and reprints them
 
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";
-		var authors = item['gsx$author']['$t'].split(/,|([Aa]nd)/)
+		
+		var authors = item['gsx$author']['$t'].split(/[, ]?and ?|, /).filter(function(elem) { return elem !== "" }).sort(); // sometimes regex gives empty results
+		var sortedAuthors = "";
+		for (int i = 0; i < authors.length; i++) {
+			if (i === 0) sortAuthors += authors[0];
+			else if (i < authors.length - 1) sortAuthors += ", " + authors[i];
+			else sortAuthors += ", and" + authors[i];
+		}
 		
 		if (item['gsx$link']['$t'] === "") text += "<p class='projectTitle noLink'>" + item['gsx$name']['$t'] + "</p>";
 		else text += "<a class='projectTitle' href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a>";
 		
 		text += "<p class='description'>" + item['gsx$description']['$t'] + "</p>";
-		text += "<p class='author'>" + item['gsx$author']['$t'] + "</p>";
+		text += "<p class='author'>" + sortedAuthors + "</p>";
 		text += "</div></div>";
 		
 		projects.push(text);
