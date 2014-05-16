@@ -14,9 +14,9 @@ $(document).ready(function (e) {
 		});
 	});
 
-	$("#sortMenu > div[value]").click(function () { // handles sort button clicks
+	$("#sortMenu > div[value]").click(function () {
 		var requestedSort = "gsx$" + $(this).attr("value");
-		if (sortBy === requestedSort) sortAscending *= -1; // flip sort direction
+		if (sortBy === requestedSort) sortAscending *= -1;
 		else sortBy = requestedSort;
 
 		generateTiles();
@@ -36,7 +36,7 @@ $(document).ready(function (e) {
 		// get matching elements
 		var text = $(this).val();
 		if (text.toLowerCase() === atob("ZG8gd29yaw==")) {
-			$("<div style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 40px; background-color: black; opacity: 0.5; color: white; font-size: 150px; font-weight: bold; text-align: center'>" + atob("U09OIQ==") + "</div>").appendTo("body").fadeOut(fadeTime, function() { $(this).remove(); });
+			$(atob("PGRpdiBzdHlsZT0ncG9zaXRpb246IGZpeGVkOyB0b3A6IDA7IGxlZnQ6IDA7IHdpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IHBhZGRpbmc6IDQwcHg7IGJhY2tncm91bmQtY29sb3I6IGJsYWNrOyBvcGFjaXR5OiAwLjU7IGNvbG9yOiB3aGl0ZTsgZm9udC1zaXplOiAxNTBweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IHRleHQtYWxpZ246IGNlbnRlcic+U09OITwvZGl2Pg==")).appendTo("body").fadeOut(fadeTime, function() { $(this).remove(); });
 		}
 		
 		var matches = $(".project:search(" + text + ")").show();
@@ -47,9 +47,7 @@ $(document).ready(function (e) {
 	});
 	
 	$(".openBox").click(function() {
-        // blur background	
-		$("#fade").show().animate( { opacity: 0.5 }, { duration: fadeTime } );
-		
+		$("#fade").show().animate( { opacity: 0.5 }, { duration: fadeTime } );		
 		$("#" + $(this).attr('value')).fadeIn(fadeTime);
     });
 	
@@ -76,7 +74,6 @@ $(document).click(function (e) {
 	}
 });
 
-// trigger search on ctrl-f
 $(document).keydown(function (e) {
 	if ((e.which == 102 || e.which == 70) && e.ctrlKey) {
 		e.preventDefault();
