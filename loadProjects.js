@@ -46,7 +46,7 @@ function generateTiles() { // sorts projects and reprints them
 		projects.push(text);
 	});
 	
-	$("#namesData").html(authors.join("<br>"));
+	$("#namesData").html(authors.sort().join("<br>"));
 	
 	$(".loading").hide();
 	$("#content").append(projects.join(''));
