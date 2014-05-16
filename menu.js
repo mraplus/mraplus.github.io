@@ -39,15 +39,11 @@ $(document).ready(function (e) {
 			$("<div style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 40px; background-color: black; opacity: 0.5; color: white; font-size: 150px; font-weight: bold; text-align: center'>" + atob("U09OIQ==") + "</div>").appendTo("body").fadeOut(fadeTime, function() { $(this).remove(); });
 		}
 		
-		var matches = $(".project:search(" + text + ")").remove();
+		var matches = $(".project:search(" + text + ")").show();
 		if (matches.length === 0) $(".projectMessage").show();
 		else $(".projectMessage").hide();
 		
 		$(".project").not(matches).hide();
-		
-		// sort matches
-		matches.sort(sortProjects);		
-		matches.prependTo("#content");
 	});
 	
 	$("#credits").click(function() {
@@ -75,6 +71,8 @@ $(document).click(function (e) {
 	} else if (isSearchVisible) {
 		if (!searchBox.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function () {
 			searchBox.val('');
+			$(".project").show();
+			$(".projectMessage").hide();
 			isSearchVisible = false;
 		});
 	}

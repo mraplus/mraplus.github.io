@@ -1,5 +1,4 @@
-function sortProjects(a, b) {
-	/*
+function sortf(a, b) {
 	if (sortBy === "gsx$category") {
 		var Aindex = categoryOrer.indexOf(a[sortBy]['$t']);
 		var Bindex = categoryOrder.indexOf(b[sortBy]['$t']);
@@ -14,17 +13,6 @@ function sortProjects(a, b) {
 	else {
 		if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
 		else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
-		return 0;
-	}*/
-	
-	if (sortBy === "gsx$name") {
-		// get name of both
-		var aTitle = $(a).children().children(".projectTitle").text();
-		var bTitle = $(b).children().children(".projectTitle").text();
-		
-		if (aTitle > bTitle) return sortAscending;
-		else if (aTitle < bTitle) return -sortAscending;
-		
 		return 0;
 	}
 }
