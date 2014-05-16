@@ -2,6 +2,7 @@ $(document).ready(function (e) {
 	$(".popup").hide();
 	$(".credits").hide();
 	$("#fade").hide();
+	$(".projectMessage").hide();
 
 	$("#sort").click(function (e) {
 		// fade out search if it's open
@@ -39,8 +40,8 @@ $(document).ready(function (e) {
 		}
 		
 		var matches = $(".project:search(" + text + ")").show();
-		if (matches.length === 0) $(".projectMessage").text("No matches found");
-		else $(".projectMessage").text("");
+		if (matches.length === 0) $(".projectMessage").show();
+		else $(".projectMessage").hide();
 		
 		$(".project").not(matches).hide();
 	});

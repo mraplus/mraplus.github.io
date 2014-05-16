@@ -43,7 +43,9 @@ function generateTiles() { // sorts projects and reprints them
 		
 		projects.push(text);
 	});
-	$("#content").html(projects.join(''));
+	$(".loading").hide();
+	$("#content").append(projects.join(''));
+	
 	$(".project").hover(function (e) { // darken inactive <div>s
 		$(".project").not(this).stop().animate({
 			opacity: fadeValue
