@@ -4,12 +4,12 @@ function sortf(a, b) {
 		var Bindex = categoryOrder.indexOf(b[sortBy]['$t']);
 
 		if (Aindex > Bindex) return sortAscending;
-		else if (Bindex > Aindex) return -sortAscending;
-		
-		else {
+		else if (Aindex < BAindex) return -sortAscending;
+		else { // fall back to name sort
 			if (a['gsx$name'] > b['gsx$name']) return sortAscending;
 			else return -sortAscending;
 		}
+	}
 	else {
 		if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
 		else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
@@ -20,7 +20,7 @@ function sortf(a, b) {
 function generateTiles() { // sorts projects and reprints them
 	var projects = [];
 
-	data.sort(sortf);
+	//data.sort(sortf);
 
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";
