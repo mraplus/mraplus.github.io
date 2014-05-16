@@ -70,8 +70,9 @@ $(document).click(function (e) {
 		});
 	} else if (isSearchVisible) {
 		if (!searchBox.is(e.target) && searchBox.has(e.target).length === 0) searchBox.fadeOut(fadeTime, function () {
-			searchBox.val(''); // clear search box
-			$(".project").show(); // show all the projects again
+			searchBox.val(''); /
+			$(".project").show();
+			$(".projectMessage").hide();
 			isSearchVisible = false;
 		});
 	}
