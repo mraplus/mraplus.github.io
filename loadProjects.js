@@ -10,9 +10,7 @@ function sortf(a, b) {
 			if (a['gsx$name'] > b['gsx$name']) return sortAscending;
 			else return -sortAscending;
 		}
-	} else if(sortBy === "gsx$author") { 
-		// code coming soon
-	} else {
+	else {
 		if (a[sortBy]['$t'] > b[sortBy]['$t']) return sortAscending;
 		else if (a[sortBy]['$t'] < b[sortBy]['$t']) return -sortAscending;
 		return 0;
