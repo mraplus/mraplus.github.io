@@ -25,7 +25,7 @@ function generateTiles() { // sorts projects and reprints them
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";
 		
-		var authors = item['gsx$author']['$t'].split(/[, ]+and ?|, /).filter(function(elem) { return elem !== "" }).sort(); // sometimes regex gives empty results
+		var authors = item['gsx$author']['$t'].split(/[, ]+and ?| *, */); // sometimes regex gives empty results
 		var sortedAuthors = "";
 		for (var i = 0; i < authors.length; i++) {
 			if (authors.length === 2) { sortedAuthors = authors[0] + " and " + authors[1]; break; }
