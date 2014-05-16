@@ -95,6 +95,11 @@ header {
 	position: fixed;
 }
 
+#namesData {
+	max-height: 250px;
+	overflow: auto;
+}
+
 .centeredPopup > h3 { margin: 0; }
 
 hr {

@@ -25,13 +25,15 @@ function generateTiles() { // sorts projects and reprints them
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";
 		
-		var authors = item['gsx$author']['$t'].split(/[, ]+and ?| *, */); // sometimes regex gives empty results
+		var currentAuthors = item['gsx$author']['$t'].split(/[, ]+and ?| *, */);
+		authors = authors.concat(currentAuthors);
+		
 		var sortedAuthors = "";
-		for (var i = 0; i < authors.length; i++) {
-			if (authors.length === 2) { sortedAuthors = authors[0] + " and " + authors[1]; break; }
-			if (i === 0) sortedAuthors += authors[0];
-			else if (i < authors.length - 1) sortedAuthors += ", " + authors[i];
-			else sortedAuthors += ", and " + authors[i];
+		for (var i = 0; i < currentAuthors.length; i++) {
+			if (currentAuthors.length === 2) { sortedAuthors = currentAuthors[0] + " and " + currentAuthors[1]; break; }
+			if (i === 0) sortedAuthors += currentAuthors[0];
+			else if (i < currentAuthors.length - 1) sortedAuthors += ", " + currentAuthors[i];
+			else sortedAuthors += ", and " + currentAuthors[i];
 		}
 		
 		if (item['gsx$link']['$t'] === "") text += "<p class='projectTitle noLink'>" + item['gsx$name']['$t'] + "</p>";
@@ -43,6 +45,9 @@ function generateTiles() { // sorts projects and reprints them
 		
 		projects.push(text);
 	});
+	
+	$("#namesData").html(authors.join("<br>"));
+	
 	$(".loading").hide();
 	$("#content").append(projects.join(''));
 	
