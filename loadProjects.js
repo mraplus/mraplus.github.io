@@ -17,7 +17,8 @@ function sortf(a, b) {
 	}
 }
 
-function generateTiles() { // sorts projects and reprints them
+function generateTiles() { 
+	$(".project").remove();
 	var projects = [];
 
 	data.sort(sortf);
