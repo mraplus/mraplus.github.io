@@ -204,6 +204,13 @@ hr {
 .project:nth-child(6n + 5) { background-color: #16a085; } /* green, fifth one */
 .project:nth-child(6n + 6) { background-color: #E67E22; } /* orange, sixth one */
 
+.projectMessage {
+	margin: 0 100px; 
+	font-size: 24px;
+	top: 25px;
+	position: relative;
+}
+
 .button {
 	margin: 5px;
 	padding: 10px;
