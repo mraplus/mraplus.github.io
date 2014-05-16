@@ -1,6 +1,6 @@
 $(document).ready(function (e) {
 	$(".popup").hide();
-	$(".credits").hide();
+	$(".centeredPopup").hide();
 	$("#fade").hide();
 	$(".projectMessage").hide();
 
@@ -14,7 +14,7 @@ $(document).ready(function (e) {
 		});
 	});
 
-	$("div[value]").click(function () { // handles sort button clicks
+	$("#sortMenu > div[value]").click(function () { // handles sort button clicks
 		var requestedSort = "gsx$" + $(this).attr("value");
 		if (sortBy === requestedSort) sortAscending *= -1; // flip sort direction
 		else sortBy = requestedSort;
@@ -46,16 +46,15 @@ $(document).ready(function (e) {
 		$(".project").not(matches).hide();
 	});
 	
-	$("#credits").click(function() {
+	$(".openBox").click(function() {
         // blur background	
-		
 		$("#fade").show().animate( { opacity: 0.5 }, { duration: fadeTime } );
 		
-		$(".credits").fadeIn(fadeTime);
+		$("#" + $(this).attr('value')).fadeIn(fadeTime);
     });
 	
-	$("#closeCredits, #fade").click(function(e) {
-        $(".credits").fadeOut(fadeTime);
+	$(".closeCenteredPopup, #fade").click(function(e) {
+        $(".centeredPopup").fadeOut(fadeTime);
 		$("#fade").animate( { opacity: 0 }, fadeTime, function() { $("#fade").hide(); } );
     });
 });

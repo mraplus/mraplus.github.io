@@ -20,7 +20,7 @@ function sortf(a, b) {
 function generateTiles() { // sorts projects and reprints them
 	var projects = [];
 
-	//data.sort(sortf);
+	data.sort(sortf);
 
 	$.each(data, function (index, item) {
 		var text = "<div class='project " + item['gsx$category']['$t'] + "'><div class='pwrapper'>";

@@ -83,8 +83,9 @@
 		<div id="right">
        		<a target="_blank" href="https://docs.google.com/forms/d/1OT0jZMMEMUJdBZQ92cW7zonSbUDEnMd5U8hppL7Dlf8/viewform?usp=send_form">Submit Project</a>
 			<a target="_blank" href="https://plus.google.com/100327193111348672671" rel="publisher">Visit us on Google+</a>
-
-       		<div id="credits">Credits</div>
+			
+            <div class="openBox" value="namesBox">Names</div>
+       		<div class="openBox" value="creditsBox">Credits</div>
 			<div id="search">Search</div>
 			<div id="sort">Arrange</div>
 		</div>	
@@ -102,7 +103,16 @@
 		<input type="text" id="searchField">
 	</div>
 
-	<div class="credits">
+	<div class="centeredPopup" id="namesBox">
+    	<h3>Names</h3>
+        <p>People whose project appears on this site</p>
+        <hr>
+		<div class="centeredPopupButtons">
+        	<div class="button closeCenteredPopup">Close</div>
+        </div>
+    </div>
+
+	<div class="centeredPopup" id="creditsBox">
     	<h3>Credits</h3>
         <hr>
 		<p>Design: Ishan Bhargava</p>
@@ -116,9 +126,9 @@
 		Send us an email at <a href="mailto:doworkson2014@gmail.com">doworkson2014@gmail.com</a>
         </p>
         
-        <div id="creditButtons">
+        <div class="centeredPopupButtons">
 			<div class="button" onClick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View Source on GitHub</div>
-			<div class="button" id="closeCredits">Close</div>
+			<div class="button closeCenteredPopup">Close</div>
 	    </div>
 	</div>
 	

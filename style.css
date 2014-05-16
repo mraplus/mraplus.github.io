@@ -83,7 +83,7 @@ header {
 	font-weight: 100;
 }
 
-.credits {
+.centeredPopup {
 	border-radius: 10px;
 	width: 20%;
 	background-color: white;
@@ -95,7 +95,7 @@ header {
 	position: fixed;
 }
 
-.credits > h3 { margin: 0; }
+.centeredPopup > h3 { margin: 0; }
 
 hr {
 	border: 0;
@@ -103,7 +103,7 @@ hr {
 	height: 1px;
 }
 
-#creditButtons { text-align: center; }
+.centeredPopupButtons { text-align: center; }
 
 #content {
 	width: 100%; height: 100%;
