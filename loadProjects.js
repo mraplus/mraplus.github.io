@@ -41,6 +41,7 @@ function generateTiles() {
 		else text += "<a class='projectTitle' href='" + item['gsx$link']['$t'] + "'>" + item['gsx$name']['$t'] + "</a>";
 		
 		text += "<p class='description'>" + item['gsx$description']['$t'] + "</p>";
+		text += "<p class='projectType'>" + item['gsx$type']['$t'] + "</p>";
 		text += "<p class='author'>" + sortedAuthors + "</p>";
 		text += "</div></div>";
 		
