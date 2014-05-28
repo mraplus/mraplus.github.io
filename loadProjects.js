@@ -4,7 +4,7 @@ function sortf(a, b) {
 		var Bindex = categoryOrder.indexOf(b[sortBy]['$t']);
 
 		if (Aindex > Bindex) return sortAscending;
-		else if (Aindex < BAindex) return -sortAscending;
+		else if (Aindex < Bindex) return -sortAscending;
 		else { // fall back to name sort
 			if (a['gsx$name'] > b['gsx$name']) return sortAscending;
 			else return -sortAscending;
