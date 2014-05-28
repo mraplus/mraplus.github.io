@@ -1,6 +1,6 @@
 function sortf(a, b) {
 	if (sortBy === "gsx$category") {
-		var Aindex = categoryOrer.indexOf(a[sortBy]['$t']);
+		var Aindex = categoryOrder.indexOf(a[sortBy]['$t']);
 		var Bindex = categoryOrder.indexOf(b[sortBy]['$t']);
 
 		if (Aindex > Bindex) return sortAscending;
