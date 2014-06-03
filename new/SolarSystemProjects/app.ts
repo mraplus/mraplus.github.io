@@ -1,4 +1,5 @@
-﻿/// <reference path="knockout.d.ts" />
+﻿/// <reference path="Knockout.d.ts" />
+/// <reference path="jQuery.d.ts" />
 
 /** A container for the information associated with each project */
 class Project {
@@ -24,13 +25,13 @@ class Project {
 class ProjectViewModel {
     /** Is the sort menu visible? */
     sortVisible: KnockoutObservable<boolean>;
-    
+
     /** Is the search field visible? */
     searchVisible: KnockoutObservable<boolean>;
     /** The string the user entered for searching */
     searchInput: KnockoutObservable<string>;
-    /** Are there no search results? Used to display a "no matches" message */
-    noMatches: KnockoutObservable<boolean>;
+    /** The amount of results found */
+    searchResultText: KnockoutObservable<string>;
 
     /** The array of the projects. Updates the grid on change (i.e. order) */
     projects: KnockoutObservableArray<Project>;
@@ -41,25 +42,29 @@ class ProjectViewModel {
 
         this.sortVisible = ko.observable<boolean>(false);
         this.searchVisible = ko.observable<boolean>(false);
-        this.noMatches = ko.observable<boolean>(false);
+        this.searchResultText = ko.observable<string>("");
 
         this.searchInput = ko.observable<string>("");
         this.searchInput.subscribe((value: string) => {
-            projects.forEach((project: Project, index: number, array: Project[]) => {
-                var visibleCount: number = 0;
-                if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-                    array[index].visible(false);
-                }
-                else {
+            if (value === "") {
+                this.searchResultText("Enter something to search for");
+                projects.forEach((project: Project, index: number, array: Project[]) => {
                     array[index].visible(true);
-                    visibleCount += 1;
-                }
-                if (visibleCount === 0) {
-                    this.noMatches(true);
-                } else {
-                    this.noMatches(false);
-                }
-            });
+                });
+            }
+            else {
+                var resultCount: number = 0;
+                projects.forEach((project: Project, index: number, array: Project[]) => {
+                    if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
+                        array[index].visible(false);
+                    }
+                    else {
+                        array[index].visible(true);
+                        resultCount += 1;
+                    }
+                });
+                this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
+            }
         });
     }
 
@@ -71,7 +76,7 @@ class ProjectViewModel {
     /** Toggles the visiblity of the sort menu */
     toggleSort() {
         // disable all other popup boxes
-        this.searchVisible(false); 
+        this.searchVisible(false);
 
         this.sortVisible(!this.sortVisible());
     }
@@ -79,7 +84,7 @@ class ProjectViewModel {
     /** Toggles the visibility of the search box */
     toggleSearch() {
         // disable all other popup boxes
-        this.searchVisible(false);
+        this.sortVisible(false);
 
         this.searchVisible(!this.searchVisible());
     }
@@ -99,7 +104,22 @@ class ProjectViewModel {
     }
 }
 
+interface KnockoutBindingHandlers {
+    fadeVisible: {};
+}
+
 function onLoadedJson(data: any) {
+    // assign the custom event thing
+    ko.bindingHandlers.fadeVisible = {
+        init: (element, valueAccessor) => {
+            $(element).toggle(ko.unwrap(valueAccessor()));
+        },
+
+        update: (element, valueAccessor) => {
+            ko.unwrap(valueAccessor()) ? $(element).fadeIn() : $(element).fadeOut();
+        }
+    }
+
     // make a list of all the projects
     var projects: Project[] = [];
     data['feed']['entry'].forEach((item) => {
@@ -108,7 +128,7 @@ function onLoadedJson(data: any) {
             item['gsx$link']['$t'],
             item['gsx$description']['$t'],
             item['gsx$author']['$t']
-        ));
+            ));
     });
 
     // apply to HTML

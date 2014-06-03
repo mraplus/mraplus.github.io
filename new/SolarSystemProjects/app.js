@@ -17,24 +17,27 @@ var ProjectViewModel = (function () {
 
         this.sortVisible = ko.observable(false);
         this.searchVisible = ko.observable(false);
-        this.noMatches = ko.observable(false);
+        this.searchResultText = ko.observable("");
 
         this.searchInput = ko.observable("");
         this.searchInput.subscribe(function (value) {
-            projects.forEach(function (project, index, array) {
-                var visibleCount = 0;
-                if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-                    array[index].visible(false);
-                } else {
+            if (value === "") {
+                _this.searchResultText("Enter something to search for");
+                projects.forEach(function (project, index, array) {
                     array[index].visible(true);
-                    visibleCount += 1;
-                }
-                if (visibleCount === 0) {
-                    _this.noMatches(true);
-                } else {
-                    _this.noMatches(false);
-                }
-            });
+                });
+            } else {
+                var resultCount = 0;
+                projects.forEach(function (project, index, array) {
+                    if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
+                        array[index].visible(false);
+                    } else {
+                        array[index].visible(true);
+                        resultCount += 1;
+                    }
+                });
+                _this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
+            }
         });
     }
     ProjectViewModel.prototype.openLink = function (item) {
@@ -48,7 +51,7 @@ var ProjectViewModel = (function () {
     };
 
     ProjectViewModel.prototype.toggleSearch = function () {
-        this.searchVisible(false);
+        this.sortVisible(false);
 
         this.searchVisible(!this.searchVisible());
     };
@@ -69,6 +72,15 @@ var ProjectViewModel = (function () {
 })();
 
 function onLoadedJson(data) {
+    ko.bindingHandlers.fadeVisible = {
+        init: function (element, valueAccessor) {
+            $(element).toggle(ko.unwrap(valueAccessor()));
+        },
+        update: function (element, valueAccessor) {
+            ko.unwrap(valueAccessor()) ? $(element).fadeIn() : $(element).fadeOut();
+        }
+    };
+
     var projects = [];
     data['feed']['entry'].forEach(function (item) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));

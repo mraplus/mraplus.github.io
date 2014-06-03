@@ -28,19 +28,23 @@
 
 input[type=text] {
   padding: 10px;
-  color: white;
-  background-color: rgba(61, 142, 185, 0.5);
   border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(248, 251, 252, 0.3);
   font-size: 18px; }
 
 .menu {
   background-color: #3D8EB9;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
   position: absolute;
-  top: 60px;
-  right: 20px; }
+  top: 110px;
+  right: 25px; }
+
+main {
+  float: left; }
 
 .project {
   box-sizing: border-box;
@@ -69,28 +73,21 @@ input[type=text] {
     font-weight: bold;
     margin: 10px 0; }
 
-.project:nth-child(8n+1) {
+.project:not([style*="display: none"]):nth-child(8n+1) {
   background-color: #E25041; }
-
-.project:nth-child(8n+2) {
+.project:not([style*="display: none"]):nth-child(8n+2) {
   background-color: #3D8EB9; }
-
-.project:nth-child(8n+3) {
+.project:not([style*="display: none"]):nth-child(8n+3) {
   background-color: #FBA026; }
-
-.project:nth-child(8n+4) {
+.project:not([style*="display: none"]):nth-child(8n+4) {
   background-color: #61BD6D; }
-
-.project:nth-child(8n+5) {
+.project:not([style*="display: none"]):nth-child(8n+5) {
   background-color: #FBA026; }
-
-.project:nth-child(8n+6) {
+.project:not([style*="display: none"]):nth-child(8n+6) {
   background-color: #61BD6D; }
-
-.project:nth-child(8n+7) {
+.project:not([style*="display: none"]):nth-child(8n+7) {
   background-color: #E25041; }
-
-.project:nth-child(8n+8) {
+.project:not([style*="display: none"]):nth-child(8n+8) {
   background-color: #3D8EB9; }
 
 #noMatches {

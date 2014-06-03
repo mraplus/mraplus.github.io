@@ -6,6 +6,7 @@
     <script type="text/javascript" src="//use.typekit.net/eda3eaj.js"></script>
     <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 
+    <script src="jQuery.js"></script>
     <script src="Knockout.js"></script>
     <script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=onLoadedJson"></script>
     
@@ -24,13 +25,14 @@
         </nav>
     </header>
 
-    <section class="menu" data-bind="visible: sortVisible">
+    <section class="menu" data-bind="fadeVisible: sortVisible">
         <div class="button" data-value="name" data-bind="click: sortProjects">Name</div>
         <div class="button" data-value="author" data-bind="click: sortProjects">Author</div>
     </section>
 
-    <section class="menu" data-bind="visible: searchVisible">
-        <input type="text" placeholder="Enter search term..." data-bind="value: searchInput, valueUpdate: 'input'" />
+    <section class="menu" data-bind="fadeVisible: searchVisible">
+        <input type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
+        <div data-bind="text: searchResultText"></div>
     </section>
 
     <main data-bind="foreach: projects">
@@ -40,6 +42,5 @@
             <div class="author" data-bind="text: 'By ' + author"></div>
         </section>
     </main>
-    <section id="noMatches" data-bind="visible: noMatches">No matches found.</section>
 </body>
 </html>

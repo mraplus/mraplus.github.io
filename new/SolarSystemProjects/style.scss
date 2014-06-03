@@ -25,62 +25,83 @@ body {
 
         nav {
             float: right;
-            
+
             .button {
                 padding: 20px;
             }
         }
     }
 }
-    
+
 .button {
     color: black;
     display: inline-block;
     padding: 10px;
     background-color: $gray;
-    font-weight: bold;  
+    font-weight: bold;
     cursor: pointer;
     margin: 0 7px;
 }
 
 input[type=text] {
     padding: 10px;
-    color: white;
-    background-color: rgba($blue, 0.5);
+
     border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(lighten($blue, 50%), 0.3);
     font-size: 18px;
 }
 
 .menu {
     background-color: $blue;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
     position: absolute;
-    top: 60px;
-    right: 20px;
+    top: 110px;
+    right: 25px;
+}
+
+main {
+    float: left;
 }
 
 $break-small: 320px;
 $break-large: 1024px;
 
 @mixin respond-to($media) {
-  @if $media == handhelds {
-    @media only screen and (max-width: $break-small) { @content; }
-  }
-  @else if $media == medium-screens {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
-  }
-  @else if $media == wide-screens {
-    @media only screen and (min-width: $break-large) { @content; }
-  }
+    @if $media == handhelds {
+        @media only screen and (max-width: $break-small) {
+            @content;
+        }
+    }
+    @else if $media == medium-screens {
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {
+            @content;
+        }
+    }
+    @else if $media == wide-screens {
+        @media only screen and (min-width: $break-large) {
+            @content;
+        }
+    }
 }
+
 .project {
     box-sizing: border-box;
 
-    @include respond-to(handhelds) { width: 100%; }
-    @include respond-to(medium-screens) { width: 50%; }
-    @include respond-to(wide-screens) { width: 25%; }
+    @include respond-to(handhelds) {
+        width: 100%;
+    }
+
+    @include respond-to(medium-screens) {
+        width: 50%;
+    }
+
+    @include respond-to(wide-screens) {
+        width: 25%;
+    }
 
     height: 250px;
     overflow: auto;
@@ -105,42 +126,43 @@ $break-large: 1024px;
     }
 }
 
-.project:nth-child(8n + 1) {
-    background-color: $red;
-}
+.project:not([style*="display: none"]) {
+    &:nth-child(8n + 1) {
+        background-color: $red;
+    }
 
-.project:nth-child(8n + 2) {
-    background-color: $blue;
-}
+    &:nth-child(8n + 2) {
+        background-color: $blue;
+    }
 
-.project:nth-child(8n + 3) {
-    background-color: $yellow;
-}
+    &:nth-child(8n + 3) {
+        background-color: $yellow;
+    }
 
-.project:nth-child(8n + 4) {
-    background-color: $green;
-}
+    &:nth-child(8n + 4) {
+        background-color: $green;
+    }
 
-.project:nth-child(8n + 5) {
-    background-color: $yellow;
-}
+    &:nth-child(8n + 5) {
+        background-color: $yellow;
+    }
 
-.project:nth-child(8n + 6) {
-    background-color: $green;
-}
+    &:nth-child(8n + 6) {
+        background-color: $green;
+    }
 
-.project:nth-child(8n + 7) {
-    background-color: $red;
-}
+    &:nth-child(8n + 7) {
+        background-color: $red;
+    }
 
-.project:nth-child(8n + 8) {
-    background-color: $blue;
+    &:nth-child(8n + 8) {
+        background-color: $blue;
+    }
 }
 
 #noMatches {
     font: 24px "proxima-nova";
     color: black;
-
     margin: 20px;
     float: left;
 }
