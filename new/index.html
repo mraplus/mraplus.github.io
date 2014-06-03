@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <script src="Knockout.js"></script>
+    <script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=onLoadedJson"></script>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+
+    <title>Projects</title>
+</head>
+
+<body>
+    <header>
+        <h1>Chapter 14 Projects</h1>
+        <nav>
+            <div class="button" data-bind="click: toggleSort">Arrange</div>
+            <div class="button" data-bind="click: toggleSearch">Search</div>
+        </nav>
+    </header>
+
+    <section class="menu" data-bind="visible: sortVisible">
+        <div class="button" data-value="name" data-bind="click: sortProjects">Name</div>
+        <div class="button" data-value="author" data-bind="click: sortProjects">Author</div>
+    </section>
+
+    <section class="menu" data-bind="visible: searchVisible">
+        <input type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
+    </section>
+
+    <main data-bind="foreach: projects">
+        <section class="project" data-bind="visible: visible">
+            <header data-bind="text: name, click: $parent.goToLink"></header>
+            <div class="description" data-bind="text: description"></div>
+            <div class="author" data-bind="text: author"></div>
+        </section>
+    </main>
+</body>
+</html>
