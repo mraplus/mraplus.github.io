@@ -183,6 +183,11 @@ hr {
 	display: block;
 }
 
+.projectType {
+	text-align: right;
+	padding: 0 20px;
+}
+
 .nolink {
 	text-decoration: none;
 }
