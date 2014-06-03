@@ -27,14 +27,14 @@
     </section>
 
     <section class="menu" data-bind="visible: searchVisible">
-        <input type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
+        <input type="text" placeholder="Enter search term..." data-bind="value: searchInput, valueUpdate: 'input'" />
     </section>
 
     <main data-bind="foreach: projects">
         <section class="project" data-bind="visible: visible">
-            <header data-bind="text: name, click: $parent.goToLink"></header>
+            <header data-bind="text: name, click: $parent.openLink"></header>
             <div class="description" data-bind="text: description"></div>
-            <div class="author" data-bind="text: author"></div>
+            <div class="author" data-bind="text: 'By ' + author"></div>
         </section>
     </main>
 </body>

@@ -1,51 +1,65 @@
-﻿$red: #e74c3c;
-$blue: #2980b9;
-$brown: #96281B;
-$purple: #8e44ad;
-$green: #16a085;
-$orange: #E67E22;
+﻿$red: #E25041;
+$blue: #3D8EB9;
+$green: #61BD6D;
+$yellow: #FBA026;
+$purple: #9365B8;
+$gray: #EFEFEF;
 
 body {
     margin: 0 0;
     font-family: 'Segoe UI', sans-serif;
-}
+    color: white;
 
-header {
-    padding: 20px 10px;
-    float: left;
-    width: 100%;
-    box-sizing: border-box;
-
-    h1 {
-        font-weight: lighter;
-        font-size: 48px;
-        margin: 0 0;
+    > header {
+        background-color: $purple;
+        padding: 20px 20px;
         float: left;
-    }
+        width: 100%;
+        box-sizing: border-box;
 
-    nav {
-        float: right;
-        padding: 10px 0;
+        h1 {
+            font-weight: lighter;
+            font-size: 48px;
+            margin: 0 0;
+            float: left;
+        }
+
+        nav {
+            float: right;
+            
+            .button {
+                padding: 20px;
+            }
+        }
     }
 }
 
 .button {
+    color: black;
     display: inline-block;
-
-    text-decoration: underline;
+    padding: 10px;
+    background-color: $gray;
+    font-weight: bold;  
     cursor: pointer;
+    margin: 0 7px;
 }
 
+input[type=text] {
+    padding: 10px;
+    color: white;
+    background-color: rgba($blue, 0.5);
+    border: none;
+    font-size: 18px;
+}
 
 .menu {
     background-color: $blue;
     border-radius: 5px;
-    color: white;
     padding: 10px;
     box-sizing: border-box;
     position: absolute;
-    top: 50px;
-    right: 10px;
+    top: 60px;
+    right: 20px;
 }
 
 .project {
@@ -53,11 +67,11 @@ header {
     width: 25%;
     height: 250px;
     overflow: auto;
-    padding: 10px;
+    padding: 15px;
     float: left;
-    color: white;
 
     header {
+        padding: 5px 0;
         font-size: 24px;
         cursor: pointer;
         text-decoration: underline;
@@ -70,26 +84,34 @@ header {
     }
 }
 
-.project:nth-child(6n + 1) {
+.project:nth-child(8n + 1) {
     background-color: $red;
 }
 
-.project:nth-child(6n + 2) {
+.project:nth-child(8n + 2) {
     background-color: $blue;
 }
 
-.project:nth-child(6n + 3) {
-    background-color: $brown;
+.project:nth-child(8n + 3) {
+    background-color: $yellow;
 }
 
-.project:nth-child(6n + 4) {
-    background-color: $purple;
-}
-
-.project:nth-child(6n + 5) {
+.project:nth-child(8n + 4) {
     background-color: $green;
 }
 
-.project:nth-child(6n + 6) {
-    background-color: $orange;
+.project:nth-child(8n + 5) {
+    background-color: $yellow;
+}
+
+.project:nth-child(8n + 6) {
+    background-color: $green;
+}
+
+.project:nth-child(8n + 7) {
+    background-color: $blue;
+}
+
+.project:nth-child(8n + 8) {
+    background-color: $red;
 }

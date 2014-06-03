@@ -28,15 +28,19 @@ var ProjectViewModel = (function () {
             });
         });
     }
-    ProjectViewModel.prototype.goToLink = function (item) {
+    ProjectViewModel.prototype.openLink = function (item) {
         window.open(item.url, "_blank");
     };
 
     ProjectViewModel.prototype.toggleSort = function () {
+        this.searchVisible(false);
+
         this.sortVisible(!this.sortVisible());
     };
 
     ProjectViewModel.prototype.toggleSearch = function () {
+        this.searchVisible(false);
+
         this.searchVisible(!this.searchVisible());
     };
 
@@ -65,3 +69,4 @@ function onLoadedJson(data) {
     ko.applyBindings(model);
 }
 ;
+//# sourceMappingURL=app.js.map

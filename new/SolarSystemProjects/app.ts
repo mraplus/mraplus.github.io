@@ -54,16 +54,23 @@ class ProjectViewModel {
     }
 
     /** Opens (in a new window) the item's link */
-    goToLink(item: Project) {
+    openLink(item: Project) {
         window.open(item.url, "_blank");
     }
 
     /** Toggles the visiblity of the sort menu */
     toggleSort() {
+        // disable all other popup boxes
+        this.searchVisible(false); 
+
         this.sortVisible(!this.sortVisible());
     }
 
+    /** Toggles the visibility of the search box */
     toggleSearch() {
+        // disable all other popup boxes
+        this.searchVisible(false);
+
         this.searchVisible(!this.searchVisible());
     }
 
@@ -73,11 +80,9 @@ class ProjectViewModel {
         this.projects(this.projects().sort((a: Project, b: Project) => {
             if (a[sortBy] > b[sortBy]) {
                 return 1;
-            }
-            else if (a[sortBy] < b[sortBy]) {
+            } else if (a[sortBy] < b[sortBy]) {
                 return -1
-            }
-            else {
+            } else {
                 return 0;
             }
         }));
@@ -93,7 +98,7 @@ function onLoadedJson(data: any) {
             item['gsx$link']['$t'],
             item['gsx$description']['$t'],
             item['gsx$author']['$t']
-            ));
+        ));
     });
 
     // apply to HTML
