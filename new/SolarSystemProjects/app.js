@@ -12,18 +12,27 @@
 
 var ProjectViewModel = (function () {
     function ProjectViewModel(projects) {
+        var _this = this;
         this.projects = ko.observableArray(projects);
 
         this.sortVisible = ko.observable(false);
         this.searchVisible = ko.observable(false);
+        this.noMatches = ko.observable(false);
 
         this.searchInput = ko.observable("");
         this.searchInput.subscribe(function (value) {
             projects.forEach(function (project, index, array) {
+                var visibleCount = 0;
                 if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
                     array[index].visible(false);
                 } else {
                     array[index].visible(true);
+                    visibleCount += 1;
+                }
+                if (visibleCount === 0) {
+                    _this.noMatches(true);
+                } else {
+                    _this.noMatches(false);
                 }
             });
         });
@@ -68,5 +77,4 @@ function onLoadedJson(data) {
     var model = new ProjectViewModel(projects);
     ko.applyBindings(model);
 }
-;
 //# sourceMappingURL=app.js.map

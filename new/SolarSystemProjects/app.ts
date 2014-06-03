@@ -29,6 +29,8 @@ class ProjectViewModel {
     searchVisible: KnockoutObservable<boolean>;
     /** The string the user entered for searching */
     searchInput: KnockoutObservable<string>;
+    /** Are there no search results? Used to display a "no matches" message */
+    noMatches: KnockoutObservable<boolean>;
 
     /** The array of the projects. Updates the grid on change (i.e. order) */
     projects: KnockoutObservableArray<Project>;
@@ -39,15 +41,23 @@ class ProjectViewModel {
 
         this.sortVisible = ko.observable<boolean>(false);
         this.searchVisible = ko.observable<boolean>(false);
+        this.noMatches = ko.observable<boolean>(false);
 
         this.searchInput = ko.observable<string>("");
         this.searchInput.subscribe((value: string) => {
             projects.forEach((project: Project, index: number, array: Project[]) => {
+                var visibleCount: number = 0;
                 if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
                     array[index].visible(false);
                 }
                 else {
                     array[index].visible(true);
+                    visibleCount += 1;
+                }
+                if (visibleCount === 0) {
+                    this.noMatches(true);
+                } else {
+                    this.noMatches(false);
                 }
             });
         });
@@ -104,4 +114,4 @@ function onLoadedJson(data: any) {
     // apply to HTML
     var model = new ProjectViewModel(projects);
     ko.applyBindings(model);
-};
+}

@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8" />
 
+    <script type="text/javascript" src="//use.typekit.net/eda3eaj.js"></script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+
     <script src="Knockout.js"></script>
     <script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=onLoadedJson"></script>
     
@@ -14,7 +17,7 @@
 
 <body>
     <header>
-        <h1>Chapter 14 Projects</h1>
+        <h1>Iron Horse Solar System Projects</h1>
         <nav>
             <div class="button" data-bind="click: toggleSort">Arrange</div>
             <div class="button" data-bind="click: toggleSearch">Search</div>
@@ -37,5 +40,6 @@
             <div class="author" data-bind="text: 'By ' + author"></div>
         </section>
     </main>
+    <section id="noMatches" data-bind="visible: noMatches">No matches found.</section>
 </body>
 </html>

@@ -1,16 +1,15 @@
 ﻿body {
   margin: 0 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'myriad-pro', sans-serif;
   color: white; }
   body > header {
-    background-color: #9365B8;
+    background-color: #6e4a8b;
     padding: 20px 20px;
     float: left;
     width: 100%;
     box-sizing: border-box; }
     body > header h1 {
-      font-weight: lighter;
-      font-size: 48px;
+      font: lighter 48px "proxima-nova";
       margin: 0 0;
       float: left; }
     body > header nav {
@@ -37,7 +36,7 @@ input[type=text] {
 .menu {
   background-color: #3D8EB9;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
   position: absolute;
   top: 60px;
@@ -45,11 +44,19 @@ input[type=text] {
 
 .project {
   box-sizing: border-box;
-  width: 25%;
   height: 250px;
   overflow: auto;
   padding: 15px;
   float: left; }
+  @media only screen and (max-width: 320px) {
+    .project {
+      width: 100%; } }
+  @media only screen and (min-width: 321px) and (max-width: 1023px) {
+    .project {
+      width: 50%; } }
+  @media only screen and (min-width: 1024px) {
+    .project {
+      width: 25%; } }
   .project header {
     padding: 5px 0;
     font-size: 24px;
@@ -58,7 +65,7 @@ input[type=text] {
   .project .author {
     text-align: right;
     font-weight: bold;
-    margin: 3px 0; }
+    margin: 10px 0; }
 
 .project:nth-child(8n+1) {
   background-color: #E25041; }
@@ -79,9 +86,15 @@ input[type=text] {
   background-color: #61BD6D; }
 
 .project:nth-child(8n+7) {
-  background-color: #3D8EB9; }
+  background-color: #E25041; }
 
 .project:nth-child(8n+8) {
-  background-color: #E25041; }
+  background-color: #3D8EB9; }
+
+#noMatches {
+  font: 24px "proxima-nova";
+  color: black;
+  margin: 20px;
+  float: left; }
 
 /*# sourceMappingURL=style.css.map */
