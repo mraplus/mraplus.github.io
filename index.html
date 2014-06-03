@@ -2,150 +2,149 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <meta name="keywords" content="science, armstrong, iron, horse, project">
 
-	<meta name="viewport" content="width=device-width">
-	<meta charset="utf-8">
-	<meta name="keywords" content="science, armstrong, iron, horse, project">
+    <!-- Adobe Typekit -->
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                kitId: 'eda3eaj'
+            };
+            var d = false;
+            var tk = document.createElement('script');
+            tk.src = '//use.typekit.net/' + config.kitId + '.js';
+            tk.type = 'text/javascript';
+            tk.async = 'true';
+            tk.onload = tk.onreadystatechange = function () {
+                var rs = this.readyState;
+                if (d || rs && rs != 'complete' && rs != 'loaded') return;
+                d = true;
+                try {
+                    Typekit.load(config);
+                } catch (e) { }
+            };
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(tk, s);
+        })();
+    </script>
 
-	<!-- Adobe Typekit -->
-	<script type="text/javascript">
-	(function () {
-		var config = {
-			kitId: 'eda3eaj'
-		};
-		var d = false;
-		var tk = document.createElement('script');
-		tk.src = '//use.typekit.net/' + config.kitId + '.js';
-		tk.type = 'text/javascript';
-		tk.async = 'true';
-		tk.onload = tk.onreadystatechange = function () {
-			var rs = this.readyState;
-			if (d || rs && rs != 'complete' && rs != 'loaded') return;
-			d = true;
-			try {
-				Typekit.load(config);
-			} catch (e) {}
-		};
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(tk, s);
-	})();
-	</script>
-    
-   	<script src="jquery.js"></script>
-    
+    <script src="jquery.js"></script>
+
     <script src="loadProjects.js"></script>
-	<script src="menu.js"></script>
+    <script src="menu.js"></script>
 
-	<script>
-	// global variables
-	// tiles
-	const fadeValue = 0.75;
+    <script>
+        // global variables
+        // tiles
+        var fadeValue = 0.75;
 
-	var sortBy = "gsx$name";
-	var sortAscending = 1;
-	var categoryOrder = ["Game", "Presentation", "Worksheet"]; // controls sort order for categories
+        var sortBy = "gsx$name";
+        var sortAscending = 1;
+        var categoryOrder = ["Game", "Presentation", "Worksheet"]; // controls sort order for categories
 
-	var authors = [];
-	var data = [];
-	
-	// JSON callback
-	function parseFormData(json) {
-		data = json['feed']['entry'];
-		generateTiles();
-	}
+        var authors = [];
+        var data = [];
 
-	// menu
-	const fadeTime = 500;
+        // JSON callback
+        function parseFormData(json) {
+            data = json['feed']['entry'];
+            generateTiles();
+        }
 
-	var isSortVisible = false;
-	var isSearchVisible = false;
-	var height;
+        // menu
+        var fadeTime = 500;
 
-	// page styling
-	$(function() {
-		height = $("header").innerHeight();
-		$("#content").css( { 'top': height });
-	});
-	</script>
+        var isSortVisible = false;
+        var isSearchVisible = false;
+        var height;
 
-	<script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
-	
-	<link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/png" href="icon.png">
+        // page styling
+        $(function () {
+            height = $("header").innerHeight();
+            $("#content").css({ 'top': height });
+        });
+    </script>
 
-	<title>Iron Horse 2014 Science Projects</title>
+    <script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=parseFormData"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <title>Iron Horse 2014 Science Projects</title>
 </head>
 
 <body>
-	<header>
-		<span id="title">Iron Horse 2014 Science Projects</span>
-		<div id="right">
-       		<a target="_blank" href="https://docs.google.com/forms/d/1OT0jZMMEMUJdBZQ92cW7zonSbUDEnMd5U8hppL7Dlf8/viewform?usp=send_form">Submit Project</a>
-			<a target="_blank" href="https://plus.google.com/100327193111348672671" rel="publisher">Visit us on Google+</a>
-			
+    <header>
+        <span id="title">Iron Horse 2014 Science Projects</span>
+        <div id="right">
+            <a target="_blank" href="https://docs.google.com/forms/d/1OT0jZMMEMUJdBZQ92cW7zonSbUDEnMd5U8hppL7Dlf8/viewform?usp=send_form">Submit Project</a>
+            <a target="_blank" href="https://plus.google.com/100327193111348672671" rel="publisher">Visit us on Google+</a>
+
             <div class="openBox" value="namesBox">Names</div>
-       		<div class="openBox" value="creditsBox">Credits</div>
-			<div id="search">Search</div>
-			<div id="sort">Arrange</div>
-		</div>	
-	</header>
-	
-	<div id="fade"></div>
-	
-	<div class="popup" id="sortMenu">
-		<div class="button" value="name">Name</div>
-		<div class="button" value="author">Author</div>
-		<div class="button" value="category">Type</div>
-	</div>
+            <div class="openBox" value="creditsBox">Credits</div>
+            <div id="search">Search</div>
+            <div id="sort">Arrange</div>
+        </div>
+    </header>
 
-	<div class="popup" id="searchForm">
-		<input type="text" id="searchField">
-	</div>
+    <div id="fade"></div>
 
-	<div class="centeredPopup" id="namesBox">
-    	<h3>Names</h3>
+    <div class="popup" id="sortMenu">
+        <div class="button" value="name">Name</div>
+        <div class="button" value="author">Author</div>
+        <div class="button" value="category">Type</div>
+    </div>
+
+    <div class="popup" id="searchForm">
+        <input type="text" id="searchField">
+    </div>
+
+    <div class="centeredPopup" id="namesBox">
+        <h3>Names</h3>
         <hr>
         <div id="namesData"></div>
-        
+
         <hr>
-        
+
         <p>
-        <b>Total: </b><span id="namesCount"></span>
+            <b>Total: </b><span id="namesCount"></span>
         </p>
-		<div class="centeredPopupButtons">
-        	<div class="button closeCenteredPopup">Close</div>
+        <div class="centeredPopupButtons">
+            <div class="button closeCenteredPopup">Close</div>
         </div>
     </div>
 
-	<div class="centeredPopup" id="creditsBox">
-    	<h3>Credits</h3>
+    <div class="centeredPopup" id="creditsBox">
+        <h3>Credits</h3>
         <hr>
-		<p>Design: Ishan Bhargava</p>
-		<p>Programming: Dhruba Ghosh and Ishan Bhargava</p>
-        
+        <p>Design: Ishan Bhargava</p>
+        <p>Programming: Dhruba Ghosh and Ishan Bhargava</p>
+
         <hr>
-        
+
         <p>
-        Do you need to contact us for any reason at all?
+            Do you need to contact us for any reason at all?
         <br>
-		Send us an email at <a href="mailto:doworkson2014@gmail.com">doworkson2014@gmail.com</a>
+            Send us an email at <a href="mailto:doworkson2014@gmail.com">doworkson2014@gmail.com</a>
         </p>
-        
+
         <div class="centeredPopupButtons">
-			<div class="button" onClick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View Source on GitHub</div>
-			<div class="button closeCenteredPopup">Close</div>
-	    </div>
-	</div>
-	
-	<div id="content">
-    	<div class="loading">
-        	<div class="rect1"></div>
-			<div class="rect2"></div>
-			<div class="rect3"></div>
-			<div class="rect4"></div>
-			<div class="rect5"></div>
+            <div class="button" onclick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View Source on GitHub</div>
+            <div class="button closeCenteredPopup">Close</div>
         </div>
-		<div class="projectMessage">No matches found</div>
+    </div>
+
+    <div id="content">
+        <div class="loading">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+        <div class="projectMessage">No matches found</div>
     </div>
 </body>
 </html>
