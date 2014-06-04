@@ -40,10 +40,10 @@ class ProjectViewModel {
     /** The array of the projects. Updates the grid on change (i.e. order) */
     projects: KnockoutObservableArray<Project>;
 
-    /** Initializes the ViewModel with the given list of projects*/
-    constructor(projects: Project[]) {
+    /** Initializes the ViewModel with everything blank */
+    constructor() {
         this.__this = this;
-        this.projects = ko.observableArray<Project>(projects);
+        this.projects = ko.observableArray<Project>();
 
         this.sortVisible = ko.observable<boolean>(false);
 
@@ -57,7 +57,7 @@ class ProjectViewModel {
         this.searchInput.subscribe((value: string) => {
             this.searchResults.removeAll();
             if (value !== "") {
-                projects.forEach((project: Project, index: number, array: Project[]) => {
+                this.projects().forEach((project: Project, index: number, array: Project[]) => {
                     if (project.searchText.indexOf(value.toLowerCase()) !== -1) {
                         this.searchResults.push(project);
                     }
@@ -76,7 +76,7 @@ class ProjectViewModel {
                         element.removeClass("scaleOut");
                         element.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend");
                     });
-            });
+                });
             $("#searchField").val('');
             this.searchResults.removeAll();
             this.toggleSearch();
@@ -126,9 +126,9 @@ interface KnockoutBindingHandlers {
     fadeVisible: {};
 }
 
-var model;
+var model: ProjectViewModel;
 
-function onLoadedJson(data: any) {
+$(() => {
     // assign the custom event thing
     ko.bindingHandlers.fadeVisible = {
         init: (element, valueAccessor) => {
@@ -140,6 +140,13 @@ function onLoadedJson(data: any) {
         }
     }
 
+    // apply to HTML
+    model = new ProjectViewModel();
+    ko.applyBindings(model);
+});
+
+function onLoadedJson(data: any): void {
+
     // make a list of all the projects
     var projects: Project[] = [];
     data['feed']['entry'].forEach((item) => {
@@ -150,8 +157,6 @@ function onLoadedJson(data: any) {
             item['gsx$author']['$t']
             ));
     });
-
-    // apply to HTML
-    model = new ProjectViewModel(projects);
-    ko.applyBindings(model);
+    $(".loading").remove();
+    model.projects(projects);
 }

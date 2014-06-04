@@ -11,10 +11,10 @@
 })();
 
 var ProjectViewModel = (function () {
-    function ProjectViewModel(projects) {
+    function ProjectViewModel() {
         var _this = this;
         this.__this = this;
-        this.projects = ko.observableArray(projects);
+        this.projects = ko.observableArray();
 
         this.sortVisible = ko.observable(false);
 
@@ -27,7 +27,7 @@ var ProjectViewModel = (function () {
         this.searchInput.subscribe(function (value) {
             _this.searchResults.removeAll();
             if (value !== "") {
-                projects.forEach(function (project, index, array) {
+                _this.projects().forEach(function (project, index, array) {
                     if (project.searchText.indexOf(value.toLowerCase()) !== -1) {
                         _this.searchResults.push(project);
                     }
@@ -87,7 +87,7 @@ var ProjectViewModel = (function () {
 
 var model;
 
-function onLoadedJson(data) {
+$(function () {
     ko.bindingHandlers.fadeVisible = {
         init: function (element, valueAccessor) {
             $(element).toggle(ko.unwrap(valueAccessor()));
@@ -97,12 +97,16 @@ function onLoadedJson(data) {
         }
     };
 
+    model = new ProjectViewModel();
+    ko.applyBindings(model);
+});
+
+function onLoadedJson(data) {
     var projects = [];
     data['feed']['entry'].forEach(function (item) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));
     });
-
-    model = new ProjectViewModel(projects);
-    ko.applyBindings(model);
+    $(".loading").remove();
+    model.projects(projects);
 }
 //# sourceMappingURL=app.js.map
