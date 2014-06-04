@@ -43,24 +43,33 @@ body {
     margin: 0 7px;
 }
 
-input[type=text] {
-    padding: 10px;
-
-    border: none;
-    border-radius: 5px;
-    color: white;
-    background-color: rgba(lighten($blue, 50%), 0.3);
-    font-size: 18px;
-}
-
 .menu {
-    background-color: $blue;
+    background-color: lighten($blue, 10%);
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
     position: absolute;
     top: 110px;
     right: 25px;
+}
+
+.searchResults {
+    position: absolute;
+    top: 160px;
+    right: 25px;
+    box-sizing: border-box;
+
+    background-color: white;
+    border-radius: 20px;
+}
+
+input[type=text] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(lighten($blue, 50%), 0.3);
+    font-size: 18px;
 }
 
 main {

@@ -16,7 +16,7 @@ class Project {
      * @param (string) author - The author(s) of the project
      */
     constructor(public name: string, public url: string, public description: string, public author: string) {
-        this.searchText = [name, description, author].join(' ');
+        this.searchText = [name, description, author].join(' ').toLowerCase();
         this.visible = ko.observable<boolean>(true);
     }
 }
@@ -32,6 +32,8 @@ class ProjectViewModel {
     searchInput: KnockoutObservable<string>;
     /** The amount of results found */
     searchResultText: KnockoutObservable<string>;
+    /** The projects found */
+    searchResults: KnockoutObservableArray<Project>;
 
     /** The array of the projects. Updates the grid on change (i.e. order) */
     projects: KnockoutObservableArray<Project>;
@@ -41,31 +43,47 @@ class ProjectViewModel {
         this.projects = ko.observableArray<Project>(projects);
 
         this.sortVisible = ko.observable<boolean>(false);
+
         this.searchVisible = ko.observable<boolean>(false);
         this.searchResultText = ko.observable<string>("");
+        this.searchResults = ko.observableArray<Project>();
 
         this.searchInput = ko.observable<string>("");
+
+        // Uses a table to show search results
         this.searchInput.subscribe((value: string) => {
-            if (value === "") {
-                this.searchResultText("Enter something to search for");
+            this.searchResults.removeAll();
+            if (value !== "") {
                 projects.forEach((project: Project, index: number, array: Project[]) => {
-                    array[index].visible(true);
-                });
-            }
-            else {
-                var resultCount: number = 0;
-                projects.forEach((project: Project, index: number, array: Project[]) => {
-                    if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-                        array[index].visible(false);
-                    }
-                    else {
-                        array[index].visible(true);
-                        resultCount += 1;
+                    if (project.searchText.indexOf(value.toLowerCase()) !== -1) {
+                        this.searchResults.push(project);
                     }
                 });
-                this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
             }
         });
+
+        // Filters grid to show search results
+        //this.searchInput.subscribe((value: string) => {
+        //    if (value === "") {
+        //        this.searchResultText("Enter something to search for");
+        //        projects.forEach((project: Project, index: number, array: Project[]) => {
+        //            array[index].visible(true);
+        //        });
+        //    }
+        //    else {
+        //        var resultCount: number = 0;
+        //        projects.forEach((project: Project, index: number, array: Project[]) => {
+        //            if (project.searchText.indexOf(value.toLowerCase()) === -1) {
+        //                array[index].visible(false);
+        //            }
+        //            else {
+        //                array[index].visible(true);
+        //                resultCount += 1;
+        //            }
+        //        });
+        //        this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
+        //    }
+        //});
     }
 
     /** Opens (in a new window) the item's link */

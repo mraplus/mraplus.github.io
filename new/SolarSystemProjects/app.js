@@ -4,7 +4,7 @@
         this.url = url;
         this.description = description;
         this.author = author;
-        this.searchText = [name, description, author].join(' ');
+        this.searchText = [name, description, author].join(' ').toLowerCase();
         this.visible = ko.observable(true);
     }
     return Project;
@@ -16,27 +16,21 @@ var ProjectViewModel = (function () {
         this.projects = ko.observableArray(projects);
 
         this.sortVisible = ko.observable(false);
+
         this.searchVisible = ko.observable(false);
         this.searchResultText = ko.observable("");
+        this.searchResults = ko.observableArray();
 
         this.searchInput = ko.observable("");
+
         this.searchInput.subscribe(function (value) {
-            if (value === "") {
-                _this.searchResultText("Enter something to search for");
+            _this.searchResults.removeAll();
+            if (value !== "") {
                 projects.forEach(function (project, index, array) {
-                    array[index].visible(true);
-                });
-            } else {
-                var resultCount = 0;
-                projects.forEach(function (project, index, array) {
-                    if (project.searchText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-                        array[index].visible(false);
-                    } else {
-                        array[index].visible(true);
-                        resultCount += 1;
+                    if (project.searchText.indexOf(value.toLowerCase()) !== -1) {
+                        _this.searchResults.push(project);
                     }
                 });
-                _this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
             }
         });
     }

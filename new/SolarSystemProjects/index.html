@@ -9,7 +9,7 @@
     <script src="jQuery.js"></script>
     <script src="Knockout.js"></script>
     <script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=onLoadedJson"></script>
-    
+
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
 
@@ -30,9 +30,21 @@
         <div class="button" data-value="author" data-bind="click: sortProjects">Author</div>
     </section>
 
-    <section class="menu" data-bind="fadeVisible: searchVisible">
-        <input type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
-        <div data-bind="text: searchResultText"></div>
+    <section data-bind="fadeVisible: searchVisible">
+        <div class="menu">
+            <input type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
+            <div data-bind="text: searchResultText"></div>
+        </div>
+
+        <div class="searchResults" data-bind="visible: searchResults.length < 10">
+            <table data-bind="foreach: searchResults">
+                <tr>
+                    <td class="title" data-bind="text: name"></td>
+                    <td class="author" data-bind="text: author"></td>
+                </tr>
+            </table>
+            <span data-bind="visible: searchResults.length === 0">No results</span>
+        </div>
     </section>
 
     <main data-bind="foreach: projects">
