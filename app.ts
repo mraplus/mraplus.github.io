@@ -23,7 +23,8 @@ class Project {
 
 /** Holds our data */
 class ProjectViewModel {
-    __this: ProjectViewModel;
+    /** Are the credits visible? */
+    contactVisible: KnockoutObservable<boolean>;
 
     /** Is the sort menu visible? */
     sortVisible: KnockoutObservable<boolean>;
@@ -42,9 +43,9 @@ class ProjectViewModel {
 
     /** Initializes the ViewModel with everything blank */
     constructor() {
-        this.__this = this;
         this.projects = ko.observableArray<Project>();
 
+        this.contactVisible = ko.observable<boolean>(false);
         this.sortVisible = ko.observable<boolean>(false);
 
         this.searchVisible = ko.observable<boolean>(false);
@@ -89,6 +90,12 @@ class ProjectViewModel {
     /** Opens (in a new window) the item's link */
     openLink(item: Project) {
         window.open(item.url, "_blank");
+    }
+
+    /** Toggles visiblity of credits */
+    toggleContact() {
+        this.contactVisible(!this.contactVisible());
+        this.contactVisible() ? $("#fade").fadeIn() : $("#fade").fadeOut();
     }
 
     /** Toggles the visiblity of the sort menu */

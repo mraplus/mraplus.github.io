@@ -13,9 +13,9 @@
 var ProjectViewModel = (function () {
     function ProjectViewModel() {
         var _this = this;
-        this.__this = this;
         this.projects = ko.observableArray();
 
+        this.contactVisible = ko.observable(false);
         this.sortVisible = ko.observable(false);
 
         this.searchVisible = ko.observable(false);
@@ -56,6 +56,11 @@ var ProjectViewModel = (function () {
 
     ProjectViewModel.prototype.openLink = function (item) {
         window.open(item.url, "_blank");
+    };
+
+    ProjectViewModel.prototype.toggleContact = function () {
+        this.contactVisible(!this.contactVisible());
+        this.contactVisible() ? $("#fade").fadeIn() : $("#fade").fadeOut();
     };
 
     ProjectViewModel.prototype.toggleSort = function () {

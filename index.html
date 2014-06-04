@@ -21,6 +21,7 @@
         <h1>Iron Horse Chapter 14 &mdash; Solar System Projects</h1>
         <nav>
             <a href="old/">View old site</a>
+            <div class="button" data-bind="click: toggleContact">Contact Us</div>
             <div class="button" data-bind="click: toggleSort">Arrange</div>
             <div class="button" data-bind="click: toggleSearch">Search</div>
         </nav>
@@ -37,7 +38,7 @@
             <div data-bind="text: 'Found ' + searchResults().length + ' projects'"></div>
         </div>
 
-        <div class="searchResults" data-bind="fadeVisible: searchVisible">
+        <div id="searchResults" data-bind="fadeVisible: searchVisible">
             <table data-bind="foreach: searchResults">
                 <tr data-bind="click: $parent.scrollToProject">
                     <td data-bind="text: name"></td>
@@ -48,6 +49,22 @@
         </div>
     </section>
 
+    <section id="contactUs" data-bind="fadeVisible: contactVisible">
+        <h3>Contact Us</h3>
+        <hr />
+        <p>By Ishan Bhargava, with elements by Dhruba Ghosh</p>
+        <hr />
+        <p>
+            Do you need to contact us for any reason at all?
+            <br />
+            Send us an email at <a href="mailto:doworkson2014@gmail.com">doworkson2014@gmail.com</a>
+        </p>
+        <div class="center">
+            <div class="button" onclick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View on GitHub</div>
+            <div class="button" data-bind="click: toggleContact">Close</div>
+        </div>
+    </section>
+    <div id="fade"></div>
     <main data-bind="foreach: projects">
         <section class="project" data-bind="visible: visible">
             <header data-bind="text: name, click: $parent.openLink"></header>
