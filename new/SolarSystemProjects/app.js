@@ -46,6 +46,7 @@ var ProjectViewModel = (function () {
                     element.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend");
                 });
             });
+            $("#searchField").val('');
             _this.searchResults.removeAll();
             _this.toggleSearch();
         };

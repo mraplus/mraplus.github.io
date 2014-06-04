@@ -99,7 +99,8 @@ class ProjectViewModel {
                         element.removeClass("scaleOut");
                         element.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend");
                     });
-                });
+            });
+            $("#searchField").val('');
             this.searchResults.removeAll();
             this.toggleSearch();
         }
