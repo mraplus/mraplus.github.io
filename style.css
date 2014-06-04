@@ -109,10 +109,11 @@ main {
   .project:last-child {
     margin-bottom: 100px; }
   .project header {
-    padding: 5px 0;
+    display: inline-block;
+    margin: 5px 0;
     font-size: 24px;
     cursor: pointer;
-    text-decoration: underline; }
+    border-bottom: 1px solid white; }
   .project .description {
     font-weight: lighter; }
   .project .author {
