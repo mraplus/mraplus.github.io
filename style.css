@@ -20,6 +20,8 @@
       float: left; }
     body > header nav {
       float: right; }
+      body > header nav a {
+        color: white; }
       body > header nav .button {
         padding: 20px; }
 
