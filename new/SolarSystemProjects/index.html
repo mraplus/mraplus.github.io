@@ -33,7 +33,7 @@
     <section data-bind="fadeVisible: searchVisible">
         <div class="menu">
             <input id="searchField" type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
-            <div data-bind="text: searchResultText"></div>
+            <div data-bind="text: 'Found ' + searchResults().length + ' projects'"></div>
         </div>
 
         <div class="searchResults">
