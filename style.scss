@@ -189,14 +189,7 @@ $break-large: 1024px;
         font-weight: bold;
         margin: 10px 0;
     }
-}
 
-.scaleOut {
-    -webkit-transform: scale(1.25, 1.25);
-    transform: scale(1.25, 1.25);
-}
-
-.project:not([style*="display: none"]) {
     &:nth-child(8n + 1) {
         background-color: $red;
     }
@@ -228,4 +221,9 @@ $break-large: 1024px;
     &:nth-child(8n + 8) {
         background-color: $blue;
     }
+}
+
+.scaleOut {
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.25, 1.25);
 }
