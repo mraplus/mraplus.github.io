@@ -30,13 +30,13 @@
         <div class="button" data-value="author" data-bind="click: sortProjects">Author</div>
     </section>
 
-    <section data-bind="fadeVisible: searchVisible">
-        <div class="menu">
+    <section>
+        <div class="menu" data-bind="fadeVisible: searchVisible">
             <input id="searchField" type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
             <div data-bind="text: 'Found ' + searchResults().length + ' projects'"></div>
         </div>
 
-        <div class="searchResults">
+        <div class="searchResults" data-bind="fadeVisible: searchVisible">
             <table data-bind="foreach: searchResults">
                 <tr data-bind="click: $parent.scrollToProject">
                     <td data-bind="text: name"></td>

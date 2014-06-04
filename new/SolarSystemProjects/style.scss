@@ -1,6 +1,6 @@
 ﻿$red: #E25041;
 $green: #61BD6D;
-$yellow: #FBA026;
+$yellow: #fa8f00;
 $purple: #6e4a8b;
 $gray: #EFEFEF;
 
@@ -13,6 +13,10 @@ body {
     color: white;
 
     > header {
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 1;
+
         background-color: $purple;
         padding: 20px 20px;
         float: left;
@@ -48,20 +52,22 @@ body {
 }
 
 .menu {
+    z-index: 2;
     background-color: $lightBlue;
     border-radius: 10px;
     padding: 20px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     top: 110px;
     right: 25px;
 }
 
 .searchResults {
+    z-index: 2;
     position: absolute;
-    top: 200px;
+    top: 220px;
     right: 25px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -105,6 +111,12 @@ input[type=text] {
 
 main {
     float: left;
+    position: fixed;
+    top: 100px;
+    left: 0;
+
+    height: 100%;
+    overflow: auto;
 }
 
 $break-small: 320px;
@@ -207,11 +219,4 @@ $break-large: 1024px;
     &:nth-child(8n + 8) {
         background-color: $blue;
     }
-}
-
-#noMatches {
-    font: 24px "proxima-nova";
-    color: black;
-    margin: 20px;
-    float: left;
 }
