@@ -20,6 +20,7 @@
     <Content Include="jQuery.js" />
     <Content Include="Knockout.js" />
     <Content Include="index.html" />
+    <Content Include="logo.png" />
     <Content Include="style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
