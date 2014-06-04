@@ -23,6 +23,8 @@ class Project {
 
 /** Holds our data */
 class ProjectViewModel {
+    __this: ProjectViewModel;
+
     /** Is the sort menu visible? */
     sortVisible: KnockoutObservable<boolean>;
 
@@ -40,6 +42,7 @@ class ProjectViewModel {
 
     /** Initializes the ViewModel with the given list of projects*/
     constructor(projects: Project[]) {
+        this.__this = this;
         this.projects = ko.observableArray<Project>(projects);
 
         this.sortVisible = ko.observable<boolean>(false);
@@ -84,7 +87,26 @@ class ProjectViewModel {
         //        this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
         //    }
         //});
+
+        this.scrollToProject = (item: Project) => {
+            // index is incremented because CSS is NOT 0-based
+            var element = $("main > section:nth-child(" + (this.projects.indexOf(item) + 1) + ")");
+            $("html, body").animate({
+                scrollTop: element.offset().top - $("body > header").height()
+            }, function () {
+                    element.addClass("scaleOut");
+                    element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function (event) {
+                        element.removeClass("scaleOut");
+                        element.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend");
+                    });
+                });
+            this.searchResults.removeAll();
+            this.toggleSearch();
+        }
     }
+
+    /** Smoothly scrolls the document to the project */
+    scrollToProject(item: Project) { }
 
     /** Opens (in a new window) the item's link */
     openLink(item: Project) {
@@ -126,6 +148,8 @@ interface KnockoutBindingHandlers {
     fadeVisible: {};
 }
 
+var model;
+
 function onLoadedJson(data: any) {
     // assign the custom event thing
     ko.bindingHandlers.fadeVisible = {
@@ -150,6 +174,6 @@ function onLoadedJson(data: any) {
     });
 
     // apply to HTML
-    var model = new ProjectViewModel(projects);
+    model = new ProjectViewModel(projects);
     ko.applyBindings(model);
 }

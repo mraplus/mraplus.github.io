@@ -32,18 +32,18 @@
 
     <section data-bind="fadeVisible: searchVisible">
         <div class="menu">
-            <input type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
+            <input id="searchField" type="text" data-bind="value: searchInput, valueUpdate: 'input'" />
             <div data-bind="text: searchResultText"></div>
         </div>
 
-        <div class="searchResults" data-bind="visible: searchResults.length < 10">
+        <div class="searchResults">
             <table data-bind="foreach: searchResults">
-                <tr>
-                    <td class="title" data-bind="text: name"></td>
-                    <td class="author" data-bind="text: author"></td>
+                <tr data-bind="click: $parent.scrollToProject">
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: author"></td>
                 </tr>
             </table>
-            <span data-bind="visible: searchResults.length === 0">No results</span>
+            <span data-bind="visible: searchResults().length === 0">(No results)</span>
         </div>
     </section>
 

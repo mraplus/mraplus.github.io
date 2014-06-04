@@ -7,6 +7,8 @@
     padding: 20px 20px;
     float: left;
     width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     body > header h1 {
       font: lighter 48px "proxima-nova";
@@ -30,6 +32,8 @@
   background-color: #5fa6ca;
   border-radius: 10px;
   padding: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: absolute;
   top: 110px;
@@ -37,11 +41,25 @@
 
 .searchResults {
   position: absolute;
-  top: 160px;
+  top: 200px;
   right: 25px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 20px;
   background-color: white;
+  color: black;
   border-radius: 20px; }
+  .searchResults tr {
+    cursor: pointer; }
+    .searchResults tr td {
+      padding: 5px; }
+      .searchResults tr td:first-child {
+        font-weight: bold; }
+    .searchResults tr:hover {
+      background-color: #5fa6ca;
+      color: white;
+      border-radius: 10px; }
 
 input[type=text] {
   padding: 10px;
@@ -55,7 +73,11 @@ main {
   float: left; }
 
 .project {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   height: 250px;
   overflow: auto;
   padding: 15px;
@@ -80,6 +102,10 @@ main {
     text-align: right;
     font-weight: bold;
     margin: 10px 0; }
+
+.scaleOut {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25); }
 
 .project:not([style*="display: none"]):nth-child(8n+1) {
   background-color: #E25041; }

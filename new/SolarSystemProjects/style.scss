@@ -1,9 +1,11 @@
 ﻿$red: #E25041;
-$blue: #3D8EB9;
 $green: #61BD6D;
 $yellow: #FBA026;
 $purple: #6e4a8b;
 $gray: #EFEFEF;
+
+$blue: #3D8EB9;
+$lightBlue: lighten($blue, 10%);
 
 body {
     margin: 0 0;
@@ -15,6 +17,8 @@ body {
         padding: 20px 20px;
         float: left;
         width: 100%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
 
         h1 {
@@ -44,9 +48,11 @@ body {
 }
 
 .menu {
-    background-color: lighten($blue, 10%);
+    background-color: $lightBlue;
     border-radius: 10px;
     padding: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: absolute;
     top: 110px;
@@ -55,12 +61,33 @@ body {
 
 .searchResults {
     position: absolute;
-    top: 160px;
+    top: 200px;
     right: 25px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-
+    padding: 20px;
     background-color: white;
+    color: black;
     border-radius: 20px;
+
+    tr {
+        cursor: pointer;
+
+        td {
+            padding: 5px;
+
+            &:first-child {
+                font-weight: bold;
+            }
+        }
+
+        &:hover {
+            background-color: $lightBlue;
+            color: white;
+            border-radius: 10px;
+        }
+    }
 }
 
 input[type=text] {
@@ -98,7 +125,12 @@ $break-large: 1024px;
 }
 
 .project {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 
     @include respond-to(handhelds) {
         width: 100%;
@@ -133,6 +165,11 @@ $break-large: 1024px;
         font-weight: bold;
         margin: 10px 0;
     }
+}
+
+.scaleOut {
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.25, 1.25);
 }
 
 .project:not([style*="display: none"]) {

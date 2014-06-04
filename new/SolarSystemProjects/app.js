@@ -13,6 +13,7 @@
 var ProjectViewModel = (function () {
     function ProjectViewModel(projects) {
         var _this = this;
+        this.__this = this;
         this.projects = ko.observableArray(projects);
 
         this.sortVisible = ko.observable(false);
@@ -33,7 +34,25 @@ var ProjectViewModel = (function () {
                 });
             }
         });
+
+        this.scrollToProject = function (item) {
+            var element = $("main > section:nth-child(" + (_this.projects.indexOf(item) + 1) + ")");
+            $("html, body").animate({
+                scrollTop: element.offset().top - $("body > header").height()
+            }, function () {
+                element.addClass("scaleOut");
+                element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function (event) {
+                    element.removeClass("scaleOut");
+                    element.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend");
+                });
+            });
+            _this.searchResults.removeAll();
+            _this.toggleSearch();
+        };
     }
+    ProjectViewModel.prototype.scrollToProject = function (item) {
+    };
+
     ProjectViewModel.prototype.openLink = function (item) {
         window.open(item.url, "_blank");
     };
@@ -65,6 +84,8 @@ var ProjectViewModel = (function () {
     return ProjectViewModel;
 })();
 
+var model;
+
 function onLoadedJson(data) {
     ko.bindingHandlers.fadeVisible = {
         init: function (element, valueAccessor) {
@@ -80,7 +101,7 @@ function onLoadedJson(data) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));
     });
 
-    var model = new ProjectViewModel(projects);
+    model = new ProjectViewModel(projects);
     ko.applyBindings(model);
 }
 //# sourceMappingURL=app.js.map
