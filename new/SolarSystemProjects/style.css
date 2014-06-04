@@ -50,16 +50,18 @@
   background-color: white;
   color: black;
   border-radius: 20px; }
-  .searchResults tr {
-    cursor: pointer; }
-    .searchResults tr td {
-      padding: 5px; }
-      .searchResults tr td:first-child {
-        font-weight: bold; }
-    .searchResults tr:hover {
-      background-color: #5fa6ca;
-      color: white;
-      border-radius: 10px; }
+  .searchResults table {
+    border-collapse: collapse; }
+    .searchResults table tr {
+      cursor: pointer; }
+      .searchResults table tr td {
+        padding: 5px; }
+        .searchResults table tr td:first-child {
+          font-weight: bold; }
+      .searchResults table tr:hover {
+        background-color: #5fa6ca;
+        color: white;
+        border-radius: 10px; }
 
 input[type=text] {
   padding: 10px;

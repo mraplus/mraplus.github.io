@@ -71,21 +71,25 @@ body {
     color: black;
     border-radius: 20px;
 
-    tr {
-        cursor: pointer;
+    table {
+        border-collapse: collapse;
 
-        td {
-            padding: 5px;
+        tr {
+            cursor: pointer;
 
-            &:first-child {
-                font-weight: bold;
+            td {
+                padding: 5px;
+
+                &:first-child {
+                    font-weight: bold;
+                }
             }
-        }
 
-        &:hover {
-            background-color: $lightBlue;
-            color: white;
-            border-radius: 10px;
+            &:hover {
+                background-color: $lightBlue;
+                color: white;
+                border-radius: 10px;
+            }
         }
     }
 }
@@ -128,7 +132,6 @@ $break-large: 1024px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 
