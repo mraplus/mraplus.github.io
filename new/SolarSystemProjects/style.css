@@ -104,6 +104,8 @@ main {
   @media only screen and (min-width: 1024px) {
     .project {
       width: 25%; } }
+  .project:last-child {
+    margin-bottom: 100px; }
   .project header {
     padding: 5px 0;
     font-size: 24px;

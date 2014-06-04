@@ -65,34 +65,11 @@ class ProjectViewModel {
             }
         });
 
-        // Filters grid to show search results
-        //this.searchInput.subscribe((value: string) => {
-        //    if (value === "") {
-        //        this.searchResultText("Enter something to search for");
-        //        projects.forEach((project: Project, index: number, array: Project[]) => {
-        //            array[index].visible(true);
-        //        });
-        //    }
-        //    else {
-        //        var resultCount: number = 0;
-        //        projects.forEach((project: Project, index: number, array: Project[]) => {
-        //            if (project.searchText.indexOf(value.toLowerCase()) === -1) {
-        //                array[index].visible(false);
-        //            }
-        //            else {
-        //                array[index].visible(true);
-        //                resultCount += 1;
-        //            }
-        //        });
-        //        this.searchResultText(resultCount === 0 ? "No results found" : "Found " + resultCount + " projects");
-        //    }
-        //});
-
         this.scrollToProject = (item: Project) => {
             // index is incremented because CSS is NOT 0-based
             var element = $("main > section:nth-child(" + (this.projects.indexOf(item) + 1) + ")");
-            $("html, body").animate({
-                scrollTop: element.offset().top - $("body > header").height()
+            $("main").animate({
+                scrollTop: element.offset().top - $("body > header").outerHeight()
             }, function () {
                     element.addClass("scaleOut");
                     element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function (event) {

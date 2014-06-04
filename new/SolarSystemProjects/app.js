@@ -37,8 +37,8 @@ var ProjectViewModel = (function () {
 
         this.scrollToProject = function (item) {
             var element = $("main > section:nth-child(" + (_this.projects.indexOf(item) + 1) + ")");
-            $("html, body").animate({
-                scrollTop: element.offset().top - $("body > header").height()
+            $("main").animate({
+                scrollTop: element.offset().top - $("body > header").outerHeight()
             }, function () {
                 element.addClass("scaleOut");
                 element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function (event) {

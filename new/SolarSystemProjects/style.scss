@@ -7,6 +7,8 @@ $gray: #EFEFEF;
 $blue: #3D8EB9;
 $lightBlue: lighten($blue, 10%);
 
+$headerHeight: 100px;
+
 body {
     margin: 0 0;
     font-family: 'myriad-pro', sans-serif;
@@ -112,7 +114,7 @@ input[type=text] {
 main {
     float: left;
     position: fixed;
-    top: 100px;
+    top: $headerHeight;
     left: 0;
 
     height: 100%;
@@ -163,6 +165,10 @@ $break-large: 1024px;
     overflow: auto;
     padding: 15px;
     float: left;
+
+    &:last-child {
+        margin-bottom: $headerHeight;
+    }
 
     header {
         padding: 5px 0;
