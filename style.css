@@ -109,7 +109,7 @@ input[type=text] {
   transition: background-color ease-in-out 0.5s;
   background-color: rgba(248, 251, 252, 0.3); }
   input[type=text]:focus {
-    outline: 0;
+    outline: none;
     background-color: rgba(248, 251, 252, 0.5); }
 
 main {

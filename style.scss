@@ -148,7 +148,7 @@ input[type=text] {
     background-color: rgba(lighten($blue, 50%), 0.3);
 
     &:focus {
-        outline: 0;
+        outline: none;
         background-color: rgba(lighten($blue, 50%), 0.5);
     }
 }
