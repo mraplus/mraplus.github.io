@@ -153,7 +153,6 @@ $(() => {
 });
 
 function onLoadedJson(data: any): void {
-
     // make a list of all the projects
     var projects: Project[] = [];
     data['feed']['entry'].forEach((item) => {
@@ -164,6 +163,5 @@ function onLoadedJson(data: any): void {
             item['gsx$author']['$t']
             ));
     });
-    $(".loading").remove();
     model.projects(projects);
 }

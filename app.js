@@ -111,7 +111,6 @@ function onLoadedJson(data) {
     data['feed']['entry'].forEach(function (item) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));
     });
-    $(".loading").remove();
     model.projects(projects);
 }
 //# sourceMappingURL=app.js.map
