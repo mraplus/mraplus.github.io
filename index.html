@@ -39,7 +39,7 @@
             <div data-bind="visible: searchInput() !== '', text: (searchResults().length === 0 ? 'No results found' : 'Found ' + searchResults().length + ' projects')"></div>
         </div>
 
-        <div id="searchResults" data-bind="fadeVisible: (searchVisible() && searchResults().length !== 0 && searchInput() !== '')">
+        <div id="searchResults" data-bind="visible: (searchVisible() && searchResults().length !== 0 && searchInput() !== '')">
             <table>
                 <tbody data-bind="foreach: searchResults">
                     <tr data-bind="click: $parent.scrollToProject">
