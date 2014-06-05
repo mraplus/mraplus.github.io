@@ -88,6 +88,7 @@ hr {
 #contactUs {
   z-index: 5;
   background-color: #E25041;
+  border-radius: 15px;
   box-sizing: border-box;
   padding: 20px;
   width: 30%;
