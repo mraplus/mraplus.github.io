@@ -68,7 +68,9 @@
             <div class="button" data-bind="click: toggleContact">Close</div>
         </div>
     </section>
+
     <div id="fade" data-bind="click: toggleContact"></div>
+
     <main data-bind="foreach: projects">
         <section class="project" data-bind="visible: visible">
             <header data-bind="text: name, click: $parent.openLink"></header>
