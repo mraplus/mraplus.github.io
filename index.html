@@ -39,11 +39,13 @@
         </div>
 
         <div id="searchResults" data-bind="fadeVisible: searchVisible">
-            <table data-bind="foreach: searchResults">
-                <tr data-bind="click: $parent.scrollToProject">
-                    <td data-bind="text: name"></td>
-                    <td data-bind="text: author"></td>
-                </tr>
+            <table>
+                <tbody data-bind="foreach: searchResults">
+                    <tr data-bind="click: $parent.scrollToProject">
+                        <td data-bind="text: name"></td>
+                        <td data-bind="text: author"></td>
+                    </tr>
+                </tbody>
             </table>
             <span data-bind="visible: searchResults().length === 0">(No results)</span>
         </div>
