@@ -142,8 +142,15 @@ input[type=text] {
     border: none;
     border-radius: 5px;
     color: white;
-    background-color: rgba(lighten($blue, 50%), 0.3);
     font-size: 18px;
+    -webkit-transition: background-color ease-in-out 0.5s;
+    transition: background-color ease-in-out 0.5s;
+    background-color: rgba(lighten($blue, 50%), 0.3);
+
+    &:focus {
+        outline: 0;
+        background-color: rgba(lighten($blue, 50%), 0.5);
+    }
 }
 
 main {

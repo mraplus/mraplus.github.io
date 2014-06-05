@@ -104,8 +104,13 @@ input[type=text] {
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: rgba(248, 251, 252, 0.3);
-  font-size: 18px; }
+  font-size: 18px;
+  -webkit-transition: background-color ease-in-out 0.5s;
+  transition: background-color ease-in-out 0.5s;
+  background-color: rgba(248, 251, 252, 0.3); }
+  input[type=text]:focus {
+    outline: 0;
+    background-color: rgba(248, 251, 252, 0.5); }
 
 main {
   float: left;
