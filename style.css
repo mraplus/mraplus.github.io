@@ -113,6 +113,18 @@ input[type=text] {
     outline: none;
     background-color: rgba(248, 251, 252, 0.5); }
 
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6); }
+
+:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6); }
+
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6); }
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6); }
+
 main {
   float: left;
   position: fixed;
