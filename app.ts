@@ -73,9 +73,9 @@ class ProjectViewModel {
                 scrollTop: element.position().top + $("main").scrollTop()
             }, function () {
                     element.addClass("scaleOut");
-                    element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function (event) {
+                    element.on("webkitTransitionEnd transitionend", function (event) {
                         element.removeClass("scaleOut");
-                        element.off("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend");
+                        element.off("webkitTransitionEnd transitionend");
                     });
                 });
             $("#searchField").val('');
