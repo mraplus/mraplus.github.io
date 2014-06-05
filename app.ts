@@ -70,7 +70,7 @@ class ProjectViewModel {
             // index is incremented because CSS is NOT 0-based
             var element = $("main > section:nth-child(" + (this.projects.indexOf(item) + 1) + ")");
             $("main").animate({
-                scrollTop: element.offset().top - $("body > header").outerHeight()
+                scrollTop: element.position().top + $("main").scrollTop()
             }, function () {
                     element.addClass("scaleOut");
                     element.on("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function (event) {
@@ -84,7 +84,7 @@ class ProjectViewModel {
         }
     }
 
-    /** Smoothly scrolls the document to the project */
+    /** Smoothly scrolls the document to the project. Implemented in constructor */
     scrollToProject(item: Project) { }
 
     /** Opens (in a new window) the item's link */
