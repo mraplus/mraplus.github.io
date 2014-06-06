@@ -72,8 +72,12 @@
 
     <main data-bind="foreach: projects">
         <section class="project" data-bind="visible: visible">
-            <header data-bind="ifnot: url === '', text: name, click: $parent.openLink"></header>
-            <header class="noLink" data-bind="if: url === '', text: name"></header>
+            <!-- ko ifnot: url === '' -->
+            <header data-bind="text: name, click: $parent.openLink"></header>
+            <!-- /ko -->
+            <!-- ko if: url === '' -->
+            <header class="noLink" data-bind="text: name"></header>
+            <!-- /ko -->
             <div class="description" data-bind="text: description"></div>
             <div class="author" data-bind="text: 'By ' + author"></div>
         </section>
