@@ -71,14 +71,15 @@ class ProjectViewModel {
             var element = $("main > section:nth-child(" + (this.projects.indexOf(item) + 1) + ")");
             $("main").animate({
                 scrollTop: element.position().top + $("main").scrollTop()
-            }, function () {
+            }, () => {
                     element.addClass("scaleOut");
-                    element.on("webkitTransitionEnd transitionend", function (event) {
+                    element.on("webkitTransitionEnd transitionend", (event) => {
                         element.removeClass("scaleOut");
                         element.off("webkitTransitionEnd transitionend");
                     });
                 });
             $("#searchField").val('');
+            this.searchInput('');
             this.searchResults.removeAll();
             this.toggleSearch();
         }
@@ -164,4 +165,13 @@ function onLoadedJson(data: any): void {
             ));
     });
     model.projects(projects);
+
+    setHeader();
+    $(window).resize(setHeader)
+}
+
+function setHeader() {
+    var headerHeight = $("body > header").outerHeight();
+    $("main").css("top", headerHeight);
+    $(".project:last-child").css("margin-bottom", headerHeight);
 }

@@ -7,7 +7,26 @@ $gray: #EFEFEF;
 $blue: #3D8EB9;
 $lightBlue: lighten($blue, 10%);
 
-$headerHeight: 100px;
+$break-small: 320px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+    @if $media == handhelds {
+        @media only screen and (max-width: $break-small) {
+            @content;
+        }
+    }
+    @else if $media == medium-screens {
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {
+            @content;
+        }
+    }
+    @else if $media == wide-screens {
+        @media only screen and (min-width: $break-large) {
+            @content;
+        }
+    }
+}
 
 body {
     margin: 0 0;
@@ -28,7 +47,19 @@ body {
         box-sizing: border-box;
 
         h1 {
-            font: lighter 48px "proxima-nova";
+            font-weight: lighter;
+            font-family: "proxima-nova", sans-serif;
+
+            @include respond-to(handhelds) {
+                font-size: 27px;
+            }
+            @include respond-to(medium-screens) {
+                font-size: 36px;
+            }
+            @include respond-to(wide-screens) {
+                font-size: 48px;
+            }
+
             margin: 0 0;
             float: left;
         }
@@ -37,7 +68,15 @@ body {
             float: right;
 
             .button {
-                padding: 20px;
+                @include respond-to(handhelds) {
+                    padding: 10px;
+                }
+                @include respond-to(medium-screens) {
+                    padding: 15px;
+                }
+                @include respond-to(wide-screens) {
+                    padding: 20px;
+                }
             }
         }
     }
@@ -180,31 +219,9 @@ input[type=text] {
 main {
     float: left;
     position: fixed;
-    top: $headerHeight;
     left: 0;
     height: 100%;
     overflow: auto;
-}
-
-$break-small: 320px;
-$break-large: 1024px;
-
-@mixin respond-to($media) {
-    @if $media == handhelds {
-        @media only screen and (max-width: $break-small) {
-            @content;
-        }
-    }
-    @else if $media == medium-screens {
-        @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {
-            @content;
-        }
-    }
-    @else if $media == wide-screens {
-        @media only screen and (min-width: $break-large) {
-            @content;
-        }
-    }
 }
 
 .project {
@@ -231,15 +248,14 @@ $break-large: 1024px;
     padding: 15px;
     float: left;
 
-    &:last-child {
-        margin-bottom: $headerHeight;
-    }
-
     header {
         padding: 5px 0;
         font-size: 24px;
-        cursor: pointer;
-        text-decoration: underline;
+
+        &:not(.noLink) {
+            cursor: pointer;
+            text-decoration: underline;
+        }
     }
 
     .description {

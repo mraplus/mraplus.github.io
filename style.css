@@ -15,13 +15,30 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     body > header h1 {
-      font: lighter 48px "proxima-nova";
+      font-weight: lighter;
+      font-family: "proxima-nova", sans-serif;
       margin: 0 0;
       float: left; }
+      @media only screen and (max-width: 320px) {
+        body > header h1 {
+          font-size: 27px; } }
+      @media only screen and (min-width: 321px) and (max-width: 1023px) {
+        body > header h1 {
+          font-size: 36px; } }
+      @media only screen and (min-width: 1024px) {
+        body > header h1 {
+          font-size: 48px; } }
     body > header nav {
       float: right; }
-      body > header nav .button {
-        padding: 20px; }
+      @media only screen and (max-width: 320px) {
+        body > header nav .button {
+          padding: 10px; } }
+      @media only screen and (min-width: 321px) and (max-width: 1023px) {
+        body > header nav .button {
+          padding: 15px; } }
+      @media only screen and (min-width: 1024px) {
+        body > header nav .button {
+          padding: 20px; } }
 
 a {
   color: white; }
@@ -128,7 +145,6 @@ input[type=text] {
 main {
   float: left;
   position: fixed;
-  top: 100px;
   left: 0;
   height: 100%;
   overflow: auto; }
@@ -152,13 +168,12 @@ main {
   @media only screen and (min-width: 1024px) {
     .project {
       width: 25%; } }
-  .project:last-child {
-    margin-bottom: 100px; }
   .project header {
     padding: 5px 0;
-    font-size: 24px;
-    cursor: pointer;
-    text-decoration: underline; }
+    font-size: 24px; }
+    .project header:not(.noLink) {
+      cursor: pointer;
+      text-decoration: underline; }
   .project .description {
     font-weight: lighter; }
   .project .author {

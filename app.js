@@ -47,6 +47,7 @@ var ProjectViewModel = (function () {
                 });
             });
             $("#searchField").val('');
+            _this.searchInput('');
             _this.searchResults.removeAll();
             _this.toggleSearch();
         };
@@ -112,5 +113,14 @@ function onLoadedJson(data) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));
     });
     model.projects(projects);
+
+    setHeader();
+    $(window).resize(setHeader);
+}
+
+function setHeader() {
+    var headerHeight = $("body > header").outerHeight();
+    $("main").css("top", headerHeight);
+    $(".project:last-child").css("margin-bottom", headerHeight);
 }
 //# sourceMappingURL=app.js.map
