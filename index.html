@@ -30,12 +30,12 @@
         </nav>
     </header>
 
-    <section class="menu" data-bind="fadeVisible: sortVisible">
+    <nav class="menu" data-bind="fadeVisible: sortVisible">
         <div class="button" data-value="name" data-bind="click: sortProjects">Title</div>
         <div class="button" data-value="author" data-bind="click: sortProjects">Author</div>
-    </section>
+    </nav>
 
-    <section>
+    <nav>
         <div class="menu" data-bind="fadeVisible: searchVisible">
             <input id="searchField" type="text" placeholder="Type something..." data-bind="value: searchInput, valueUpdate: 'input'" />
             <div data-bind="visible: searchInput() !== '', text: (searchResults().length === 0 ? 'No results found' : 'Found ' + searchResults().length + ' projects')"></div>
@@ -51,10 +51,10 @@
                 </tbody>
             </table>
         </div>
-    </section>
+    </nav>
 
     <section class="popup" id="contactUs" data-bind="fadeVisible: contactVisible">
-        <h3>Contact Us</h3>
+        <header>Contact Us</header>
         <hr />
         <p>This version was made completely by Ishan Bhargava</p>
         <hr />

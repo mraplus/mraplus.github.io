@@ -112,6 +112,9 @@ hr {
   left: 50%;
   margin: 0 0 0 -15%;
   z-index: 5; }
+  .popup header {
+    font-weight: bold;
+    font-size: 18px; }
 
 #contactUs {
   background-color: #E25041; }
