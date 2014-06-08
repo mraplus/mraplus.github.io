@@ -134,7 +134,7 @@ function onLoadedJson(data) {
     });
     model.projects(projects);
     $(".descriptionText").dotdotdot({
-        height: 120,
+        height: 100,
         watch: true,
         after: ".open"
     });
