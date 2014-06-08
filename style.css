@@ -174,7 +174,8 @@ main {
   font-weight: lighter; }
 
 .additionalInfo {
-  text-align: right; }
+  text-align: right;
+  margin-bottom: 5px; }
   .additionalInfo > span {
     display: block; }
 
