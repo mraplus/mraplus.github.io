@@ -17,8 +17,9 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="jQuery.js" />
-    <Content Include="Knockout.js" />
+    <Content Include="lib\jQuery.dotdotdot.js" />
+    <Content Include="lib\jQuery.js" />
+    <Content Include="lib\Knockout.js" />
     <Content Include="index.html" />
     <Content Include="style.css">
       <DependentUpon>style.scss</DependentUpon>
@@ -30,8 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="jQuery.d.ts" />
-    <TypeScriptCompile Include="Knockout.d.ts" />
+    <TypeScriptCompile Include="lib\jQuery.d.ts" />
+    <TypeScriptCompile Include="lib\Knockout.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

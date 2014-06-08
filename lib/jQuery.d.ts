@@ -1258,6 +1258,12 @@ interface JQueryStatic {
  * The jQuery instance members
  */
 interface JQuery {
+    /** 
+     * Causes text that overflows to be replaced with dots
+     * 
+     * @param options Options to be passed to the plugin
+     */
+    dotdotdot(options?: any): JQuery;
     /**
      * Register a handler to be called when Ajax requests complete. This is an AjaxEvent.
      *

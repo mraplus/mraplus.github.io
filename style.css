@@ -102,9 +102,7 @@ hr {
   background-color: rgba(0, 0, 0, 0.5);
   display: none; }
 
-#contactUs {
-  z-index: 5;
-  background-color: #E25041;
+.popup {
   border-radius: 15px;
   box-sizing: border-box;
   padding: 20px;
@@ -112,7 +110,11 @@ hr {
   position: fixed;
   top: 20%;
   left: 50%;
-  margin: 0 0 0 -15%; }
+  margin: 0 0 0 -15%;
+  z-index: 5; }
+
+#contactUs {
+  background-color: #E25041; }
 
 .center {
   text-align: center; }
@@ -149,14 +151,25 @@ main {
   height: 100%;
   overflow: auto; }
 
+.project header, #currentProject header {
+  padding: 5px 0;
+  font-size: 24px; }
+  .project header:not(.noLink), #currentProject header:not(.noLink) {
+    cursor: pointer;
+    text-decoration: underline; }
+.project .author, #currentProject .author {
+  text-align: right;
+  font-weight: bold;
+  margin: 10px 0; }
+.project .description, #currentProject .description {
+  font-weight: lighter; }
+
 .project {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
   height: 250px;
-  overflow: auto;
+  overflow: hidden;
   padding: 15px;
   float: left; }
   @media only screen and (max-width: 320px) {
@@ -168,18 +181,11 @@ main {
   @media only screen and (min-width: 1024px) {
     .project {
       width: 25%; } }
-  .project header {
-    padding: 5px 0;
-    font-size: 24px; }
-    .project header:not(.noLink) {
-      cursor: pointer;
-      text-decoration: underline; }
-  .project .description {
-    font-weight: lighter; }
-  .project .author {
+  .project .open {
+    font-style: italic;
     text-align: right;
-    font-weight: bold;
-    margin: 10px 0; }
+    text-decoration: underline;
+    cursor: pointer; }
   .project:nth-child(8n+1) {
     background-color: #E25041; }
   .project:nth-child(8n+2) {
@@ -196,9 +202,5 @@ main {
     background-color: #E25041; }
   .project:nth-child(8n+8) {
     background-color: #3D8EB9; }
-
-.scaleOut {
-  -webkit-transform: scale(1.25, 1.25);
-  transform: scale(1.25, 1.25); }
 
 /*# sourceMappingURL=style.css.map */

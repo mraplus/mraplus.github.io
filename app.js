@@ -1,11 +1,13 @@
 ﻿var Project = (function () {
     function Project(name, url, description, author) {
+        if (typeof name === "undefined") { name = ""; }
+        if (typeof url === "undefined") { url = ""; }
+        if (typeof description === "undefined") { description = ""; }
+        if (typeof author === "undefined") { author = ""; }
         this.name = name;
         this.url = url;
         this.description = description;
         this.author = author;
-        this.searchText = [name, description, author].join(' ').toLowerCase();
-        this.visible = ko.observable(true);
     }
     return Project;
 })();
@@ -14,6 +16,9 @@ var ProjectViewModel = (function () {
     function ProjectViewModel() {
         var _this = this;
         this.projects = ko.observableArray();
+
+        this.projectPopup = ko.observable(false);
+        this.selectedProject = ko.observable(new Project());
 
         this.contactVisible = ko.observable(false);
         this.sortVisible = ko.observable(false);
@@ -27,36 +32,44 @@ var ProjectViewModel = (function () {
         this.searchInput.subscribe(function (value) {
             _this.searchResults.removeAll();
             if (value !== "") {
-                _this.projects().forEach(function (project, index, array) {
-                    if (project.searchText.indexOf(value.toLowerCase()) !== -1) {
+                _this.projects().forEach(function (project) {
+                    var searchString = [project.name, project.description, project.author].join(' ').toLowerCase();
+                    if (searchString.indexOf(value.toLowerCase()) !== -1) {
                         _this.searchResults.push(project);
                     }
                 });
             }
         });
 
-        this.scrollToProject = function (item) {
+        this.selectedProject.subscribe(function (item) {
             var element = $("main > section:nth-child(" + (_this.projects.indexOf(item) + 1) + ")");
             $("main").animate({
                 scrollTop: element.position().top + $("main").scrollTop()
             }, function () {
-                element.addClass("scaleOut");
-                element.on("webkitTransitionEnd transitionend", function (event) {
-                    element.removeClass("scaleOut");
-                    element.off("webkitTransitionEnd transitionend");
-                });
+                $("#currentProject").css("background-color", element.css("background-color"));
+                _this.toggleProjectPopup();
             });
+
             $("#searchField").val('');
             _this.searchInput('');
             _this.searchResults.removeAll();
-            _this.toggleSearch();
-        };
+            _this.searchVisible(false);
+        });
     }
     ProjectViewModel.prototype.scrollToProject = function (item) {
     };
 
     ProjectViewModel.prototype.openLink = function (item) {
         window.open(item.url, "_blank");
+    };
+
+    ProjectViewModel.prototype.toggleProjectPopup = function () {
+        if (this.contactVisible()) {
+            this.toggleContact();
+        }
+
+        this.projectPopup(!this.projectPopup());
+        this.projectPopup() ? $("#fade").fadeIn() : $("#fade").fadeOut();
     };
 
     ProjectViewModel.prototype.toggleContact = function () {
@@ -105,6 +118,13 @@ $(function () {
 
     model = new ProjectViewModel();
     ko.applyBindings(model);
+
+    $(document).keydown(function (event) {
+        if (event.keyCode === 114 || event.ctrlKey && event.keyCode === 70) {
+            model.toggleSearch();
+            event.preventDefault();
+        }
+    });
 });
 
 function onLoadedJson(data) {
@@ -113,6 +133,11 @@ function onLoadedJson(data) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));
     });
     model.projects(projects);
+    $(".descriptionText").dotdotdot({
+        height: 80,
+        watch: true,
+        after: ".open"
+    });
 
     setHeader();
     $(window).resize(setHeader);

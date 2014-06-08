@@ -1,13 +1,8 @@
-﻿/// <reference path="Knockout.d.ts" />
-/// <reference path="jQuery.d.ts" />
+﻿/// <reference path="lib/Knockout.d.ts" />
+/// <reference path="lib/jQuery.d.ts" />
 
 /** A container for the information associated with each project */
 class Project {
-    /** Holds all the visible information in one string for searching */
-    searchText: string;
-    /** Is this project visible? */
-    visible: KnockoutObservable<boolean>;
-
     /**
      * Creates a new Project
      * @param (string) name - The Project name
@@ -15,16 +10,22 @@ class Project {
      * @param (string) description - The description of the project shown
      * @param (string) author - The author(s) of the project
      */
-    constructor(public name: string, public url: string, public description: string, public author: string) {
-        this.searchText = [name, description, author].join(' ').toLowerCase();
-        this.visible = ko.observable<boolean>(true);
-    }
+    constructor(
+        public name: string = "",
+        public url: string = "",
+        public description: string = "",
+        public author: string = "") { }
 }
 
 /** Holds our data */
 class ProjectViewModel {
     /** Are the credits visible? */
     contactVisible: KnockoutObservable<boolean>;
+
+    /** Is the project visible in a popup? */
+    projectPopup: KnockoutObservable<boolean>;
+    /** The currently selected project i.e. when "more" is clicked */
+    selectedProject: KnockoutObservable<Project>;
 
     /** Is the sort menu visible? */
     sortVisible: KnockoutObservable<boolean>;
@@ -45,6 +46,9 @@ class ProjectViewModel {
     constructor() {
         this.projects = ko.observableArray<Project>();
 
+        this.projectPopup = ko.observable<boolean>(false);
+        this.selectedProject = ko.observable<Project>(new Project());
+
         this.contactVisible = ko.observable<boolean>(false);
         this.sortVisible = ko.observable<boolean>(false);
 
@@ -54,43 +58,53 @@ class ProjectViewModel {
 
         this.searchInput = ko.observable<string>("");
 
-        // Uses a table to show search results
+        // Find search results on input
         this.searchInput.subscribe((value: string) => {
             this.searchResults.removeAll();
             if (value !== "") {
-                this.projects().forEach((project: Project, index: number, array: Project[]) => {
-                    if (project.searchText.indexOf(value.toLowerCase()) !== -1) {
+                this.projects().forEach((project: Project) => {
+                    var searchString = [project.name, project.description, project.author].join(' ').toLowerCase();
+                    if (searchString.indexOf(value.toLowerCase()) !== -1) {
                         this.searchResults.push(project);
                     }
                 });
             }
         });
 
-        this.scrollToProject = (item: Project) => {
+        this.selectedProject.subscribe((item: Project) => {
             // index is incremented because CSS is NOT 0-based
             var element = $("main > section:nth-child(" + (this.projects.indexOf(item) + 1) + ")");
             $("main").animate({
                 scrollTop: element.position().top + $("main").scrollTop()
             }, () => {
-                    element.addClass("scaleOut");
-                    element.on("webkitTransitionEnd transitionend", (event) => {
-                        element.removeClass("scaleOut");
-                        element.off("webkitTransitionEnd transitionend");
-                    });
+                    $("#currentProject").css("background-color", element.css("background-color"));
+                    this.toggleProjectPopup();
                 });
+
+            // reset form
             $("#searchField").val('');
             this.searchInput('');
             this.searchResults.removeAll();
-            this.toggleSearch();
-        }
+            this.searchVisible(false);
+        });
     }
 
-    /** Smoothly scrolls the document to the project. Implemented in constructor */
+    /** Smoothly scrolls the document to the project. Implemented in constructor because of (this) issues */
     scrollToProject(item: Project) { }
 
     /** Opens (in a new window) the item's link */
     openLink(item: Project) {
         window.open(item.url, "_blank");
+    }
+
+    /** Opens/Closes the project popup */
+    toggleProjectPopup() {
+        if (this.contactVisible()) {
+            this.toggleContact();
+        }
+
+        this.projectPopup(!this.projectPopup());
+        this.projectPopup() ? $("#fade").fadeIn() : $("#fade").fadeOut();
     }
 
     /** Toggles visiblity of credits */
@@ -134,6 +148,7 @@ interface KnockoutBindingHandlers {
     fadeVisible: {};
 }
 
+// allows inspecting of VM from Console
 var model: ProjectViewModel;
 
 $(() => {
@@ -151,6 +166,13 @@ $(() => {
     // apply to HTML
     model = new ProjectViewModel();
     ko.applyBindings(model);
+
+    // open search on CTRL-F
+    $(document).keydown((event: JQueryKeyEventObject) => {
+        if (event.keyCode === 114 || event.ctrlKey && event.keyCode === 70) {
+            model.toggleSearch(); event.preventDefault();
+        }
+    });
 });
 
 function onLoadedJson(data: any): void {
@@ -165,6 +187,11 @@ function onLoadedJson(data: any): void {
             ));
     });
     model.projects(projects);
+    $(".descriptionText").dotdotdot({
+        height: 80,
+        watch: true,
+        after: ".open"
+    });
 
     setHeader();
     $(window).resize(setHeader)

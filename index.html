@@ -6,8 +6,9 @@
     <script type="text/javascript" src="//use.typekit.net/eda3eaj.js"></script>
     <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 
-    <script src="jQuery.js"></script>
-    <script src="Knockout.js"></script>
+    <script src="lib/jQuery.js"></script>
+    <script src="lib/jQuery.dotdotdot.js"></script>
+    <script src="lib/Knockout.js"></script>
     <script async src="https://spreadsheets.google.com/feeds/list/0At0qWZvFZioqdEdXQzJXYlN2bTQ3YXlqZDZIV2Nab1E/od6/public/values?alt=json-in-script&callback=onLoadedJson"></script>
 
     <link rel="stylesheet" href="style.css" />
@@ -17,6 +18,8 @@
 </head>
 
 <body>
+    <div id="fade"></div>
+
     <header>
         <h1>Iron Horse Chapter 14 &ndash; Solar System Projects</h1>
         <nav>
@@ -41,7 +44,7 @@
         <div id="searchResults" data-bind="visible: (searchVisible() && searchResults().length !== 0 && searchInput() !== '')">
             <table>
                 <tbody data-bind="foreach: searchResults">
-                    <tr data-bind="click: $parent.scrollToProject">
+                    <tr data-bind="click: function() { $parent.selectedProject(this); }">
                         <td data-bind="text: name"></td>
                         <td data-bind="text: author"></td>
                     </tr>
@@ -50,10 +53,10 @@
         </div>
     </section>
 
-    <section id="contactUs" data-bind="fadeVisible: contactVisible">
+    <section class="popup" id="contactUs" data-bind="fadeVisible: contactVisible">
         <h3>Contact Us</h3>
         <hr />
-        <p>By Ishan Bhargava, with elements by Dhruba Ghosh</p>
+        <p>This version was made completely by Ishan Bhargava</p>
         <hr />
         <p>
             Do you need to contact us for any reason at all?
@@ -61,24 +64,39 @@
             Send us an email at <a href="mailto:doworkson2014@gmail.com">doworkson2014@gmail.com</a>
         </p>
         <hr />
-        <p>&copy; 2014. All rights reserved.</p>
+        <p>&copy; 2014. All rights reserved. All projects are property of their original owners. Used with permission</p>
         <div class="center">
             <div class="button" onclick="window.location.href='https://github.com/mraplus/mraplus.github.io'">View on GitHub</div>
             <div class="button" data-bind="click: toggleContact">Close</div>
         </div>
     </section>
 
-    <div id="fade" data-bind="click: toggleContact"></div>
+    <section class="popup" id="currentProject" data-bind="fadeVisible: projectPopup">
+        <!-- ko ifnot: selectedProject().url === '' -->
+        <header data-bind="text: selectedProject().name, click: function() { openLink(selectedProject()); }"></header>
+        <!-- /ko -->
+        <!-- ko if: selectedProject().url === '' -->
+        <header class="noLink" data-bind="text: selectedProject().name"></header>
+        <!-- /ko -->
+        <div class="description" style="text-align: justify;" data-bind="text: selectedProject().description"></div>
+        <div class="author" data-bind="text: 'By ' +  selectedProject().author"></div>
+        <div class="center">
+            <div class="button" data-bind="click: toggleProjectPopup">Close</div>
+        </div>
+    </section>
 
     <main data-bind="foreach: projects">
-        <section class="project" data-bind="visible: visible">
+        <section class="project">
             <!-- ko ifnot: url === '' -->
             <header data-bind="text: name, click: $parent.openLink"></header>
             <!-- /ko -->
             <!-- ko if: url === '' -->
             <header class="noLink" data-bind="text: name"></header>
             <!-- /ko -->
-            <div class="description" data-bind="text: description"></div>
+            <div class="description">
+                <span class="descriptionText" data-bind="text: description"></span>
+                <span class="open" data-bind="click: function() { $parent.selectedProject(this); }">(More)</span>
+            </div>
             <div class="author" data-bind="text: 'By ' + author"></div>
         </section>
     </main>

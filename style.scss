@@ -53,9 +53,11 @@ body {
             @include respond-to(handhelds) {
                 font-size: 27px;
             }
+
             @include respond-to(medium-screens) {
                 font-size: 36px;
             }
+
             @include respond-to(wide-screens) {
                 font-size: 48px;
             }
@@ -71,9 +73,11 @@ body {
                 @include respond-to(handhelds) {
                     padding: 10px;
                 }
+
                 @include respond-to(medium-screens) {
                     padding: 15px;
                 }
+
                 @include respond-to(wide-screens) {
                     padding: 20px;
                 }
@@ -160,9 +164,7 @@ hr {
     display: none;
 }
 
-#contactUs {
-    z-index: 5;
-    background-color: $red;
+.popup {
     border-radius: 15px;
     box-sizing: border-box;
     padding: 20px;
@@ -171,6 +173,11 @@ hr {
     top: 20%;
     left: 50%;
     margin: 0 0 0 -15%;
+    z-index: 5;
+}
+
+#contactUs {
+    background-color: $red;
 }
 
 .center {
@@ -194,7 +201,7 @@ input[type=text] {
 }
 
 @mixin placeholder() {
-    color: rgba(255, 255, 255, 0.6)
+    color: rgba(255, 255, 255, 0.6);
 }
 
 ::-webkit-input-placeholder {
@@ -214,8 +221,6 @@ input[type=text] {
     @include placeholder();
 }
 
-
-
 main {
     float: left;
     position: fixed;
@@ -224,12 +229,32 @@ main {
     overflow: auto;
 }
 
+.project, #currentProject {
+    header {
+        padding: 5px 0;
+        font-size: 24px;
+
+        &:not(.noLink) {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
+    .author {
+        text-align: right;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .description {
+        font-weight: lighter;
+    }
+}
+
 .project {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
 
     @include respond-to(handhelds) {
         width: 100%;
@@ -244,28 +269,15 @@ main {
     }
 
     height: 250px;
-    overflow: auto;
+    overflow: hidden;
     padding: 15px;
     float: left;
 
-    header {
-        padding: 5px 0;
-        font-size: 24px;
-
-        &:not(.noLink) {
-            cursor: pointer;
-            text-decoration: underline;
-        }
-    }
-
-    .description {
-        font-weight: lighter;
-    }
-
-    .author {
+    .open {
+        font-style: italic;
         text-align: right;
-        font-weight: bold;
-        margin: 10px 0;
+        text-decoration: underline;
+        cursor: pointer;
     }
 
     &:nth-child(8n + 1) {
@@ -299,9 +311,4 @@ main {
     &:nth-child(8n + 8) {
         background-color: $blue;
     }
-}
-
-.scaleOut {
-    -webkit-transform: scale(1.25, 1.25);
-    transform: scale(1.25, 1.25);
 }
