@@ -1,6 +1,7 @@
 ﻿/// <reference path="lib/Knockout.d.ts" />
 /// <reference path="lib/jQuery.d.ts" />
 
+
 /** A container for the information associated with each project */
 class Project {
     /**
@@ -9,12 +10,16 @@ class Project {
      * @param (string) url - Link to project
      * @param (string) description - The description of the project shown
      * @param (string) author - The author(s) of the project
+     * @param (string) type - Type of project
+     * @param (Date) timestamp - The date this project was added
      */
     constructor(
         public name: string = "",
         public url: string = "",
         public description: string = "",
-        public author: string = "") { }
+        public author: string = "",
+        public type: string = "",
+        public timestamp: Date = new Date()) { }
 }
 
 /** Holds our data */
@@ -183,8 +188,9 @@ function onLoadedJson(data: any): void {
             item['gsx$name']['$t'],
             item['gsx$link']['$t'],
             item['gsx$description']['$t'],
-            item['gsx$author']['$t']
-            ));
+            item['gsx$author']['$t'],
+            item['gsx$category']['$t'],
+            new Date(item['gsx$timestamp']['$t'])));
     });
     model.projects(projects);
     $(".descriptionText").dotdotdot({

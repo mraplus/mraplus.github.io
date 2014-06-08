@@ -104,13 +104,17 @@ hr {
 
 .popup {
   border-radius: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20px;
-  width: 30%;
   position: fixed;
   top: 20%;
-  left: 50%;
-  margin: 0 0 0 -15%;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 40%;
   z-index: 5; }
   .popup header {
     font-weight: bold;
@@ -129,6 +133,8 @@ input[type=text] {
   color: white;
   font-size: 18px;
   -webkit-transition: background-color ease-in-out 0.5s;
+  -moz-transition: background-color ease-in-out 0.5s;
+  -o-transition: background-color ease-in-out 0.5s;
   transition: background-color ease-in-out 0.5s;
   background-color: rgba(248, 251, 252, 0.3); }
   input[type=text]:focus {
@@ -167,6 +173,11 @@ main {
 .project .description, #currentProject .description {
   font-weight: lighter; }
 
+.additionalInfo {
+  text-align: right; }
+  .additionalInfo > span {
+    display: block; }
+
 .project {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -199,11 +210,23 @@ main {
     background-color: #61BD6D; }
   .project:nth-child(8n+5) {
     background-color: #fa8f00; }
+    @media only screen and (max-width: 320px) {
+      .project:nth-child(8n+5) {
+        background-color: #3D8EB9 !important; } }
   .project:nth-child(8n+6) {
     background-color: #61BD6D; }
+    @media only screen and (max-width: 320px) {
+      .project:nth-child(8n+6) {
+        background-color: #E25041 !important; } }
   .project:nth-child(8n+7) {
     background-color: #E25041; }
+    @media only screen and (max-width: 320px) {
+      .project:nth-child(8n+7) {
+        background-color: #fa8f00 !important; } }
   .project:nth-child(8n+8) {
     background-color: #3D8EB9; }
+    @media only screen and (max-width: 320px) {
+      .project:nth-child(8n+8) {
+        background-color: #61BD6D !important; } }
 
 /*# sourceMappingURL=style.css.map */

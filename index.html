@@ -80,6 +80,10 @@
         <!-- /ko -->
         <div class="description" style="text-align: justify;" data-bind="text: selectedProject().description"></div>
         <div class="author" data-bind="text: 'By ' +  selectedProject().author"></div>
+        <div class="additionalInfo">
+            <span data-bind="text: selectedProject().type"></span>
+            <span data-bind="text: 'Added on ' + selectedProject().timestamp.toLocaleString()"></span>
+        </div>
         <div class="center">
             <div class="button" data-bind="click: toggleProjectPopup">Close</div>
         </div>

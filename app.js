@@ -1,13 +1,17 @@
 ﻿var Project = (function () {
-    function Project(name, url, description, author) {
+    function Project(name, url, description, author, type, timestamp) {
         if (typeof name === "undefined") { name = ""; }
         if (typeof url === "undefined") { url = ""; }
         if (typeof description === "undefined") { description = ""; }
         if (typeof author === "undefined") { author = ""; }
+        if (typeof type === "undefined") { type = ""; }
+        if (typeof timestamp === "undefined") { timestamp = new Date(); }
         this.name = name;
         this.url = url;
         this.description = description;
         this.author = author;
+        this.type = type;
+        this.timestamp = timestamp;
     }
     return Project;
 })();
@@ -130,7 +134,7 @@ $(function () {
 function onLoadedJson(data) {
     var projects = [];
     data['feed']['entry'].forEach(function (item) {
-        projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t']));
+        projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t'], item['gsx$category']['$t'], new Date(item['gsx$timestamp']['$t'])));
     });
     model.projects(projects);
     $(".descriptionText").dotdotdot({

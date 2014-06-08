@@ -164,15 +164,23 @@ hr {
     display: none;
 }
 
+@mixin centerDiv() {
+    top: 20%;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .popup {
     border-radius: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 20px;
-    width: 30%;
     position: fixed;
-    top: 20%;
-    left: 50%;
-    margin: 0 0 0 -15%;
+    @include centerDiv();
+    width: 40%;
     z-index: 5;
 
     header {
@@ -196,6 +204,8 @@ input[type=text] {
     color: white;
     font-size: 18px;
     -webkit-transition: background-color ease-in-out 0.5s;
+    -moz-transition: background-color ease-in-out 0.5s;
+    -o-transition: background-color ease-in-out 0.5s;
     transition: background-color ease-in-out 0.5s;
     background-color: rgba(lighten($blue, 50%), 0.3);
 
@@ -256,6 +266,14 @@ main {
     }
 }
 
+.additionalInfo {
+    text-align: right;
+
+    > span {
+        display: block;
+    }
+}
+
 .project {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -303,17 +321,33 @@ main {
 
     &:nth-child(8n + 5) {
         background-color: $yellow;
+
+        @include respond-to(handhelds) {
+            background-color: $blue !important;
+        }
     }
 
     &:nth-child(8n + 6) {
         background-color: $green;
+
+        @include respond-to(handhelds) {
+            background-color: $red !important;
+        }
     }
 
     &:nth-child(8n + 7) {
         background-color: $red;
+
+        @include respond-to(handhelds) {
+            background-color: $yellow !important;
+        }
     }
 
     &:nth-child(8n + 8) {
         background-color: $blue;
+
+        @include respond-to(handhelds) {
+            background-color: $green !important;
+        }
     }
 }
