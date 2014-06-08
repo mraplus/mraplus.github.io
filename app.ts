@@ -188,7 +188,7 @@ function onLoadedJson(data: any): void {
     });
     model.projects(projects);
     $(".descriptionText").dotdotdot({
-        height: 80,
+        height: 120,
         watch: true,
         after: ".open"
     });
