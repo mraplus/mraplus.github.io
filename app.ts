@@ -136,6 +136,7 @@ class ProjectViewModel {
 
     /** Sorts the projects (grid is automatically updated) */
     sortProjects(data, event: Event) {
+        $(".project:last-child").css("margin-bottom", 0);
         var sortBy = (<HTMLElement>event.currentTarget).dataset['value'];
         this.projects(this.projects().sort((a: Project, b: Project) => {
             if (a[sortBy] > b[sortBy]) {
@@ -146,6 +147,7 @@ class ProjectViewModel {
                 return 0;
             }
         }));
+        setHeader();
     }
 }
 
@@ -180,8 +182,11 @@ $(() => {
     });
 });
 
+var json: any;
+
 function onLoadedJson(data: any): void {
     // make a list of all the projects
+    json = data;
     var projects: Project[] = [];
     data['feed']['entry'].forEach((item) => {
         projects.push(new Project(

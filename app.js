@@ -94,6 +94,7 @@ var ProjectViewModel = (function () {
     };
 
     ProjectViewModel.prototype.sortProjects = function (data, event) {
+        $(".project:last-child").css("margin-bottom", 0);
         var sortBy = event.currentTarget.dataset['value'];
         this.projects(this.projects().sort(function (a, b) {
             if (a[sortBy] > b[sortBy]) {
@@ -104,6 +105,7 @@ var ProjectViewModel = (function () {
                 return 0;
             }
         }));
+        setHeader();
     };
     return ProjectViewModel;
 })();
@@ -131,7 +133,10 @@ $(function () {
     });
 });
 
+var json;
+
 function onLoadedJson(data) {
+    json = data;
     var projects = [];
     data['feed']['entry'].forEach(function (item) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t'], item['gsx$category']['$t'], new Date(item['gsx$timestamp']['$t'])));
