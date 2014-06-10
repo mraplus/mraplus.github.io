@@ -104,6 +104,19 @@ hr {
     margin: 0 7px;
 }
 
+.selected {
+    color: white;
+    background-color: darken($gray, 30%);
+}
+
+.ascending::before {
+    content: '▲';
+}
+
+.descending::before {
+    content: '▼';
+}
+
 .menu {
     z-index: 2;
     background-color: $lightBlue;
@@ -136,18 +149,18 @@ hr {
         tr {
             cursor: pointer;
 
-            td {
-                padding: 5px;
-
-                &:first-child {
-                    font-weight: bold;
-                }
-            }
-
             &:hover {
                 background-color: $lightBlue;
                 color: white;
                 border-radius: 10px;
+            }
+        }
+
+        td {
+            padding: 5px;
+
+            &:first-child {
+                font-weight: bold;
             }
         }
     }

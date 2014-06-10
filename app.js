@@ -25,7 +25,9 @@ var ProjectViewModel = (function () {
         this.selectedProject = ko.observable(new Project());
 
         this.contactVisible = ko.observable(false);
+
         this.sortVisible = ko.observable(false);
+        this.sortDirection = 1;
 
         this.searchVisible = ko.observable(false);
         this.searchResultText = ko.observable("");
@@ -94,13 +96,28 @@ var ProjectViewModel = (function () {
     };
 
     ProjectViewModel.prototype.sortProjects = function (data, event) {
+        var _this = this;
         $(".project:last-child").css("margin-bottom", 0);
-        var sortBy = event.currentTarget.dataset['value'];
+        $(".button[data-value='" + this.sortBy + "']").removeClass('ascending descending selected');
+
+        var element = $(event.currentTarget).addClass('selected');
+        var newSort = element.data("value");
+        if (newSort === this.sortBy) {
+            this.sortDirection *= -1;
+        } else {
+            this.sortBy = newSort;
+            this.sortDirection = 1;
+        }
+        if (this.sortDirection === 1) {
+            element.addClass('descending');
+        } else {
+            element.addClass('ascending');
+        }
         this.projects(this.projects().sort(function (a, b) {
-            if (a[sortBy] > b[sortBy]) {
-                return 1;
-            } else if (a[sortBy] < b[sortBy]) {
-                return -1;
+            if (a[_this.sortBy] > b[_this.sortBy]) {
+                return _this.sortDirection;
+            } else if (a[_this.sortBy] < b[_this.sortBy]) {
+                return -(_this.sortDirection);
             } else {
                 return 0;
             }

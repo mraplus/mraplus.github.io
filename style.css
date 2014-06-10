@@ -55,6 +55,16 @@ hr {
   cursor: pointer;
   margin: 0 7px; }
 
+.selected {
+  color: white;
+  background-color: #a3a3a3; }
+
+.ascending::before {
+  content: '▲'; }
+
+.descending::before {
+  content: '▼'; }
+
 .menu {
   z-index: 2;
   background-color: #5fa6ca;
@@ -83,14 +93,14 @@ hr {
     border-collapse: collapse; }
     #searchResults table tr {
       cursor: pointer; }
-      #searchResults table tr td {
-        padding: 5px; }
-        #searchResults table tr td:first-child {
-          font-weight: bold; }
       #searchResults table tr:hover {
         background-color: #5fa6ca;
         color: white;
         border-radius: 10px; }
+    #searchResults table td {
+      padding: 5px; }
+      #searchResults table td:first-child {
+        font-weight: bold; }
 
 #fade {
   z-index: 3;

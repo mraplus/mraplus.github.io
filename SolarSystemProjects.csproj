@@ -21,12 +21,6 @@
     <Content Include="lib\jQuery.js" />
     <Content Include="lib\Knockout.js" />
     <Content Include="index.html" />
-    <Content Include="ProjectView.js">
-      <DependentUpon>ProjectView.js.bundle</DependentUpon>
-    </Content>
-    <Content Include="ProjectView.min.js">
-      <DependentUpon>ProjectView.js</DependentUpon>
-    </Content>
     <Content Include="style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
@@ -39,14 +33,6 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="lib\jQuery.d.ts" />
     <TypeScriptCompile Include="lib\Knockout.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ProjectView.js.bundle" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ProjectView.min.js.map">
-      <DependentUpon>ProjectView.min.js</DependentUpon>
-    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

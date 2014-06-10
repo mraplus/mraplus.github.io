@@ -34,6 +34,10 @@ class ProjectViewModel {
 
     /** Is the sort menu visible? */
     sortVisible: KnockoutObservable<boolean>;
+    /** The current sort direction */
+    sortDirection: number;
+    /** The currently selected sort method */
+    sortBy: string;
 
     /** Is the search field visible? */
     searchVisible: KnockoutObservable<boolean>;
@@ -55,7 +59,9 @@ class ProjectViewModel {
         this.selectedProject = ko.observable<Project>(new Project());
 
         this.contactVisible = ko.observable<boolean>(false);
+
         this.sortVisible = ko.observable<boolean>(false);
+        this.sortDirection = 1;
 
         this.searchVisible = ko.observable<boolean>(false);
         this.searchResultText = ko.observable<string>("");
@@ -136,13 +142,29 @@ class ProjectViewModel {
 
     /** Sorts the projects (grid is automatically updated) */
     sortProjects(data, event: Event) {
-        $(".project:last-child").css("margin-bottom", 0);
-        var sortBy = (<HTMLElement>event.currentTarget).dataset['value'];
+        $(".project:last-child").css("margin-bottom", 0); // reset margin
+        $(".button[data-value='" + this.sortBy + "']").removeClass('ascending descending selected'); // reset button
+
+        var element = $(event.currentTarget).addClass('selected');
+        var newSort = element.data("value");
+        if (newSort === this.sortBy) {
+            this.sortDirection *= -1;
+        }
+        else {
+            this.sortBy = newSort;
+            this.sortDirection = 1;
+        }
+        if (this.sortDirection === 1) {
+            element.addClass('descending');
+        }
+        else {
+            element.addClass('ascending');
+        }
         this.projects(this.projects().sort((a: Project, b: Project) => {
-            if (a[sortBy] > b[sortBy]) {
-                return 1;
-            } else if (a[sortBy] < b[sortBy]) {
-                return -1
+            if (a[this.sortBy] > b[this.sortBy]) {
+                return this.sortDirection;
+            } else if (a[this.sortBy] < b[this.sortBy]) {
+                return -(this.sortDirection);
             } else {
                 return 0;
             }
