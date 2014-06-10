@@ -106,7 +106,7 @@ hr {
 
 .selected {
     color: white;
-    background-color: darken($gray, 30%);
+    background-color: $blue;
 }
 
 .ascending::before {

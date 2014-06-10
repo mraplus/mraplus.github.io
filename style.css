@@ -57,7 +57,7 @@ hr {
 
 .selected {
   color: white;
-  background-color: #a3a3a3; }
+  background-color: #3D8EB9; }
 
 .ascending::before {
   content: '▲'; }
