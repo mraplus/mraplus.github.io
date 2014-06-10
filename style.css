@@ -19,10 +19,10 @@
       font-family: "proxima-nova", sans-serif;
       margin: 0 0;
       float: left; }
-      @media only screen and (max-width: 320px) {
+      @media only screen and (max-width: 400px) {
         body > header h1 {
           font-size: 27px; } }
-      @media only screen and (min-width: 321px) and (max-width: 1023px) {
+      @media only screen and (min-width: 401px) and (max-width: 1023px) {
         body > header h1 {
           font-size: 36px; } }
       @media only screen and (min-width: 1024px) {
@@ -30,10 +30,10 @@
           font-size: 48px; } }
     body > header nav {
       float: right; }
-      @media only screen and (max-width: 320px) {
+      @media only screen and (max-width: 400px) {
         body > header nav .button {
           padding: 10px; } }
-      @media only screen and (min-width: 321px) and (max-width: 1023px) {
+      @media only screen and (min-width: 401px) and (max-width: 1023px) {
         body > header nav .button {
           padding: 15px; } }
       @media only screen and (min-width: 1024px) {
@@ -187,10 +187,10 @@ main {
   overflow: hidden;
   padding: 15px;
   float: left; }
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 400px) {
     .project {
       width: 100%; } }
-  @media only screen and (min-width: 321px) and (max-width: 1023px) {
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
     .project {
       width: 50%; } }
   @media only screen and (min-width: 1024px) {
@@ -211,22 +211,22 @@ main {
     background-color: #61BD6D; }
   .project:nth-child(8n+5) {
     background-color: #fa8f00; }
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 400px) {
       .project:nth-child(8n+5) {
         background-color: #3D8EB9 !important; } }
   .project:nth-child(8n+6) {
     background-color: #61BD6D; }
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 400px) {
       .project:nth-child(8n+6) {
         background-color: #E25041 !important; } }
   .project:nth-child(8n+7) {
     background-color: #E25041; }
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 400px) {
       .project:nth-child(8n+7) {
         background-color: #fa8f00 !important; } }
   .project:nth-child(8n+8) {
     background-color: #3D8EB9; }
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 400px) {
       .project:nth-child(8n+8) {
         background-color: #61BD6D !important; } }
 
