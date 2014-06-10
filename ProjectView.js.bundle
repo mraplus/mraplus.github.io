@@ -6,15 +6,15 @@
     <!--Determin whether to generate/re-generate this sprite on building the solution.-->
     <runOnBuild>true</runOnBuild>
     <!--Use absolute path in the generated CSS files. By default, the URLs are relative to generated bundled CSS file.-->
-    <adjustRelativePaths>false</adjustRelativePaths>
+    <adjustRelativePaths>true</adjustRelativePaths>
     <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
     <outputDirectory />
   </settings>
   <!--The order of the <file> elements determines the order of the images in the bundle.-->
   <files>
-    <file>/lib/jQuery.js</file>
-    <file>/lib/jQuery.dotdotdot.js</file>
-    <file>/lib/Knockout.js</file>
-    <file>/app.js</file>
+    <file>lib/jQuery.js</file>
+    <file>lib/jQuery.dotdotdot.js</file>
+    <file>lib/Knockout.js</file>
+    <file>app.js</file>
   </files>
 </bundle>

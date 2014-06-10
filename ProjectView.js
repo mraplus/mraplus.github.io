@@ -591,10 +591,7 @@ $(function () {
     });
 });
 
-var json;
-
 function onLoadedJson(data) {
-    json = data;
     var projects = [];
     data['feed']['entry'].forEach(function (item) {
         projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t'], item['gsx$category']['$t'], new Date(item['gsx$timestamp']['$t'])));

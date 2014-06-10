@@ -182,11 +182,9 @@ $(() => {
     });
 });
 
-var json: any;
 
 function onLoadedJson(data: any): void {
     // make a list of all the projects
-    json = data;
     var projects: Project[] = [];
     data['feed']['entry'].forEach((item) => {
         projects.push(new Project(
