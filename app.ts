@@ -153,12 +153,7 @@ class ProjectViewModel {
             this.sortBy = newSort;
             this.sortDirection = 1;
         }
-        if (this.sortDirection === 1) {
-            element.addClass('descending');
-        }
-        else {
-            element.addClass('ascending');
-        }
+        this.sortDirection === 1 ? element.addClass('descending') : element.addClass('ascending');
         this.projects(this.projects().sort((a: Project, b: Project) => {
             if (a[this.sortBy] > b[this.sortBy]) {
                 return this.sortDirection;
@@ -204,18 +199,15 @@ $(() => {
 });
 
 function onLoadedJson(data: any): void {
-    // make a list of all the projects
-    var projects: Project[] = [];
-    data['feed']['entry'].forEach((item) => {
-        projects.push(new Project(
+    model.projects(data['feed']['entry'].map((item) => {
+        return new Project(
             item['gsx$name']['$t'],
             item['gsx$link']['$t'],
             item['gsx$description']['$t'],
             item['gsx$author']['$t'],
             item['gsx$category']['$t'],
-            new Date(item['gsx$timestamp']['$t'])));
-    });
-    model.projects(projects);
+            new Date(item['gsx$timestamp']['$t']))
+        }));
     $(".descriptionText").dotdotdot({
         height: 100,
         watch: true,

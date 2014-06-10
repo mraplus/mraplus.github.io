@@ -108,11 +108,7 @@ var ProjectViewModel = (function () {
             this.sortBy = newSort;
             this.sortDirection = 1;
         }
-        if (this.sortDirection === 1) {
-            element.addClass('descending');
-        } else {
-            element.addClass('ascending');
-        }
+        this.sortDirection === 1 ? element.addClass('descending') : element.addClass('ascending');
         this.projects(this.projects().sort(function (a, b) {
             if (a[_this.sortBy] > b[_this.sortBy]) {
                 return _this.sortDirection;
@@ -151,11 +147,9 @@ $(function () {
 });
 
 function onLoadedJson(data) {
-    var projects = [];
-    data['feed']['entry'].forEach(function (item) {
-        projects.push(new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t'], item['gsx$category']['$t'], new Date(item['gsx$timestamp']['$t'])));
-    });
-    model.projects(projects);
+    model.projects(data['feed']['entry'].map(function (item) {
+        return new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t'], item['gsx$category']['$t'], new Date(item['gsx$timestamp']['$t']));
+    }));
     $(".descriptionText").dotdotdot({
         height: 100,
         watch: true,
