@@ -1,7 +1,6 @@
 ﻿/// <reference path="lib/Knockout.d.ts" />
 /// <reference path="lib/jQuery.d.ts" />
 
-
 /** A container for the information associated with each project */
 class Project {
     /**
@@ -203,7 +202,6 @@ $(() => {
         }
     });
 });
-
 
 function onLoadedJson(data: any): void {
     // make a list of all the projects
