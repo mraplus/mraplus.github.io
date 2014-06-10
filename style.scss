@@ -7,7 +7,7 @@ $gray: #EFEFEF;
 $blue: #3D8EB9;
 $lightBlue: lighten($blue, 10%);
 
-$break-small: 320px;
+$break-small: 400px;
 $break-large: 1024px;
 
 @mixin respond-to($media) {
