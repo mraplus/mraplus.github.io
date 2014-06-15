@@ -10,7 +10,8 @@
 body {
   margin: 0 0;
   font-family: 'myriad-pro', sans-serif;
-  color: white; }
+  color: white;
+  background-color: brown; }
   body > header {
     position: fixed;
     top: 0;
