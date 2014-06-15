@@ -198,7 +198,9 @@ $(() => {
     });
 });
 
+/** Called when the spreadsheet data is received */
 function onLoadedJson(data: any): void {
+    $("#loading").remove();
     model.projects(data['feed']['entry'].map((item) => {
         return new Project(
             item['gsx$name']['$t'],

@@ -1,4 +1,16 @@
-﻿var Project = (function () {
+﻿/// <reference path="lib/Knockout.d.ts" />
+/// <reference path="lib/jQuery.d.ts" />
+/** A container for the information associated with each project */
+var Project = (function () {
+    /**
+    * Creates a new Project
+    * @param (string) name - The Project name
+    * @param (string) url - Link to project
+    * @param (string) description - The description of the project shown
+    * @param (string) author - The author(s) of the project
+    * @param (string) type - Type of project
+    * @param (Date) timestamp - The date this project was added
+    */
     function Project(name, url, description, author, type, timestamp) {
         if (typeof name === "undefined") { name = ""; }
         if (typeof url === "undefined") { url = ""; }
@@ -16,7 +28,9 @@
     return Project;
 })();
 
+/** Holds our data */
 var ProjectViewModel = (function () {
+    /** Initializes the ViewModel with everything blank */
     function ProjectViewModel() {
         var _this = this;
         this.projects = ko.observableArray();
@@ -35,6 +49,7 @@ var ProjectViewModel = (function () {
 
         this.searchInput = ko.observable("");
 
+        // Find search results on input
         this.searchInput.subscribe(function (value) {
             _this.searchResults.removeAll();
             if (value !== "") {
@@ -48,6 +63,7 @@ var ProjectViewModel = (function () {
         });
 
         this.selectedProject.subscribe(function (item) {
+            // index is incremented because CSS is NOT 0-based
             var element = $("main > section:nth-child(" + (_this.projects.indexOf(item) + 1) + ")");
             $("main").animate({
                 scrollTop: element.position().top + $("main").scrollTop()
@@ -56,19 +72,23 @@ var ProjectViewModel = (function () {
                 _this.toggleProjectPopup();
             });
 
+            // reset form
             $("#searchField").val('');
             _this.searchInput('');
             _this.searchResults.removeAll();
             _this.searchVisible(false);
         });
     }
+    /** Smoothly scrolls the document to the project. Implemented in constructor because of (this) issues */
     ProjectViewModel.prototype.scrollToProject = function (item) {
     };
 
+    /** Opens (in a new window) the item's link */
     ProjectViewModel.prototype.openLink = function (item) {
         window.open(item.url, "_blank");
     };
 
+    /** Opens/Closes the project popup */
     ProjectViewModel.prototype.toggleProjectPopup = function () {
         if (this.contactVisible()) {
             this.toggleContact();
@@ -78,27 +98,33 @@ var ProjectViewModel = (function () {
         this.projectPopup() ? $("#fade").fadeIn() : $("#fade").fadeOut();
     };
 
+    /** Toggles visiblity of credits */
     ProjectViewModel.prototype.toggleContact = function () {
         this.contactVisible(!this.contactVisible());
         this.contactVisible() ? $("#fade").fadeIn() : $("#fade").fadeOut();
     };
 
+    /** Toggles the visiblity of the sort menu */
     ProjectViewModel.prototype.toggleSort = function () {
+        // disable all other popup boxes
         this.searchVisible(false);
 
         this.sortVisible(!this.sortVisible());
     };
 
+    /** Toggles the visibility of the search box */
     ProjectViewModel.prototype.toggleSearch = function () {
+        // disable all other popup boxes
         this.sortVisible(false);
 
         this.searchVisible(!this.searchVisible());
     };
 
+    /** Sorts the projects (grid is automatically updated) */
     ProjectViewModel.prototype.sortProjects = function (data, event) {
         var _this = this;
-        $(".project:last-child").css("margin-bottom", 0);
-        $(".button[data-value='" + this.sortBy + "']").removeClass('ascending descending selected');
+        $(".project:last-child").css("margin-bottom", 0); // reset margin
+        $(".button[data-value='" + this.sortBy + "']").removeClass('ascending descending selected'); // reset button
 
         var element = $(event.currentTarget).addClass('selected');
         var newSort = element.data("value");
@@ -123,9 +149,11 @@ var ProjectViewModel = (function () {
     return ProjectViewModel;
 })();
 
+// allows inspecting of VM from Console
 var model;
 
 $(function () {
+    // assign the custom event thing
     ko.bindingHandlers.fadeVisible = {
         init: function (element, valueAccessor) {
             $(element).toggle(ko.unwrap(valueAccessor()));
@@ -135,9 +163,11 @@ $(function () {
         }
     };
 
+    // apply to HTML
     model = new ProjectViewModel();
     ko.applyBindings(model);
 
+    // open search on CTRL-F
     $(document).keydown(function (event) {
         if (event.keyCode === 114 || event.ctrlKey && event.keyCode === 70) {
             model.toggleSearch();
@@ -146,7 +176,9 @@ $(function () {
     });
 });
 
+/** Called when the spreadsheet data is received */
 function onLoadedJson(data) {
+    $("#loading").remove();
     model.projects(data['feed']['entry'].map(function (item) {
         return new Project(item['gsx$name']['$t'], item['gsx$link']['$t'], item['gsx$description']['$t'], item['gsx$author']['$t'], item['gsx$category']['$t'], new Date(item['gsx$timestamp']['$t']));
     }));
@@ -165,4 +197,3 @@ function setHeader() {
     $("main").css("top", headerHeight);
     $(".project:last-child").css("margin-bottom", headerHeight);
 }
-//# sourceMappingURL=app.js.map
